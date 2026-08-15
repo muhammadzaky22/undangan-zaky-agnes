@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8f5d66">
+<meta name="description" content="Undangan Pernikahan Muhammad Zaky Khairun & Agnes Viannissa — 7 Februari 2027">
+<title>Zaky & Agnes — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="cover" class="cover">
+  <div class="cover-bg"></div><div class="cover-shade"></div>
+  <div class="cover-content">
+    <p class="mini">THE WEDDING OF</p>
+    <h1>Muhammad Zaky<br><i>&</i><br>Agnes Viannissa</h1>
+    <p class="cover-date">07 · 02 · 2027</p>
+    <p class="guest">Kepada Yth.<br><strong id="guestName">Bapak/Ibu/Saudara/i</strong></p>
+    <button class="open" id="openBtn">Buka Undangan <span>♡</span></button>
+  </div>
+</div>
+
+<div id="site" class="site hidden">
+  <button id="musicBtn" class="floating" title="Musik">♫</button>
+
+  <header class="hero">
+    <div class="hero-photo"></div><div class="hero-overlay"></div>
+    <div class="hero-text">
+      <p class="mini">WE ARE GETTING MARRIED</p>
+      <h2>Zaky <span>&</span> Agnes</h2>
+      <p>7 Februari 2027</p>
+    </div>
+    <div class="scroll">SCROLL ↓</div>
+  </header>
+
+  <section class="welcome">
+    <p class="mini rose">ASSALAMU'ALAIKUM WARAHMATULLAHI WABARAKATUH</p>
+    <h2>Dengan penuh rasa syukur</h2>
+    <p class="lead">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.</p>
+    <div class="ornament">✦</div>
+  </section>
+
+  <section class="couple">
+    <div class="couple-photo"><img src="images/foto2.jpg" alt="Zaky dan Agnes"></div>
+    <div class="couple-copy">
+      <p class="mini rose">THE COUPLE</p>
+      <h2>Muhammad Zaky Khairun</h2>
+      <p>Putra dari keluarga tercinta</p>
+      <div class="amp">&</div>
+      <h2>Agnes Viannissa</h2>
+      <p>Putri dari keluarga tercinta</p>
+    </div>
+  </section>
+
+  <section class="count">
+    <p class="mini rose">COUNTDOWN TO OUR DAY</p>
+    <h2>Menuju Hari Bahagia</h2>
+    <div class="timer">
+      <div><b id="d">0</b><span>Hari</span></div>
+      <div><b id="h">0</b><span>Jam</span></div>
+      <div><b id="m">0</b><span>Menit</span></div>
+      <div><b id="s">0</b><span>Detik</span></div>
+    </div>
+  </section>
+
+  <section class="event">
+    <p class="mini rose">SAVE THE DATE</p><h2>Detail Acara</h2>
+    <div class="event-grid">
+      <article><div class="icon">♢</div><h3>Akad & Resepsi</h3><p><strong>Minggu, 7 Februari 2027</strong><br>08.00 WITA s/d selesai</p></article>
+      <article><div class="icon">⌖</div><h3>Lokasi</h3><p><strong>Gas Alam Badak 1</strong><br>Muara Badak, Kalimantan Timur</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gas+Alam+Badak+1+Muara+Badak" target="_blank">Buka Google Maps</a></article>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <p class="mini rose">OUR MOMENTS</p><h2>Galeri Foto</h2>
+    <div class="grid">
+      <img src="images/foto1.jpg" alt="Momen Zaky dan Agnes">
+      <img src="images/foto2.jpg" alt="Momen Zaky dan Agnes">
+      <img src="images/foto3.jpg" alt="Momen Zaky dan Agnes">
+      <img src="images/foto4.jpg" alt="Momen Zaky dan Agnes">
+    </div>
+  </section>
+
+  <section class="story">
+    <p class="mini rose">OUR STORY</p><h2>Kisah Kami</h2>
+    <div class="timeline">
+      <div><span>01</span><article><h3>Pertemuan</h3><p>Sebuah perkenalan sederhana menjadi awal dari cerita yang berarti.</p></article></div>
+      <div><span>02</span><article><h3>Perjalanan</h3><p>Hari demi hari kami belajar saling memahami, menjaga, dan menguatkan.</p></article></div>
+      <div><span>03</span><article><h3>Selamanya</h3><p>Dengan doa dan restu keluarga, kami memilih melangkah bersama menuju kehidupan baru.</p></article></div>
+    </div>
+  </section>
+
+  <section class="music">
+    <p class="mini rose">OUR SONG</p><h2>Tak Ada Ujungnya</h2><p>Rony Parulian</p>
+    <button class="btn" id="songBtn">▶ Dengarkan Lagu</button>
+    <p class="tiny">Tombol akan membuka lagu resmi di YouTube.</p>
+  </section>
+
+  <section class="rsvp">
+    <p class="mini rose">RSVP</p><h2>Konfirmasi Kehadiran</h2>
+    <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
+    <a class="btn" id="waBtn" target="_blank">Konfirmasi via WhatsApp</a>
+  </section>
+
+  <footer><div class="ornament">✦</div><h2>Zaky <span>&</span> Agnes</h2><p>7 Februari 2027 · Muara Badak</p><small>Made with love</small></footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
