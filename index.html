@@ -2,39 +2,43 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8c5d6b">
 <title>Muhammad Zaky Khairy & Agnes Viannisa</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Georgia,serif;color:#4b3940;background:#f8eef2}
-.cover{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;background:linear-gradient(#0005,#0005),url('assets/foto-placeholder.svg') center/cover}
-.card{max-width:520px;padding:38px 25px;border-radius:24px;background:#fffdfde8;box-shadow:0 10px 40px #0003}
-.small{letter-spacing:3px;text-transform:uppercase;font-size:12px}.names{font-size:42px;line-height:1.15;margin:18px 0}.amp{font-size:24px}.date{font-size:18px;margin:18px 0 28px}
-button{border:0;border-radius:30px;padding:14px 25px;background:#8f596b;color:white;font-size:16px;cursor:pointer}
-#invitation{display:none;max-width:760px;margin:auto;background:#fff;padding:38px 22px;min-height:100vh;text-align:center}
-section{padding:45px 10px;border-bottom:1px solid #eadde2}h2{font-size:28px}.heroimg{width:100%;max-width:560px;border-radius:20px}.event{padding:22px;background:#f8eef2;border-radius:18px}.count{font-size:25px;font-weight:bold;letter-spacing:1px}
-a{color:#8f596b}.music{position:fixed;right:18px;bottom:18px}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+:root{--rose:#8c5d6b;--pink:#f8eef2;--dark:#4c3940}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9dfe3;color:var(--dark);font-family:Montserrat,sans-serif}.site{max-width:760px;margin:auto;background:#fff;box-shadow:0 0 35px #0002}.cover{min-height:100vh;display:flex;align-items:flex-end;justify-content:center;text-align:center;color:#fff;background:linear-gradient(#0001,#0009),url("assets/foto1.jpg") center/cover}.cover-inner{width:100%;padding:40px 22px 65px}.eyebrow{font-size:10px;letter-spacing:4px}.couple{font:500 50px/1.02 "Cormorant Garamond",serif;margin:18px 0}.date{letter-spacing:3px;font-size:13px}.open{margin-top:30px;padding:14px 28px;border:1px solid #fff;border-radius:40px;background:#ffffff1c;color:#fff;cursor:pointer}.main{display:none}section{padding:70px 25px;text-align:center;border-bottom:1px solid #eadde1}section:nth-child(even){background:var(--pink)}h2{font:500 40px "Cormorant Garamond",serif;margin:12px 0 22px}.orn{font-size:28px;color:var(--rose)}.intro{font:italic 20px/1.7 "Cormorant Garamond",serif}.photo{width:100%;max-width:560px;border-radius:180px 180px 20px 20px;display:block;margin:25px auto;box-shadow:0 12px 35px #0002}.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:560px;margin:auto}.unit{background:#fff;border-radius:14px;padding:14px 4px;box-shadow:0 5px 20px #0001}.unit b{display:block;font:500 29px "Cormorant Garamond"}.unit span{font-size:9px}.story{max-width:570px;text-align:left;margin:auto;position:relative}.story:before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:#d8bdc7}.story-item{padding:0 0 35px 42px;position:relative}.story-item:before{content:"♡";position:absolute;left:4px;color:var(--rose);font-size:20px}.story-item h3{font:500 25px "Cormorant Garamond";margin:0 0 6px}.story-item p{font-size:13px;line-height:1.8;margin:0}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}.gallery img{width:100%;height:210px;object-fit:cover;border-radius:15px}.note{font-size:11px;opacity:.7}.event,.musicbox,.rsvp{max-width:570px;margin:auto;background:#fff;border-radius:24px;padding:28px;box-shadow:0 8px 30px #0001}.event p{line-height:1.7}.btn{display:inline-block;border:0;background:var(--rose);color:#fff;text-decoration:none;padding:13px 22px;border-radius:30px;font-size:12px;margin-top:8px}.field{width:100%;padding:13px;border:1px solid #e1d4d9;border-radius:12px;margin:6px 0;font-family:inherit}.music-title{font:500 27px "Cormorant Garamond"}.musicbox audio{width:100%;margin-top:12px}.nav{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:20;background:#fff;border-radius:30px;box-shadow:0 5px 25px #0002;padding:9px 12px;display:none;gap:15px}.nav a{color:var(--rose);text-decoration:none;font-size:11px}.top{position:fixed;right:17px;bottom:70px;border:0;background:var(--rose);color:#fff;border-radius:50%;width:44px;height:44px;display:none}.footer{text-align:center;background:var(--pink);padding:70px 20px}.light{display:none;position:fixed;inset:0;background:#000d;z-index:50;align-items:center;justify-content:center}.light img{max-width:95%;max-height:90%;border-radius:15px}.light span{position:absolute;right:25px;top:15px;color:#fff;font-size:35px}@media(max-width:500px){.couple{font-size:43px}.counter{grid-template-columns:repeat(2,1fr)}section{padding:58px 20px}.gallery img{height:160px}}
 </style>
 </head>
 <body>
-<div class="cover" id="cover">
- <div class="card">
-  <div class="small">Undangan Pernikahan</div>
-  <div class="names">Muhammad Zaky Khairy<br><span class="amp">&amp;</span><br>Agnes Viannisa</div>
-  <div class="date">30 Agustus 2026</div>
-  <button onclick="openInvitation()">💌 Buka Undangan</button>
- </div>
-</div>
-<main id="invitation">
-<section><div class="small">The Wedding Of</div><h1 class="names">Zaky & Agnes</h1><p>Dengan penuh kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari istimewa kami.</p><img class="heroimg" src="assets/foto-placeholder.svg" alt="Foto pasangan"></section>
-<section><h2>Menuju Hari Bahagia</h2><div class="count" id="countdown">Menghitung...</div></section>
-<section><h2>Acara Pernikahan</h2><div class="event"><p><b>Minggu, 30 Agustus 2026</b></p><p>08.00 WITA s/d selesai</p><p><b>Gas Alam Badak 1</b><br>Muara Badak</p><p><a href="https://www.google.com/maps/search/?api=1&query=Gas+Alam+Badak+1+Muara+Badak" target="_blank">📍 Buka Google Maps</a></p></div></section>
-<section><h2>RSVP & Ucapan</h2><p>Konfirmasi kehadiran dan sampaikan doa terbaik untuk kami.</p><a href="https://wa.me/?text=Halo%20Zaky%20dan%20Agnes%2C%20saya%20akan%20hadir%20di%20acara%20pernikahan%20kalian." target="_blank"><button>💬 RSVP via WhatsApp</button></a></section>
-<section><p>Terima kasih atas doa dan kehadiran Anda.</p><h2>Zaky & Agnes ❤️</h2></section>
-</main>
+<div class="site">
+<div class="cover" id="cover"><div class="cover-inner"><div class="eyebrow">THE WEDDING OF</div><div class="couple">Muhammad Zaky Khairy<br><span style="font-size:25px">&amp;</span><br>Agnes Viannisa</div><div class="date">7 FEBRUARI 2027</div><button class="open" onclick="openInvite()">♡ BUKA UNDANGAN</button></div></div>
+<main class="main" id="main">
+<section id="home"><div class="eyebrow">ASSALAMUALAIKUM</div><h2>Dengan penuh kebahagiaan</h2><p class="intro">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya.”</p><div class="orn">❦</div><p>Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.</p><img class="photo" src="assets/foto1.jpg" onerror="this.src='assets/foto-placeholder.svg'"></section>
+<section><div class="eyebrow">SAVE THE DATE</div><h2>Menuju Hari Bahagia</h2><div class="counter" id="counter"></div></section>
+<section><div class="eyebrow">THE COUPLE</div><h2>Zaky & Agnes</h2><p>Dengan cinta, doa, dan restu keluarga, kami melangkah menuju satu cerita baru.</p><div class="gallery"><img src="assets/foto2.jpg" onerror="this.src='assets/foto-placeholder.svg'"><img src="assets/foto3.jpg" onerror="this.src='assets/foto-placeholder.svg'"></div></section>
+<section><div class="eyebrow">OUR STORY</div><h2>Kisah Cinta Kami</h2><div class="story"><div class="story-item"><h3>Pertemuan</h3><p>Berawal dari sebuah perkenalan sederhana, kemudian tumbuh menjadi cerita yang berarti.</p></div><div class="story-item"><h3>Menjadi Kita</h3><p>Kami belajar saling mengenal, saling mendukung, dan tumbuh bersama melewati hari-hari.</p></div><div class="story-item"><h3>Menuju Selamanya</h3><p>Dengan doa keluarga dan orang-orang terkasih, kami memilih melangkah bersama.</p></div></div></section>
+<section id="gallery"><div class="eyebrow">MOMENTS</div><h2>Galeri</h2><div class="gallery">
+<img src="assets/foto1.jpg" onerror="this.src='assets/foto-placeholder.svg'" onclick="zoom(this.src)">
+<img src="assets/foto2.jpg" onerror="this.src='assets/foto-placeholder.svg'" onclick="zoom(this.src)">
+<img src="assets/foto3.jpg" onerror="this.src='assets/foto-placeholder.svg'" onclick="zoom(this.src)">
+<img src="assets/foto4.jpg" onerror="this.src='assets/foto-placeholder.svg'" onclick="zoom(this.src)">
+<img src="assets/foto5.jpg" onerror="this.src='assets/foto-placeholder.svg'" onclick="zoom(this.src)">
+<img src="assets/foto6.jpg" onerror="this.src='assets/foto-placeholder.svg'" onclick="zoom(this.src)">
+</div><p class="note">Upload foto dengan nama foto1.jpg sampai foto6.jpg ke folder assets GitHub.</p></section>
+<section id="event"><div class="eyebrow">WEDDING EVENT</div><h2>Detail Acara</h2><div class="event"><p>💍 <b>Acara Pernikahan</b></p><p>📅 <b>Minggu, 7 Februari 2027</b></p><p>⏰ <b>08.00 WITA s/d selesai</b></p><p>📍 <b>Gas Alam Badak 1</b><br>Muara Badak</p><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gas+Alam+Badak+1+Muara+Badak">📍 Buka Google Maps</a></div></section>
+<section><div class="eyebrow">OUR SONG</div><h2>Musik</h2><div class="musicbox"><div class="music-title">Tak Ada Ujungnya — Rony Parulian</div><p class="note">Upload lagu yang kamu punya izin gunakan sebagai <b>musik.mp3</b> ke folder assets.</p><audio id="audio" controls loop><source src="assets/musik.mp3" type="audio/mpeg"></audio><p><a class="btn" target="_blank" href="https://open.spotify.com/search/Tak%20Ada%20Ujungnya%20Rony%20Parulian">▶ Spotify</a></p></div></section>
+<section id="rsvp"><div class="eyebrow">RSVP & UCAPAN</div><h2>Konfirmasi Kehadiran</h2><div class="rsvp"><input id="guest" class="field" placeholder="Nama Anda"><select id="status" class="field"><option>Hadir</option><option>Tidak hadir</option><option>Masih ragu</option></select><input id="jumlah" class="field" type="number" min="1" placeholder="Jumlah orang"><textarea id="ucapan" class="field" rows="4" placeholder="Ucapan & doa"></textarea><button class="btn" onclick="rsvp()">💌 Kirim ke WhatsApp</button></div></section>
+<section><div class="eyebrow">SHARE</div><h2>Bagikan Undangan</h2><p>Bagikan undangan ini kepada keluarga dan sahabat.</p><button class="btn" onclick="share()">↗ Bagikan Undangan</button></section>
+<div class="footer"><div class="orn">♡</div><div class="couple" style="color:var(--rose);font-size:42px">Zaky &amp; Agnes</div><p>Terima kasih atas doa, restu, dan kehadiran Anda.</p></div>
+</main></div>
+<div class="nav" id="nav"><a href="#home">HOME</a><a href="#gallery">GALERI</a><a href="#event">ACARA</a><a href="#rsvp">RSVP</a></div><button class="top" id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="light" id="light" onclick="this.style.display='none'"><span>×</span><img id="lightimg"></div>
 <script>
-function openInvitation(){document.getElementById('cover').style.display='none';document.getElementById('invitation').style.display='block';window.scrollTo(0,0)}
-const target=new Date('2026-08-30T08:00:00+08:00').getTime();
-setInterval(()=>{let d=target-Date.now();if(d<0){document.getElementById('countdown').textContent='Hari bahagia telah tiba ❤️';return}
-let days=Math.floor(d/864e5),h=Math.floor(d/36e5)%24,m=Math.floor(d/6e4)%60,s=Math.floor(d/1e3)%60;
-document.getElementById('countdown').textContent=`${days} Hari ${h} Jam ${m} Menit ${s} Detik`},1000);
-</script>
-</body></html>
+function openInvite(){cover.style.display='none';main.style.display='block';nav.style.display='flex';top.style.display='block';scrollTo(0,0);const a=document.getElementById('audio');a.play().catch(()=>{});}
+const target=new Date('2027-02-07T08:00:00+08:00').getTime();
+function tick(){let d=Math.max(0,target-Date.now()),v=[Math.floor(d/864e5),Math.floor(d/36e5)%24,Math.floor(d/6e4)%60,Math.floor(d/1e3)%60],l=['HARI','JAM','MENIT','DETIK'];counter.innerHTML=v.map((x,i)=>`<div class="unit"><b>${x}</b><span>${l[i]}</span></div>`).join('')}setInterval(tick,1000);tick();
+function rsvp(){let n=guest.value||'Tamu',s=status.value,j=jumlah.value||1,u=ucapan.value||'-';let t=`Halo Zaky & Agnes,%0A%0ANama: ${encodeURIComponent(n)}%0AKehadiran: ${encodeURIComponent(s)}%0AJumlah: ${j}%0AUcapan: ${encodeURIComponent(u)}`;open('https://wa.me/6289512340428?text='+t,'_blank')}
+function share(){if(navigator.share)navigator.share({title:'Undangan Zaky & Agnes',text:'Undangan Pernikahan Muhammad Zaky Khairy & Agnes Viannisa',url:location.href});else navigator.clipboard?.writeText(location.href).then(()=>alert('Link undangan disalin.'))}
+function zoom(src){lightimg.src=src;light.style.display='flex'}
+</script></body></html>
