@@ -1,113 +1,40 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#8f5d66">
-<meta name="description" content="Undangan Pernikahan Muhammad Zaky Khairun & Agnes Viannissa — 7 Februari 2027">
-<title>Zaky & Agnes — Wedding Invitation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Muhammad Zaky Khairy & Agnes Viannisa</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Georgia,serif;color:#4b3940;background:#f8eef2}
+.cover{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;background:linear-gradient(#0005,#0005),url('assets/foto-placeholder.svg') center/cover}
+.card{max-width:520px;padding:38px 25px;border-radius:24px;background:#fffdfde8;box-shadow:0 10px 40px #0003}
+.small{letter-spacing:3px;text-transform:uppercase;font-size:12px}.names{font-size:42px;line-height:1.15;margin:18px 0}.amp{font-size:24px}.date{font-size:18px;margin:18px 0 28px}
+button{border:0;border-radius:30px;padding:14px 25px;background:#8f596b;color:white;font-size:16px;cursor:pointer}
+#invitation{display:none;max-width:760px;margin:auto;background:#fff;padding:38px 22px;min-height:100vh;text-align:center}
+section{padding:45px 10px;border-bottom:1px solid #eadde2}h2{font-size:28px}.heroimg{width:100%;max-width:560px;border-radius:20px}.event{padding:22px;background:#f8eef2;border-radius:18px}.count{font-size:25px;font-weight:bold;letter-spacing:1px}
+a{color:#8f596b}.music{position:fixed;right:18px;bottom:18px}
+</style>
 </head>
 <body>
-<div id="cover" class="cover">
-  <div class="cover-bg"></div><div class="cover-shade"></div>
-  <div class="cover-content">
-    <p class="mini">THE WEDDING OF</p>
-    <h1>Muhammad Zaky<br><i>&</i><br>Agnes Viannissa</h1>
-    <p class="cover-date">07 · 02 · 2027</p>
-    <p class="guest">Kepada Yth.<br><strong id="guestName">Bapak/Ibu/Saudara/i</strong></p>
-    <button class="open" id="openBtn" type="button" onclick="bukaUndangan()">Buka Undangan <span>♡</span></button>
-  </div>
+<div class="cover" id="cover">
+ <div class="card">
+  <div class="small">Undangan Pernikahan</div>
+  <div class="names">Muhammad Zaky Khairy<br><span class="amp">&amp;</span><br>Agnes Viannisa</div>
+  <div class="date">30 Agustus 2026</div>
+  <button onclick="openInvitation()">💌 Buka Undangan</button>
+ </div>
 </div>
-
-<div id="site" class="site hidden">
-  <button id="musicBtn" class="floating" title="Musik">♫</button>
-
-  <header class="hero">
-    <div class="hero-photo"></div><div class="hero-overlay"></div>
-    <div class="hero-text">
-      <p class="mini">WE ARE GETTING MARRIED</p>
-      <h2>Zaky <span>&</span> Agnes</h2>
-      <p>7 Februari 2027</p>
-    </div>
-    <div class="scroll">SCROLL ↓</div>
-  </header>
-
-  <section class="welcome">
-    <p class="mini rose">ASSALAMU'ALAIKUM WARAHMATULLAHI WABARAKATUH</p>
-    <h2>Dengan penuh rasa syukur</h2>
-    <p class="lead">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.</p>
-    <div class="ornament">✦</div>
-  </section>
-
-  <section class="couple">
-    <div class="couple-photo"><img src="images/foto2.jpg" alt="Zaky dan Agnes"></div>
-    <div class="couple-copy">
-      <p class="mini rose">THE COUPLE</p>
-      <h2>Muhammad Zaky Khairun</h2>
-      <p>Putra dari keluarga tercinta</p>
-      <div class="amp">&</div>
-      <h2>Agnes Viannissa</h2>
-      <p>Putri dari keluarga tercinta</p>
-    </div>
-  </section>
-
-  <section class="count">
-    <p class="mini rose">COUNTDOWN TO OUR DAY</p>
-    <h2>Menuju Hari Bahagia</h2>
-    <div class="timer">
-      <div><b id="d">0</b><span>Hari</span></div>
-      <div><b id="h">0</b><span>Jam</span></div>
-      <div><b id="m">0</b><span>Menit</span></div>
-      <div><b id="s">0</b><span>Detik</span></div>
-    </div>
-  </section>
-
-  <section class="event">
-    <p class="mini rose">SAVE THE DATE</p><h2>Detail Acara</h2>
-    <div class="event-grid">
-      <article><div class="icon">♢</div><h3>Akad & Resepsi</h3><p><strong>Minggu, 7 Februari 2027</strong><br>08.00 WITA s/d selesai</p></article>
-      <article><div class="icon">⌖</div><h3>Lokasi</h3><p><strong>Gas Alam Badak 1</strong><br>Muara Badak, Kalimantan Timur</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gas+Alam+Badak+1+Muara+Badak" target="_blank">Buka Google Maps</a></article>
-    </div>
-  </section>
-
-  <section class="gallery">
-    <p class="mini rose">OUR MOMENTS</p><h2>Galeri Foto</h2>
-    <div class="grid">
-      <img src="images/foto1.jpg" alt="Momen Zaky dan Agnes">
-      <img src="images/foto2.jpg" alt="Momen Zaky dan Agnes">
-      <img src="images/foto3.jpg" alt="Momen Zaky dan Agnes">
-      <img src="images/foto4.jpg" alt="Momen Zaky dan Agnes">
-    </div>
-  </section>
-
-  <section class="story">
-    <p class="mini rose">OUR STORY</p><h2>Kisah Kami</h2>
-    <div class="timeline">
-      <div><span>01</span><article><h3>Pertemuan</h3><p>Sebuah perkenalan sederhana menjadi awal dari cerita yang berarti.</p></article></div>
-      <div><span>02</span><article><h3>Perjalanan</h3><p>Hari demi hari kami belajar saling memahami, menjaga, dan menguatkan.</p></article></div>
-      <div><span>03</span><article><h3>Selamanya</h3><p>Dengan doa dan restu keluarga, kami memilih melangkah bersama menuju kehidupan baru.</p></article></div>
-    </div>
-  </section>
-
-  <section class="music">
-    <p class="mini rose">OUR SONG</p><h2>Tak Ada Ujungnya</h2><p>Rony Parulian</p>
-    <button class="btn" id="songBtn">▶ Dengarkan Lagu</button>
-    <p class="tiny">Tombol akan membuka lagu resmi di YouTube.</p>
-  </section>
-
-  <section class="rsvp">
-    <p class="mini rose">RSVP</p><h2>Konfirmasi Kehadiran</h2>
-    <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
-    <a class="btn" id="waBtn" target="_blank">Konfirmasi via WhatsApp</a>
-  </section>
-
-  <footer><div class="ornament">✦</div><h2>Zaky <span>&</span> Agnes</h2><p>7 Februari 2027 · Muara Badak</p><small>Made with love</small></footer>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+<main id="invitation">
+<section><div class="small">The Wedding Of</div><h1 class="names">Zaky & Agnes</h1><p>Dengan penuh kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari istimewa kami.</p><img class="heroimg" src="assets/foto-placeholder.svg" alt="Foto pasangan"></section>
+<section><h2>Menuju Hari Bahagia</h2><div class="count" id="countdown">Menghitung...</div></section>
+<section><h2>Acara Pernikahan</h2><div class="event"><p><b>Minggu, 30 Agustus 2026</b></p><p>08.00 WITA s/d selesai</p><p><b>Gas Alam Badak 1</b><br>Muara Badak</p><p><a href="https://www.google.com/maps/search/?api=1&query=Gas+Alam+Badak+1+Muara+Badak" target="_blank">📍 Buka Google Maps</a></p></div></section>
+<section><h2>RSVP & Ucapan</h2><p>Konfirmasi kehadiran dan sampaikan doa terbaik untuk kami.</p><a href="https://wa.me/?text=Halo%20Zaky%20dan%20Agnes%2C%20saya%20akan%20hadir%20di%20acara%20pernikahan%20kalian." target="_blank"><button>💬 RSVP via WhatsApp</button></a></section>
+<section><p>Terima kasih atas doa dan kehadiran Anda.</p><h2>Zaky & Agnes ❤️</h2></section>
+</main>
+<script>
+function openInvitation(){document.getElementById('cover').style.display='none';document.getElementById('invitation').style.display='block';window.scrollTo(0,0)}
+const target=new Date('2026-08-30T08:00:00+08:00').getTime();
+setInterval(()=>{let d=target-Date.now();if(d<0){document.getElementById('countdown').textContent='Hari bahagia telah tiba ❤️';return}
+let days=Math.floor(d/864e5),h=Math.floor(d/36e5)%24,m=Math.floor(d/6e4)%60,s=Math.floor(d/1e3)%60;
+document.getElementById('countdown').textContent=`${days} Hari ${h} Jam ${m} Menit ${s} Detik`},1000);
+</script>
+</body></html>
