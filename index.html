@@ -154,27 +154,28 @@ function shareInvitation(){
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 /* =========================
    SUPABASE CONFIG
-   GANTI 2 NILAI DI BAWAH:
-   1. SUPABASE_URL
-   2. SUPABASE_PUBLISHABLE_KEY
    ========================= */
 const SUPABASE_URL = "https://ridrrcprspixtrbwygeo.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_qPkd-UXm7X2KRA-E5a00jA_O8Ya4iSr";
-const supabaseClient = (SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("PASTE_") && !SUPABASE_PUBLISHABLE_KEY.includes("PASTE_"))
-  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
-  : null;
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
 
 function escapeGuestbook(text){
-  return String(text).replace(/[&<>"']/g, m => ({
+  return String(text ?? "").replace(/[&<>"']/g, m => ({
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
   }[m]));
 }
 
 function statusLabel(status){
-  return status==="Hadir" ? "✅ Hadir" : status==="Tidak hadir" ? "❌ Tidak hadir" : "⏳ Masih ragu";
+  return status==="Hadir" ? "✅ Hadir" :
+         status==="Tidak hadir" ? "❌ Tidak hadir" :
+         "⏳ Masih ragu";
 }
 
 function renderGuestbook(list){
@@ -183,32 +184,33 @@ function renderGuestbook(list){
     box.innerHTML='<div class="card"><p>Belum ada ucapan. Jadilah yang pertama memberikan doa ❤️</p></div>';
     return;
   }
+
   box.innerHTML=list.map(x => `
     <div style="background:#fff;border-radius:18px;padding:18px;margin:10px 0;box-shadow:0 5px 18px #0001">
       <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-        <b>${escapeGuestbook(x.name)}</b>
-        <span style="font-size:12px">${statusLabel(x.status)}</span>
+        <b>${escapeGuestbook(x.nama)}</b>
+        <span style="font-size:12px">${statusLabel(x.kehadiran)}</span>
       </div>
-      <p style="margin:10px 0 0;line-height:1.65">${escapeGuestbook(x.message)}</p>
-    </div>`).join("");
+      <p style="margin:10px 0 0;line-height:1.65">${escapeGuestbook(x.ucapan)}</p>
+    </div>
+  `).join("");
 }
 
 async function loadGuestbook(){
-  if(!supabaseClient){
-    renderGuestbook([]);
-    document.getElementById("guestbookMessage").textContent="Database belum dihubungkan. Isi konfigurasi Supabase terlebih dahulu.";
-    return;
-  }
+  const msg=document.getElementById("guestbookMessage");
+
   const {data,error}=await supabaseClient
-    .from("guestbook")
-    .select("id,name,status,message,created_at")
+    .from("ucapan")
+    .select("id,nama,kehadiran,ucapan,created_at")
     .order("created_at",{ascending:false})
     .limit(100);
 
   if(error){
-    document.getElementById("guestbookMessage").textContent="Belum bisa memuat ucapan online.";
+    console.error("Supabase load error:", error);
+    msg.textContent="Ucapan online belum bisa dimuat. Periksa koneksi Supabase/policy.";
     return;
   }
+
   renderGuestbook(data);
 }
 
@@ -219,9 +221,8 @@ async function addGuestbook(){
   const msg=document.getElementById("guestbookMessage");
   const btn=document.getElementById("sendGuestbook");
 
-  if(!message){ alert("Silakan tulis ucapan terlebih dahulu."); return; }
-  if(!supabaseClient){
-    msg.textContent="Database belum dihubungkan.";
+  if(!message){
+    alert("Silakan tulis ucapan terlebih dahulu.");
     return;
   }
 
@@ -229,18 +230,20 @@ async function addGuestbook(){
   btn.textContent="Mengirim...";
   msg.textContent="";
 
-  const {error}=await supabaseClient.from("guestbook").insert({
-    name:name.slice(0,60),
-    status,
-    message:message.slice(0,500)
-  });
+  const {error}=await supabaseClient
+    .from("ucapan")
+    .insert({
+      nama:name.slice(0,60),
+      kehadiran:status,
+      ucapan:message.slice(0,500)
+    });
 
   btn.disabled=false;
   btn.textContent="💌 Kirim Ucapan";
 
   if(error){
-    msg.textContent="Ucapan belum terkirim. Coba lagi.";
-    console.error(error);
+    console.error("Supabase insert error:", error);
+    msg.textContent="Ucapan belum terkirim. Periksa policy Supabase lalu coba lagi.";
     return;
   }
 
@@ -251,5 +254,4 @@ async function addGuestbook(){
 }
 
 loadGuestbook();
-</script>
-</body></html>
+</script></body></html>
