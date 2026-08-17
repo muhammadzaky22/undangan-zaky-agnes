@@ -300,91 +300,6 @@ body{overflow-x:hidden}
 }
 </style>
 
-
-<style id="zaky-agnes-photo-3d">
-.hero-card{
-  perspective:1400px;
-  transform-style:preserve-3d;
-}
-
-.photo-3d{
-  position:relative !important;
-  transform-style:preserve-3d !important;
-  transition:transform .18s cubic-bezier(.2,.75,.2,1) !important;
-  will-change:transform;
-  overflow:visible !important;
-  box-shadow:
-    0 30px 65px rgba(62,38,36,.30),
-    0 8px 18px rgba(255,255,255,.7) inset !important;
-}
-
-.photo-3d::before{
-  content:"";
-  position:absolute;
-  inset:7px;
-  z-index:-1;
-  border-radius:inherit;
-  background:linear-gradient(145deg,#fffaf7,#c78c96 55%,#86505a);
-  transform:translateZ(-28px) scale(.965);
-  box-shadow:0 28px 42px rgba(50,30,35,.34);
-}
-
-.photo-3d img{
-  position:relative;
-  z-index:2;
-  transform:translateZ(24px) scale(1.012);
-  box-shadow:0 15px 30px rgba(50,30,35,.24);
-  backface-visibility:hidden;
-}
-
-.photo-3d::after{
-  content:"";
-  position:absolute;
-  inset:11px;
-  z-index:4;
-  border:1px solid rgba(255,255,255,.86);
-  border-radius:inherit;
-  pointer-events:none;
-  transform:translateZ(40px);
-  background:linear-gradient(
-    115deg,
-    rgba(255,255,255,.35),
-    transparent 30%,
-    transparent 70%,
-    rgba(255,255,255,.12)
-  );
-  box-shadow:inset 0 0 24px rgba(255,255,255,.18);
-}
-
-.photo-glare{
-  position:absolute;
-  inset:-20%;
-  z-index:6;
-  pointer-events:none;
-  background:linear-gradient(
-    110deg,
-    transparent 39%,
-    rgba(255,255,255,.48) 49%,
-    transparent 59%
-  );
-  transform:translateX(-80%) rotate(8deg);
-  mix-blend-mode:screen;
-  animation:photo3dGlare 5.8s ease-in-out infinite;
-}
-
-@keyframes photo3dGlare{
-  0%,45%{transform:translateX(-80%) rotate(8deg);opacity:0}
-  52%{opacity:.9}
-  72%,100%{transform:translateX(80%) rotate(8deg);opacity:0}
-}
-
-@media(max-width:600px){
-  .photo-3d img{transform:translateZ(16px) scale(1.012) !important}
-  .photo-3d::after{transform:translateZ(27px)}
-  .photo-3d::before{transform:translateZ(-19px) scale(.965)}
-}
-</style>
-
 </head>
 
 <body class="locked">
@@ -413,7 +328,7 @@ body{overflow-x:hidden}
 <main class="page-drift">
 <section class="hero" id="home">
   <div class="hero-inner">
-    <div class="hero-card reveal"><div class="photo-3d" id="tiltPhoto"><img src="foto-utama.jpg" alt="Zaky & Agnes"><span class="photo-glare" aria-hidden="true"></span></div></div>
+    <div class="hero-card reveal"><div class="photo-3d" id="tiltPhoto"><img src="foto-utama.jpg" alt="Zaky & Agnes"></div></div>
     <div class="eyebrow reveal">ASSALAMUALAIKUM</div>
     <h1 class="reveal">Muhammad Zaky Khairy</h1>
     <div class="script reveal">&amp; Agnes Viannisa</div>
@@ -634,54 +549,11 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll(".reveal").forEach(x=>io.observe(x));
 const tilt=document.getElementById("tiltPhoto");
 if(tilt){
-  let targetX=0,targetY=0,currentX=0,currentY=0,raf=0;
-
-  const animate=()=>{
-    currentX+=(targetX-currentX)*.13;
-    currentY+=(targetY-currentY)*.13;
-    tilt.style.transform=`rotateY(${currentX}deg) rotateX(${-currentY}deg)`;
-
-    if(Math.abs(targetX-currentX)>.01 || Math.abs(targetY-currentY)>.01){
-      raf=requestAnimationFrame(animate);
-    }
-  };
-
-  const setTilt=(x,y)=>{
-    targetX=x*14;
-    targetY=y*12;
-    cancelAnimationFrame(raf);
-    raf=requestAnimationFrame(animate);
-  };
-
-  const reset=()=>{
-    targetX=0;
-    targetY=0;
-    cancelAnimationFrame(raf);
-    raf=requestAnimationFrame(animate);
-  };
-
-  tilt.addEventListener("mousemove",e=>{
-    const r=tilt.getBoundingClientRect();
-    setTilt(
-      (e.clientX-r.left)/r.width-.5,
-      (e.clientY-r.top)/r.height-.5
-    );
-  });
-
-  tilt.addEventListener("mouseleave",reset);
-
-  tilt.addEventListener("touchmove",e=>{
-    const t=e.touches[0];
-    const r=tilt.getBoundingClientRect();
-    setTilt(
-      (t.clientX-r.left)/r.width-.5,
-      (t.clientY-r.top)/r.height-.5
-    );
-  },{passive:true});
-
-  tilt.addEventListener("touchend",reset,{passive:true});
+  const move=e=>{const r=tilt.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;tilt.style.transform=`rotateY(${x*10}deg) rotateX(${-y*10}deg)`};
+  tilt.addEventListener("mousemove",move);tilt.addEventListener("mouseleave",()=>tilt.style.transform="");
+  tilt.addEventListener("touchmove",e=>{const t=e.touches[0],r=tilt.getBoundingClientRect(),x=(t.clientX-r.left)/r.width-.5,y=(t.clientY-r.top)/r.height-.5;tilt.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg)`},{passive:true});
 }
-document.getElementById("rsvpForm").onsubmit=e=>{e.preventDefault();document.getElementById("rsvpStatus").textContent="Terima kasih, konfirmasi kamu sudah tercatat di perangkat ini ♡";localStorage.setItem("zakyAgnesRSVP",JSON.stringify(Object.fromEntries(new FormData(e.target))))};
+
 </script>
 
 <script id="ppt-motion-js">
@@ -771,28 +643,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 </script>
 
 
-<script id="wishes-js">
-document.addEventListener('DOMContentLoaded',()=>{
-  const btn=document.getElementById('wishSubmit');
-  if(!btn)return;
-  btn.addEventListener('click',()=>{
-    const name=document.getElementById('wishName').value.trim();
-    const msg=document.getElementById('wishMessage').value.trim();
-    const status=document.getElementById('wishStatus');
-    const list=document.getElementById('wishList');
-    if(!name||!msg){status.textContent='Nama dan ucapan belum diisi 🤍';return;}
-    const card=document.createElement('div');
-    card.className='wish-card reveal show';
-    card.innerHTML='<strong></strong><p></p>';
-    card.querySelector('strong').textContent=name;
-    card.querySelector('p').textContent=msg;
-    list.insertBefore(card,list.firstChild);
-    document.getElementById('wishName').value='';
-    document.getElementById('wishMessage').value='';
-    status.textContent='Terima kasih untuk doa dan ucapannya 🤍';
-  });
-});
-</script>
+
 
 
 <script id="ar-rum-motion-js">
@@ -884,6 +735,161 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+
+
+<!-- ===== SUPABASE ONLINE RSVP + DOA/UCAPAN =====
+     Ganti SUPABASE_URL dan SUPABASE_ANON_KEY dengan kredensial project kamu.
+     Gunakan publishable/anon key saja, JANGAN service_role key.
+-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script id="supabase-online-data">
+document.addEventListener('DOMContentLoaded', async ()=>{
+  const SUPABASE_URL = 'https://ridrrcprspixtrbwygeo.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_qPkd-UXm7X2KRA-E5a00jA_O8Ya4iSr';
+
+  const configured =
+    SUPABASE_URL.startsWith('https://') &&
+    SUPABASE_ANON_KEY &&
+    !SUPABASE_URL.includes('PASTE_') &&
+    !SUPABASE_ANON_KEY.includes('PASTE_');
+
+  const rsvpForm = document.getElementById('rsvpForm');
+  const rsvpStatus = document.getElementById('rsvpStatus');
+  const wishBtn = document.getElementById('wishSubmit');
+  const wishStatus = document.getElementById('wishStatus');
+  const wishList = document.getElementById('wishList');
+
+  if(!configured){
+    if(rsvpStatus) rsvpStatus.textContent='Supabase belum dihubungkan.';
+    if(wishStatus) wishStatus.textContent='Supabase belum dihubungkan.';
+    console.warn('Supabase belum dikonfigurasi. Isi SUPABASE_URL dan SUPABASE_ANON_KEY.');
+    return;
+  }
+
+  const { createClient } = window.supabase;
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const escapeText = (value)=>String(value ?? '');
+
+  // ===== Tampilkan doa/ucapan yang tersimpan online =====
+  async function loadWishes(){
+    if(!wishList)return;
+
+    const { data, error } = await supabase
+      .from('wishes')
+      .select('name,message,created_at')
+      .order('created_at',{ascending:false})
+      .limit(100);
+
+    if(error){
+      console.error('Gagal mengambil doa/ucapan:', error);
+      if(wishStatus) wishStatus.textContent='Ucapan belum dapat dimuat.';
+      return;
+    }
+
+    // Pertahankan ucapan bawaan, lalu tambahkan ucapan tamu.
+    const defaultCard = wishList.querySelector('.wish-card');
+    wishList.innerHTML = '';
+    if(defaultCard) wishList.appendChild(defaultCard);
+
+    (data || []).forEach(row=>{
+      const card=document.createElement('div');
+      card.className='wish-card reveal show';
+
+      const strong=document.createElement('strong');
+      strong.textContent=escapeText(row.name);
+
+      const p=document.createElement('p');
+      p.textContent=escapeText(row.message);
+
+      card.appendChild(strong);
+      card.appendChild(p);
+      wishList.appendChild(card);
+    });
+  }
+
+  // ===== Kirim doa/ucapan ke Supabase =====
+  if(wishBtn){
+    wishBtn.addEventListener('click', async ()=>{
+      const name=document.getElementById('wishName').value.trim();
+      const msg=document.getElementById('wishMessage').value.trim();
+
+      if(!name || !msg){
+        wishStatus.textContent='Nama dan ucapan belum diisi 🤍';
+        return;
+      }
+
+      wishBtn.disabled=true;
+      wishStatus.textContent='Mengirim ucapan…';
+
+      const { error } = await supabase
+        .from('wishes')
+        .insert([{name:name,message:msg}]);
+
+      wishBtn.disabled=false;
+
+      if(error){
+        console.error('Gagal menyimpan doa/ucapan:', error);
+        wishStatus.textContent='Gagal mengirim. Coba lagi ya 🤍';
+        return;
+      }
+
+      document.getElementById('wishName').value='';
+      document.getElementById('wishMessage').value='';
+      wishStatus.textContent='Terima kasih untuk doa dan ucapannya 🤍';
+      await loadWishes();
+    });
+  }
+
+  // ===== Kirim RSVP ke Supabase =====
+  if(rsvpForm){
+    rsvpForm.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+
+      const formData=new FormData(rsvpForm);
+      const name=String(formData.get('name') || '').trim();
+      const attendance=String(formData.get('attendance') || '').trim();
+      const guests=Number(formData.get('guests') || 1);
+
+      if(!name || !attendance || !Number.isInteger(guests) || guests<1 || guests>10){
+        rsvpStatus.textContent='Mohon lengkapi data RSVP 🤍';
+        return;
+      }
+
+      const submitBtn=rsvpForm.querySelector('button[type="submit"]');
+      if(submitBtn) submitBtn.disabled=true;
+      rsvpStatus.textContent='Menyimpan RSVP…';
+
+      const params=new URLSearchParams(window.location.search);
+      const guestFromLink=(params.get('to') || '').trim();
+
+      const { error } = await supabase
+        .from('rsvps')
+        .insert([{
+          name:name,
+          attendance:attendance,
+          guests:guests,
+          invited_to:guestFromLink || null
+        }]);
+
+      if(submitBtn) submitBtn.disabled=false;
+
+      if(error){
+        console.error('Gagal menyimpan RSVP:', error);
+        rsvpStatus.textContent='RSVP gagal dikirim. Coba lagi ya 🤍';
+        return;
+      }
+
+      rsvpForm.reset();
+      const guestInput=rsvpForm.querySelector('[name="guests"]');
+      if(guestInput) guestInput.value='1';
+      rsvpStatus.textContent='Terima kasih, konfirmasi kamu sudah tercatat 🤍';
+    });
+  }
+
+  await loadWishes();
+});
+</script>
 
 </body>
 </html>
