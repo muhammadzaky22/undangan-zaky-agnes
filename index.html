@@ -1,186 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#0d0b0b">
-  <meta name="description" content="Undangan pernikahan Muhammad Zaky Khairy & Agnes Viannissa — 7 Februari 2027.">
-  <title>Zaky & Agnes — Wedding Invitation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8c5d6b">
+<title>Muhammad Zaky Khairy & Agnes Viannisa</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9dfe3;color:#563e46;font-family:Arial,sans-serif}.site{max-width:760px;margin:auto;background:#fff;min-height:100vh}.cover{min-height:100vh;background:linear-gradient(#0002,#0009),url("foto-utama.jpg") center/cover;display:flex;align-items:end;text-align:center;color:#fff}.cover-inner{width:100%;padding:45px 22px 65px}.small{font-size:11px;letter-spacing:4px}.names{font:48px/1.05 Georgia,serif;margin:18px 0}.date{letter-spacing:2px;font-size:13px}.open,.btn{display:inline-block;border:0;border-radius:35px;background:#8c5d6b;color:#fff;padding:14px 25px;text-decoration:none;cursor:pointer}.open{background:#ffffff22;border:1px solid #fff}.main{display:none}.section{padding:65px 22px;text-align:center;border-bottom:1px solid #eadde1}.section:nth-child(even){background:#f8eef2}h2{font:42px Georgia,serif;margin:12px 0 25px;color:#563e46}.orn{font-size:30px;color:#8c5d6b}.intro{font:italic 20px/1.7 Georgia,serif}.photo{max-width:100%;width:100%;border-radius:28px;box-shadow:0 8px 25px #0001}.couple-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.person{background:#fff;border-radius:20px;padding:15px;box-shadow:0 5px 20px #0001}.person img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}.person h3{font:28px Georgia;margin:12px 0 4px}.person p{font-size:12px}.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.unit{background:#fff;border-radius:14px;padding:14px 4px;box-shadow:0 5px 20px #0001}.unit b{display:block;font:27px Georgia}.unit span{font-size:10px}.story{text-align:left;max-width:580px;margin:auto}.story-item{border-left:2px solid #cbaeb8;padding:0 0 30px 25px;margin-left:8px}.story-item h3{font:27px Georgia;margin:0 0 7px}.story-item p{font-size:13px;line-height:1.8}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:9px}.gallery img{width:100%;height:190px;object-fit:cover;border-radius:14px}.card{background:#fff;border-radius:22px;padding:25px;box-shadow:0 7px 25px #0001;line-height:1.7}.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:13px;border:1px solid #dfd0d6;border-radius:12px;margin:5px 0;font-family:inherit}.nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:none;gap:14px;background:#fff;padding:10px 14px;border-radius:30px;box-shadow:0 5px 25px #0002;z-index:10}.nav a{color:#8c5d6b;text-decoration:none;font-size:11px}.footer{padding:70px 20px;text-align:center;background:#f8eef2}.music-hidden{display:none!important}@media(max-width:500px){.names{font-size:41px}.counter{grid-template-columns:repeat(2,1fr)}.section{padding:55px 18px}.gallery img{height:155px}}
+</style>
 </head>
 <body>
-  <div id="preloader"><div class="preloader-ring"></div><span>Preparing your invitation</span></div>
-  <script>
-    // Emergency fallback: GitHub Pages must never remain trapped on the preloader
-    // if an external resource or later JavaScript fails.
-    setTimeout(function () {
-      var p = document.getElementById("preloader");
-      if (p) {
-        p.classList.add("preloader-hide");
-        p.style.opacity = "0";
-        p.style.visibility = "hidden";
-      }
-    }, 1800);
-  </script>
+<audio id="bgMusic" class="music-hidden" preload="auto" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
 
-  <div class="grain"></div>
+<div class="site">
+<div class="cover" id="cover">
+  <div class="cover-inner">
+    <div style="font-family:Georgia,serif;font-size:30px;line-height:1.8;margin-bottom:18px;direction:rtl">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="small">THE WEDDING OF</div>
+    <div class="names">Muhammad Zaky Khairy<br><span style="font-size:25px">&amp;</span><br>Agnes Viannisa</div>
+    <div class="date">7 FEBRUARI 2027</div>
+    <br><br><button class="open" onclick="openInvitation()">♡ BUKA UNDANGAN</button>
+  </div>
+</div>
 
-  <section id="opening" class="opening">
-    <div class="opening-bg"></div>
-    <div class="opening-overlay"></div>
-    <div class="opening-content">
-      <p class="eyebrow reveal">THE WEDDING OF</p>
-      <h1 class="hero-names reveal">Zaky <i>&</i> Agnes</h1>
-      <p class="opening-date reveal">07 · 02 · 2027</p>
-      <p class="opening-place reveal">Gas Alam Badak 1 · Muara Badak</p>
-      <button id="openInvitation" class="gold-button reveal">Buka Undangan <span>↗</span></button>
-      <p class="scroll-note reveal">A story begins here</p>
-    </div>
-  </section>
+<main class="main" id="main">
 
-  <main id="mainContent" class="site-main" aria-hidden="true">
-    <nav class="nav">
-      <a href="#home" class="nav-logo">Z <span>&</span> A</a>
-      <div class="nav-links">
-        <a href="#story">Story</a><a href="#gallery">Gallery</a><a href="#event">Event</a><a href="#rsvp">RSVP</a>
-      </div>
-      <button id="musicToggle" class="music-toggle" aria-label="Toggle music"><span class="music-bars"><b></b><b></b><b></b></span></button>
-    </nav>
+<section class="section">
+  <div class="small">ASSALAMUALAIKUM</div>
+  <h2>Dengan penuh kebahagiaan</h2>
+  <p class="intro">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya.”</p>
+  <div class="orn">❦</div>
+  <p>Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.</p>
+  <img class="photo" src="foto-utama.jpg" onerror="this.style.display='none'">
+</section>
 
-    <section id="home" class="hero section">
-      <div class="hero-image"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-inner">
-        <p class="eyebrow">SAVE THE DATE · 7 FEBRUARY 2027</p>
-        <h2>Two souls,<br><em>one beautiful story.</em></h2>
-        <p class="hero-copy">Dengan penuh sukacita, kami mengundang Anda untuk menjadi bagian dari hari yang istimewa bagi kami.</p>
-        <a href="#story" class="text-link">Discover our story <span>↓</span></a>
-      </div>
-      <div class="hero-side">M · ZAKY & AGNES · A</div>
-    </section>
+<section class="section">
+  <div class="small">THE COUPLE</div><h2>Zaky & Agnes</h2>
+  <div class="couple-grid">
+    <div class="person"><img src="foto1.jpg" onerror="this.style.display='none'"><h3>Zaky</h3><p>Muhammad Zaky Khairy</p></div>
+    <div class="person"><img src="foto2.jpg" onerror="this.style.display='none'"><h3>Agnes</h3><p>Agnes Viannisa</p></div>
+  </div>
+</section>
 
-    <section class="intro section">
-      <div class="section-number">01</div>
-      <div class="intro-copy reveal">
-        <p class="eyebrow">WITH LOVE</p>
-        <h2>We found a little piece of forever in each other.</h2>
-        <p>Hari ini bukan sekadar tentang dua nama yang bersanding, tetapi tentang dua perjalanan yang memilih untuk berjalan bersama.</p>
-      </div>
-    </section>
+<section class="section">
+  <div class="small">SAVE THE DATE</div><h2>Menuju Hari Bahagia</h2>
+  <div class="counter" id="counter"></div>
+</section>
 
-    <section class="countdown section">
-      <div class="countdown-bg"></div>
-      <div class="countdown-content reveal">
-        <p class="eyebrow">COUNTING DOWN TO OUR DAY</p>
-        <div class="timer">
-          <div><strong id="days">00</strong><span>Days</span></div>
-          <i>:</i><div><strong id="hours">00</strong><span>Hours</span></div>
-          <i>:</i><div><strong id="minutes">00</strong><span>Minutes</span></div>
-          <i>:</i><div><strong id="seconds">00</strong><span>Seconds</span></div>
-        </div>
-        <p class="countdown-date">SUNDAY · 7 FEBRUARY 2027</p>
-      </div>
-    </section>
+<section class="section">
+  <div class="small">OUR STORY</div><h2>Kisah Cinta Kami</h2>
+  <div class="story">
+    <div class="story-item"><h3>Pertemuan</h3><p>Berawal dari sebuah perkenalan sederhana, kemudian tumbuh menjadi cerita yang semakin berarti.</p></div>
+    <div class="story-item"><h3>Menjadi Kita</h3><p>Kami belajar saling mengenal, saling mendukung, dan melewati berbagai cerita bersama.</p></div>
+    <div class="story-item"><h3>Menuju Selamanya</h3><p>Dengan doa dan restu keluarga, kami memilih untuk melangkah bersama menuju kehidupan baru.</p></div>
+  </div>
+</section>
 
-    <section id="story" class="story section">
-      <div class="section-number">02</div>
-      <div class="story-head reveal">
-        <p class="eyebrow">OUR STORY</p>
-        <h2>From two paths<br><em>to one destination.</em></h2>
-      </div>
-      <div class="timeline">
-        <article class="story-item reveal"><span>01</span><div><small>THE BEGINNING</small><h3>It started with a hello.</h3><p>Setiap kisah besar selalu punya awal yang sederhana. Dari sebuah pertemuan, cerita kami perlahan menemukan arahnya.</p></div></article>
-        <article class="story-item reveal"><span>02</span><div><small>THE JOURNEY</small><h3>Growing, laughing, learning.</h3><p>Waktu mengajarkan kami bahwa cinta bukan hanya tentang momen indah, tetapi juga tentang memilih satu sama lain setiap hari.</p></div></article>
-        <article class="story-item reveal"><span>03</span><div><small>THE PROMISE</small><h3>And now, forever.</h3><p>Dengan segala doa dan harapan, kami melangkah menuju bab berikutnya—bersama.</p></div></article>
-      </div>
-    </section>
+<section class="section" id="gallery">
+  <div class="small">OUR MOMENTS</div><h2>Galeri Foto</h2>
+  <div class="gallery">
+    <img src="foto1.jpg" onerror="this.style.display='none'">
+    <img src="foto2.jpg" onerror="this.style.display='none'">
+    <img src="foto3.jpg" onerror="this.style.display='none'">
+    <img src="foto4.jpg" onerror="this.style.display='none'">
+    <img src="foto5.jpg" onerror="this.onerror=null;this.src='foto 5.jpg'">
+    <img src="foto6.jpg" onerror="this.onerror=null;this.src='foto 6.jpg'">
+  </div>
+</section>
 
-    <section class="couple section">
-      <div class="couple-card reveal">
-        <div class="portrait groom"></div>
-        <p class="eyebrow">THE GROOM</p><h2>Muhammad Zaky Khairy</h2><p>Putra dari keluarga tercinta</p>
-      </div>
-      <div class="couple-card reveal">
-        <div class="portrait bride"></div>
-        <p class="eyebrow">THE BRIDE</p><h2>Agnes Viannissa</h2><p>Putri dari keluarga tercinta</p>
-      </div>
-    </section>
+<section class="section" id="event">
+  <div class="small">WEDDING EVENT</div><h2>Detail Acara</h2>
+  <div class="card">
+    <p>💍 <b>Acara Pernikahan</b></p>
+    <p>📅 <b>Minggu, 7 Februari 2027</b></p>
+    <p>⏰ <b>08.00 WITA s/d selesai</b></p>
+    <p>📍 <b>Gas Alam Badak 1</b><br>Muara Badak</p>
+    <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gas+Alam+Badak+1+Muara+Badak">📍 Buka Google Maps</a>
+  </div>
+</section>
 
-    <section id="gallery" class="gallery section">
-      <div class="section-number">03</div>
-      <div class="gallery-head reveal"><p class="eyebrow">A FEW MOMENTS</p><h2>Frames of<br><em>our favorite memories.</em></h2></div>
-      <div class="gallery-grid">
-        <figure class="gallery-item tall reveal"><img src="assets/foto1.jpg" alt="Zaky & Agnes memory 1" loading="lazy"></figure>
-        <figure class="gallery-item reveal"><img src="assets/foto2.jpg" alt="Zaky & Agnes memory 2" loading="lazy"></figure>
-        <figure class="gallery-item wide reveal"><img src="assets/foto3.jpg" alt="Zaky & Agnes memory 3" loading="lazy"></figure>
-        <figure class="gallery-item reveal"><img src="assets/foto4.jpg" alt="Zaky & Agnes memory 4" loading="lazy"></figure>
-      </div>
-    </section>
 
-    <section id="event" class="event section">
-      <div class="event-image"></div>
-      <div class="event-card reveal">
-        <p class="eyebrow">THE CELEBRATION</p>
-        <h2>Save the<br><em>date.</em></h2>
-        <div class="event-detail"><span>DATE</span><strong>7 February 2027</strong><b>Sunday</b></div>
-        <div class="event-detail"><span>TIME</span><strong>08.00 WITA — selesai</strong></div>
-        <div class="event-detail"><span>VENUE</span><strong>Gas Alam Badak 1</strong><b>Muara Badak</b></div>
-        <a class="gold-button inline" href="https://www.google.com/maps/search/?api=1&query=Gas+Alam+Badak+1+Muara+Badak" target="_blank" rel="noopener">Open Google Maps ↗</a>
-      </div>
-    </section>
+<section class="section" id="rsvp">
+  <div class="small">BUKU TAMU ONLINE</div>
+  <h2>Ucapan & Kehadiran</h2>
+  <p>Berikan doa dan ucapan terbaik untuk Zaky & Agnes.</p>
 
-    <section id="rsvp" class="rsvp section">
-      <div class="section-number">04</div>
-      <div class="rsvp-inner reveal">
-        <p class="eyebrow">KINDLY RESPOND</p>
-        <h2>Will you join<br><em>our celebration?</em></h2>
-        <p class="muted">Mohon konfirmasi kehadiran Anda agar kami dapat mempersiapkan hari istimewa ini dengan sebaik-baiknya.</p>
-        <form id="rsvpForm" novalidate>
-          <label>Nama<input name="name" type="text" autocomplete="name" placeholder="Nama lengkap" required></label>
-          <label>Kehadiran<select name="attendance" required><option value="">Pilih konfirmasi</option><option value="Hadir">Dengan senang hati hadir</option><option value="Tidak hadir">Mohon maaf, tidak dapat hadir</option></select></label>
-          <label>Jumlah tamu<input name="guests" type="number" min="1" max="10" value="1" required></label>
-          <button class="gold-button" type="submit">Kirim RSVP <span>↗</span></button>
-          <p id="rsvpStatus" class="form-status" role="status"></p>
-        </form>
-      </div>
-    </section>
+  <div class="card rsvp">
+    <input id="guest" maxlength="60" placeholder="Nama Anda">
+    <select id="status">
+      <option>Hadir</option>
+      <option>Tidak hadir</option>
+      <option>Masih ragu</option>
+    </select>
+    <textarea id="ucapan" maxlength="500" rows="4" placeholder="Tulis ucapan & doa..."></textarea>
+    <button class="btn" id="sendGuestbook" onclick="addGuestbook()">💌 Kirim Ucapan</button>
+    <p id="guestbookMessage" style="font-size:12px"></p>
+  </div>
 
-    <section class="closing section">
-      <div class="closing-bg"></div>
-      <div class="closing-content reveal">
-        <p class="eyebrow">WITH GRATITUDE</p>
-        <h2>See you<br><em>on our day.</em></h2>
-        <p>Terima kasih atas doa, kasih, dan kehadiran Anda dalam cerita kami.</p>
-        <div class="share-row">
-          <button id="shareButton" class="outline-button">Share Invitation</button>
-          <a class="outline-button" href="https://wa.me/?text=Undangan%20Pernikahan%20Zaky%20%26%20Agnes%20%E2%80%94%207%20Februari%202027" target="_blank" rel="noopener">WhatsApp ↗</a>
-        </div>
-        <p class="signature">Zaky <span>&</span> Agnes</p>
-      </div>
-    </section>
+  <div id="guestbook" style="margin-top:25px;text-align:left"></div>
+</section>
 
-    <footer><p>07 · 02 · 2027</p><span>ZAKY & AGNES</span><p>WITH LOVE, ALWAYS</p></footer>
-  </main>
 
-  <audio id="weddingMusic" loop preload="none">
-    <source src="assets/music.mp3" type="audio/mpeg">
-  </audio>
-  <script src="script.js"></script>
+<section class="section">
+  <div class="small">SHARE</div><h2>Bagikan Undangan</h2>
+  <p>Bagikan kebahagiaan ini kepada keluarga dan sahabat.</p>
+  <button class="btn" onclick="shareInvitation()">↗ Bagikan Undangan</button>
+</section>
+
+<div class="footer"><div class="orn">♡</div><div class="names" style="font-size:40px;color:#8c5d6b">Zaky & Agnes</div><p>Terima kasih atas doa, restu, dan kehadiran Anda.</p></div>
+</main>
+</div>
+
+<nav class="nav" id="nav"><a href="#gallery">GALERI</a><a href="#event">ACARA</a><a href="#rsvp">RSVP</a></nav>
 
 <script>
-/* Emergency preloader: never trap visitors on a loading screen. */
-setTimeout(function(){
-  var p=document.getElementById("preloader");
-  if(p){
-    p.classList.add("preloader-hide");
-    p.style.opacity="0";
-    p.style.visibility="hidden";
-    p.style.pointerEvents="none";
+function openInvitation(){
+  document.getElementById("cover").style.display="none";
+  document.getElementById("main").style.display="block";
+  document.getElementById("nav").style.display="flex";
+  const music=document.getElementById("bgMusic");
+  music.volume=0.65;
+  music.play().catch(()=>{});
+  window.scrollTo(0,0);
+}
+
+const target=new Date("2027-02-07T08:00:00+08:00").getTime();
+function updateCountdown(){
+  let d=Math.max(0,target-Date.now());
+  const vals=[Math.floor(d/86400000),Math.floor(d/3600000)%24,Math.floor(d/60000)%60,Math.floor(d/1000)%60];
+  const labels=["HARI","JAM","MENIT","DETIK"];
+  document.getElementById("counter").innerHTML=vals.map((v,i)=>`<div class="unit"><b>${v}</b><span>${labels[i]}</span></div>`).join("");
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+function sendRSVP(){
+  const n=document.getElementById("guest").value||"Tamu";
+  const s=document.getElementById("status").value;
+  const j=document.getElementById("jumlah").value||1;
+  const u=document.getElementById("ucapan").value||"-";
+  const text=`Halo Zaky & Agnes,%0A%0ANama: ${encodeURIComponent(n)}%0AKehadiran: ${encodeURIComponent(s)}%0AJumlah: ${j}%0AUcapan: ${encodeURIComponent(u)}`;
+  window.open("https://wa.me/6289512340428?text="+text,"_blank");
+}
+
+function shareInvitation(){
+  if(navigator.share){
+    navigator.share({title:"Undangan Zaky & Agnes",text:"Undangan Pernikahan Muhammad Zaky Khairy & Agnes Viannisa",url:location.href});
+  }else if(navigator.clipboard){
+    navigator.clipboard.writeText(location.href).then(()=>alert("Link undangan berhasil disalin."));
   }
-},1800);
+}
 </script>
-</body>
-</html>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* =========================
+   SUPABASE CONFIG
+   ========================= */
+const SUPABASE_URL = "https://ridrrcprspixtrbwygeo.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_qPkd-UXm7X2KRA-E5a00jA_O8Ya4iSr";
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+function escapeGuestbook(text){
+  return String(text ?? "").replace(/[&<>"']/g, m => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[m]));
+}
+
+function statusLabel(status){
+  return status==="Hadir" ? "✅ Hadir" :
+         status==="Tidak hadir" ? "❌ Tidak hadir" :
+         "⏳ Masih ragu";
+}
+
+function renderGuestbook(list){
+  const box=document.getElementById("guestbook");
+  if(!list || !list.length){
+    box.innerHTML='<div class="card"><p>Belum ada ucapan. Jadilah yang pertama memberikan doa ❤️</p></div>';
+    return;
+  }
+
+  box.innerHTML=list.map(x => `
+    <div style="background:#fff;border-radius:18px;padding:18px;margin:10px 0;box-shadow:0 5px 18px #0001">
+      <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+        <b>${escapeGuestbook(x.nama)}</b>
+        <span style="font-size:12px">${statusLabel(x.kehadiran)}</span>
+      </div>
+      <p style="margin:10px 0 0;line-height:1.65">${escapeGuestbook(x.ucapan)}</p>
+    </div>
+  `).join("");
+}
+
+async function loadGuestbook(){
+  const msg=document.getElementById("guestbookMessage");
+
+  const {data,error}=await supabaseClient
+    .from("ucapan")
+    .select("id,nama,kehadiran,ucapan,created_at")
+    .order("created_at",{ascending:false})
+    .limit(100);
+
+  if(error){
+    console.error("Supabase load error:", error);
+    msg.textContent="Ucapan online belum bisa dimuat. Periksa koneksi Supabase/policy.";
+    return;
+  }
+
+  renderGuestbook(data);
+}
+
+async function addGuestbook(){
+  const name=document.getElementById("guest").value.trim() || "Tamu";
+  const status=document.getElementById("status").value;
+  const message=document.getElementById("ucapan").value.trim();
+  const msg=document.getElementById("guestbookMessage");
+  const btn=document.getElementById("sendGuestbook");
+
+  if(!message){
+    alert("Silakan tulis ucapan terlebih dahulu.");
+    return;
+  }
+
+  btn.disabled=true;
+  btn.textContent="Mengirim...";
+  msg.textContent="";
+
+  const {error}=await supabaseClient
+    .from("ucapan")
+    .insert({
+      nama:name.slice(0,60),
+      kehadiran:status,
+      ucapan:message.slice(0,500)
+    });
+
+  btn.disabled=false;
+  btn.textContent="💌 Kirim Ucapan";
+
+  if(error){
+    console.error("Supabase insert error:", error);
+    msg.textContent="Ucapan belum terkirim. Periksa policy Supabase lalu coba lagi.";
+    return;
+  }
+
+  document.getElementById("guest").value="";
+  document.getElementById("ucapan").value="";
+  msg.textContent="Ucapan berhasil dikirim ❤️";
+  await loadGuestbook();
+}
+
+loadGuestbook();
+</script></body></html>
