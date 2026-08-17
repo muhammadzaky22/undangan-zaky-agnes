@@ -7,6 +7,82 @@
 <title>Muhammad Zaky Khairy & Agnes Viannisa</title>
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9dfe3;color:#563e46;font-family:Arial,sans-serif}.site{max-width:760px;margin:auto;background:#fff;min-height:100vh}.cover{min-height:100vh;background:linear-gradient(#0002,#0009),url("foto-utama.jpg") center/cover;display:flex;align-items:end;text-align:center;color:#fff}.cover-inner{width:100%;padding:45px 22px 65px}.small{font-size:11px;letter-spacing:4px}.names{font:48px/1.05 Georgia,serif;margin:18px 0}.date{letter-spacing:2px;font-size:13px}.open,.btn{display:inline-block;border:0;border-radius:35px;background:#8c5d6b;color:#fff;padding:14px 25px;text-decoration:none;cursor:pointer}.open{background:#ffffff22;border:1px solid #fff}.main{display:none}.section{padding:65px 22px;text-align:center;border-bottom:1px solid #eadde1}.section:nth-child(even){background:#f8eef2}h2{font:42px Georgia,serif;margin:12px 0 25px;color:#563e46}.orn{font-size:30px;color:#8c5d6b}.intro{font:italic 20px/1.7 Georgia,serif}.photo{max-width:100%;width:100%;border-radius:28px;box-shadow:0 8px 25px #0001}.couple-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.person{background:#fff;border-radius:20px;padding:15px;box-shadow:0 5px 20px #0001}.person img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}.person h3{font:28px Georgia;margin:12px 0 4px}.person p{font-size:12px}.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.unit{background:#fff;border-radius:14px;padding:14px 4px;box-shadow:0 5px 20px #0001}.unit b{display:block;font:27px Georgia}.unit span{font-size:10px}.story{text-align:left;max-width:580px;margin:auto}.story-item{border-left:2px solid #cbaeb8;padding:0 0 30px 25px;margin-left:8px}.story-item h3{font:27px Georgia;margin:0 0 7px}.story-item p{font-size:13px;line-height:1.8}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:9px}.gallery img{width:100%;height:190px;object-fit:cover;border-radius:14px}.card{background:#fff;border-radius:22px;padding:25px;box-shadow:0 7px 25px #0001;line-height:1.7}.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:13px;border:1px solid #dfd0d6;border-radius:12px;margin:5px 0;font-family:inherit}.nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:none;gap:14px;background:#fff;padding:10px 14px;border-radius:30px;box-shadow:0 5px 25px #0002;z-index:10}.nav a{color:#8c5d6b;text-decoration:none;font-size:11px}.footer{padding:70px 20px;text-align:center;background:#f8eef2}.music-hidden{display:none!important}@media(max-width:500px){.names{font-size:41px}.counter{grid-template-columns:repeat(2,1fr)}.section{padding:55px 18px}.gallery img{height:155px}}
+
+/* ===== ZAKY & AGNES — TAHAP 1: OPENING CINEMATIC ===== */
+.cover{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.18),rgba(0,0,0,.38));
+  pointer-events:none;
+}
+.cover-inner{
+  opacity:0;
+  transform:translateY(28px);
+  animation:openingContent 1.35s cubic-bezier(.2,.75,.2,1) .25s forwards;
+}
+.cover-inner .small{
+  opacity:0;
+  transform:translateY(14px);
+  animation:openingItem .8s ease .55s forwards;
+}
+.cover-inner .names{
+  opacity:0;
+  transform:translateY(18px) scale(.97);
+  animation:openingNames 1.05s cubic-bezier(.2,.75,.2,1) .78s forwards;
+}
+.cover-inner .date{
+  opacity:0;
+  transform:translateY(12px);
+  animation:openingItem .8s ease 1.05s forwards;
+}
+.cover-inner .open{
+  opacity:0;
+  transform:translateY(14px) scale(.96);
+  animation:openingButton .9s cubic-bezier(.2,.75,.2,1) 1.28s forwards;
+}
+.open{
+  transition:transform .25s ease,background .25s ease,box-shadow .25s ease;
+}
+.open:hover{
+  transform:translateY(-2px) scale(1.025);
+  background:rgba(255,255,255,.16);
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+.cover.opening-exit{
+  animation:coverExit .95s cubic-bezier(.65,0,.25,1) forwards;
+  pointer-events:none;
+}
+@keyframes openingContent{
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes openingItem{
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes openingNames{
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes openingButton{
+  0%{opacity:0;transform:translateY(14px) scale(.96)}
+  70%{opacity:1;transform:translateY(-2px) scale(1.015)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes coverExit{
+  to{opacity:0;transform:scale(1.025)}
+}
+@media(prefers-reduced-motion:reduce){
+  .cover-inner,.cover-inner .small,.cover-inner .names,.cover-inner .date,.cover-inner .open{
+    animation:none!important;opacity:1!important;transform:none!important;
+  }
+  .cover.opening-exit{animation:none!important;opacity:0!important}
+}
+
 </style>
 </head>
 <body>
@@ -117,13 +193,22 @@
 
 <script>
 function openInvitation(){
-  document.getElementById("cover").style.display="none";
-  document.getElementById("main").style.display="block";
-  document.getElementById("nav").style.display="flex";
+  const cover=document.getElementById("cover");
+  const main=document.getElementById("main");
+  const nav=document.getElementById("nav");
+
+  main.style.display="block";
+  nav.style.display="flex";
+
   const music=document.getElementById("bgMusic");
   music.volume=0.65;
   music.play().catch(()=>{});
-  window.scrollTo(0,0);
+
+  cover.classList.add("opening-exit");
+  setTimeout(()=>{
+    cover.style.display="none";
+    window.scrollTo(0,0);
+  },950);
 }
 
 const target=new Date("2027-02-07T08:00:00+08:00").getTime();
