@@ -325,6 +325,22 @@ footer .script{font-size:55px}
   100%{transform:translate3d(-2%,50px,0) rotate(0)}
 }
 @keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- WEDDING GIFT ---------- */
+.gift-section{background:linear-gradient(180deg,#fffaf8 0%,#f7e8ec 100%)}
+.gift-intro{max-width:620px;margin:0 auto 34px;line-height:1.8;font-size:16px}
+.gift-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px;margin:35px auto 0}
+.gift-card{position:relative;overflow:hidden;text-align:left;padding:28px;border-radius:30px;background:rgba(255,255,255,.8);border:1px solid rgba(154,106,120,.22);box-shadow:var(--shadow);backdrop-filter:blur(12px)}
+.gift-card:before{content:"♡";position:absolute;right:20px;top:8px;font:48px "Great Vibes",cursive;color:rgba(154,106,120,.12)}
+.gift-bank{font:600 28px "Cormorant Garamond",serif;color:var(--rose-dark)}
+.gift-owner{margin:4px 0 18px;font-size:13px;letter-spacing:.04em;color:#80616b}
+.gift-number{font:600 clamp(22px,6vw,30px) "Cormorant Garamond",serif;letter-spacing:.05em;word-break:break-all}
+.copy-btn{margin-top:18px;border:1px solid #b47d8b;background:#b47d8b;color:#fff;border-radius:999px;padding:11px 20px;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.copy-btn:active{transform:scale(.96)}
+.copy-btn.copied{background:#694854}
+.gift-note{margin-top:25px;font:italic 18px/1.7 "Cormorant Garamond",serif;color:#765761}
+@media(min-width:700px){.gift-grid{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 
@@ -390,41 +406,6 @@ footer .script{font-size:55px}
   </div>
 </section>
 
-<section class="section" id="story">
-  <div class="section-inner">
-    <div class="eyebrow-dark reveal">PERJALANAN CINTA KAMI</div>
-    <h2 class="reveal">Kisah <span class="script">Kami</span></h2>
-
-    <div class="event-grid">
-      <article class="event-card reveal">
-        <div class="eyebrow-dark">PERTEMUAN</div>
-        <h3>Sebuah Perkenalan</h3>
-        <p>Berawal dari sebuah perkenalan, kami dipertemukan dalam sebuah kisah yang tak pernah kami sangka akan sampai sejauh ini.</p>
-      </article>
-
-      <article class="event-card reveal">
-        <div class="eyebrow-dark">PENDEKATAN</div>
-        <h3>Berawal dari Jarak</h3>
-        <p>Meski harus menjalani LDR dan melewati banyak rindu, kami belajar untuk saling percaya, menjaga, dan menguatkan.</p>
-      </article>
-
-      <article class="event-card reveal">
-        <div class="eyebrow-dark">LAMARAN</div>
-        <h3>Satu Tujuan</h3>
-        <p>Hingga akhirnya, kami menyadari bahwa jarak bukanlah alasan untuk berhenti, melainkan bagian dari perjalanan menuju satu tujuan.</p>
-      </article>
-    </div>
-
-    <div class="divider reveal"></div>
-
-    <p class="invite-text reveal">
-      Kini, kami memilih untuk melanjutkan perjalanan ini bersama, dalam ikatan pernikahan.
-    </p>
-
-    <div class="script reveal">From distance, to forever.</div>
-  </div>
-</section>
-
 <section class="section countdown" id="countdown">
   <div class="section-inner">
     <div class="count-card reveal">
@@ -481,6 +462,32 @@ footer .script{font-size:55px}
   </div>
 </section>
 
+
+
+
+<section class="section gift-section" id="gift">
+  <div class="section-inner">
+    <div class="eyebrow-dark reveal">UNGKAPAN CINTA</div>
+    <h2 class="reveal">Wedding <span class="script">Gift</span></h2>
+    <p class="gift-intro reveal">Doa dan kehadiranmu adalah hadiah terindah bagi kami. Namun, apabila berkenan memberikan tanda kasih, dapat melalui rekening berikut.</p>
+    <div class="gift-grid">
+      <article class="gift-card reveal">
+        <div class="gift-bank">Bank Mandiri</div>
+        <div class="gift-owner">a.n. Muhammad Zaky Khairy</div>
+        <div class="gift-number">1490018848368</div>
+        <button class="copy-btn" type="button" data-account="1490018848368">♡ Salin Rekening</button>
+      </article>
+      <article class="gift-card reveal">
+        <div class="gift-bank">Bank BRI</div>
+        <div class="gift-owner">a.n. Agnes Viannisa</div>
+        <div class="gift-number">360301034780530</div>
+        <button class="copy-btn" type="button" data-account="360301034780530">♡ Salin Rekening</button>
+      </article>
+    </div>
+    <div class="gift-note reveal">“Terima kasih atas doa, kasih, dan perhatian yang diberikan untuk kami. ♡”</div>
+  </div>
+</section>
+
 <section class="section" id="rsvp">
   <div class="section-inner">
     <div class="eyebrow-dark reveal">KONFIRMASI KEHADIRAN</div>
@@ -519,9 +526,9 @@ footer .script{font-size:55px}
 </main>
 
 <nav class="bottom-nav" aria-label="Navigasi">
-  <a href="#story">KISAH</a>
   <a href="#gallery">GALERI</a>
   <a href="#event">ACARA</a>
+  <a href="#gift">GIFT</a>
   <a href="#rsvp">RSVP</a>
 </nav>
 
@@ -596,6 +603,22 @@ footer .script{font-size:55px}
   }
   window.addEventListener("scroll",parallax,{passive:true});
   parallax();
+
+  /* Copy rekening */
+  document.querySelectorAll(".copy-btn").forEach(btn=>{
+    btn.addEventListener("click",async()=>{
+      const account=btn.dataset.account;
+      try{await navigator.clipboard.writeText(account)}catch(err){
+        const temp=document.createElement("textarea");
+        temp.value=account;document.body.appendChild(temp);temp.select();
+        document.execCommand("copy");temp.remove();
+      }
+      const original=btn.textContent;
+      btn.textContent="✓ Rekening Tersalin";
+      btn.classList.add("copied");
+      setTimeout(()=>{btn.textContent=original;btn.classList.remove("copied")},1800);
+    });
+  });
 
   /* RSVP is local-only in this standalone version */
   document.getElementById("rsvpForm").addEventListener("submit",e=>{
