@@ -17,6 +17,7 @@
 <div class="site">
 <div class="cover" id="cover">
   <div class="cover-inner">
+    <div style="font-family:Georgia,serif;font-size:30px;line-height:1.8;margin-bottom:18px;direction:rtl">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
     <div class="small">THE WEDDING OF</div>
     <div class="names">Muhammad Zaky Khairy<br><span style="font-size:25px">&amp;</span><br>Agnes Viannisa</div>
     <div class="date">7 FEBRUARI 2027</div>
@@ -80,16 +81,27 @@
   </div>
 </section>
 
+
 <section class="section" id="rsvp">
-  <div class="small">RSVP & UCAPAN</div><h2>Konfirmasi Kehadiran</h2>
+  <div class="small">BUKU TAMU ONLINE</div>
+  <h2>Ucapan & Kehadiran</h2>
+  <p>Berikan doa dan ucapan terbaik untuk Zaky & Agnes.</p>
+
   <div class="card rsvp">
-    <input id="guest" placeholder="Nama Anda">
-    <select id="status"><option>Hadir</option><option>Tidak hadir</option><option>Masih ragu</option></select>
-    <input id="jumlah" type="number" min="1" placeholder="Jumlah orang">
-    <textarea id="ucapan" rows="4" placeholder="Ucapan & doa"></textarea>
-    <button class="btn" onclick="sendRSVP()">💌 Kirim ke WhatsApp</button>
+    <input id="guest" maxlength="60" placeholder="Nama Anda">
+    <select id="status">
+      <option>Hadir</option>
+      <option>Tidak hadir</option>
+      <option>Masih ragu</option>
+    </select>
+    <textarea id="ucapan" maxlength="500" rows="4" placeholder="Tulis ucapan & doa..."></textarea>
+    <button class="btn" id="sendGuestbook" onclick="addGuestbook()">💌 Kirim Ucapan</button>
+    <p id="guestbookMessage" style="font-size:12px"></p>
   </div>
+
+  <div id="guestbook" style="margin-top:25px;text-align:left"></div>
 </section>
+
 
 <section class="section">
   <div class="small">SHARE</div><h2>Bagikan Undangan</h2>
@@ -139,5 +151,105 @@ function shareInvitation(){
     navigator.clipboard.writeText(location.href).then(()=>alert("Link undangan berhasil disalin."));
   }
 }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* =========================
+   SUPABASE CONFIG
+   GANTI 2 NILAI DI BAWAH:
+   1. SUPABASE_URL
+   2. SUPABASE_PUBLISHABLE_KEY
+   ========================= */
+const SUPABASE_URL = "PASTE_SUPABASE_URL_DI_SINI";
+const SUPABASE_PUBLISHABLE_KEY = "PASTE_SUPABASE_PUBLISHABLE_KEY_DI_SINI";
+const supabaseClient = (SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("PASTE_") && !SUPABASE_PUBLISHABLE_KEY.includes("PASTE_"))
+  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
+  : null;
+
+function escapeGuestbook(text){
+  return String(text).replace(/[&<>"']/g, m => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[m]));
+}
+
+function statusLabel(status){
+  return status==="Hadir" ? "✅ Hadir" : status==="Tidak hadir" ? "❌ Tidak hadir" : "⏳ Masih ragu";
+}
+
+function renderGuestbook(list){
+  const box=document.getElementById("guestbook");
+  if(!list || !list.length){
+    box.innerHTML='<div class="card"><p>Belum ada ucapan. Jadilah yang pertama memberikan doa ❤️</p></div>';
+    return;
+  }
+  box.innerHTML=list.map(x => `
+    <div style="background:#fff;border-radius:18px;padding:18px;margin:10px 0;box-shadow:0 5px 18px #0001">
+      <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+        <b>${escapeGuestbook(x.name)}</b>
+        <span style="font-size:12px">${statusLabel(x.status)}</span>
+      </div>
+      <p style="margin:10px 0 0;line-height:1.65">${escapeGuestbook(x.message)}</p>
+    </div>`).join("");
+}
+
+async function loadGuestbook(){
+  if(!supabaseClient){
+    renderGuestbook([]);
+    document.getElementById("guestbookMessage").textContent="Database belum dihubungkan. Isi konfigurasi Supabase terlebih dahulu.";
+    return;
+  }
+  const {data,error}=await supabaseClient
+    .from("guestbook")
+    .select("id,name,status,message,created_at")
+    .order("created_at",{ascending:false})
+    .limit(100);
+
+  if(error){
+    document.getElementById("guestbookMessage").textContent="Belum bisa memuat ucapan online.";
+    return;
+  }
+  renderGuestbook(data);
+}
+
+async function addGuestbook(){
+  const name=document.getElementById("guest").value.trim() || "Tamu";
+  const status=document.getElementById("status").value;
+  const message=document.getElementById("ucapan").value.trim();
+  const msg=document.getElementById("guestbookMessage");
+  const btn=document.getElementById("sendGuestbook");
+
+  if(!message){ alert("Silakan tulis ucapan terlebih dahulu."); return; }
+  if(!supabaseClient){
+    msg.textContent="Database belum dihubungkan.";
+    return;
+  }
+
+  btn.disabled=true;
+  btn.textContent="Mengirim...";
+  msg.textContent="";
+
+  const {error}=await supabaseClient.from("guestbook").insert({
+    name:name.slice(0,60),
+    status,
+    message:message.slice(0,500)
+  });
+
+  btn.disabled=false;
+  btn.textContent="💌 Kirim Ucapan";
+
+  if(error){
+    msg.textContent="Ucapan belum terkirim. Coba lagi.";
+    console.error(error);
+    return;
+  }
+
+  document.getElementById("guest").value="";
+  document.getElementById("ucapan").value="";
+  msg.textContent="Ucapan berhasil dikirim ❤️";
+  await loadGuestbook();
+}
+
+loadGuestbook();
 </script>
 </body></html>
