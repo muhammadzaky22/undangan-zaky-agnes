@@ -261,6 +261,45 @@ body{overflow-x:hidden}
 @keyframes meaningFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 </style>
 
+
+<style id="zaky-agnes-added-features">
+/* ===== Added features: guest name, social, lightbox, share ===== */
+.guest-name{font:500 clamp(26px,6vw,42px) "Cormorant Garamond";color:#8f5957;margin:10px auto 0}
+.guest-name-label{font:10px "DM Sans",sans-serif;letter-spacing:.18em;color:#9b717b;margin-top:8px}
+.social-card{max-width:760px;margin:28px auto 0;padding:28px 20px;border-radius:28px;background:linear-gradient(145deg,#fff8f4,#efdcd4);border:1px solid rgba(255,255,255,.95);box-shadow:var(--shadow)}
+.social-handle{font:600 22px "Cormorant Garamond";color:#8e5d58;margin:7px 0}
+.hashtag{font:500 18px "Cormorant Garamond";color:#a65d66;margin:8px 0 18px}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 22px;border-radius:999px;background:linear-gradient(145deg,#d8888f,#a85d66);color:#fff;box-shadow:0 7px 16px rgba(100,56,60,.2);font-family:"Cormorant Garamond";font-size:16px}
+.gallery-item button{display:block;width:100%;border:0;padding:0;background:transparent;cursor:zoom-in;color:inherit;text-align:inherit}
+.gallery-item button img{transition:transform .45s ease}
+.gallery-item:hover button img{transform:scale(1.035)}
+.lightbox{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(35,24,27,.92);opacity:0;visibility:hidden;pointer-events:none;transition:.3s ease}
+.lightbox.open{opacity:1;visibility:visible;pointer-events:auto}
+.lightbox-content{position:relative;width:min(94vw,900px);height:min(86vh,800px);display:flex;align-items:center;justify-content:center}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:18px;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:#fff;border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.lightbox-close{top:-8px;right:-8px;width:44px;height:44px;font-size:24px}
+.lightbox-prev,.lightbox-next{top:50%;transform:translateY(-50%);width:46px;height:46px;font-size:28px}
+.lightbox-prev{left:-65px}.lightbox-next{right:-65px}
+.lightbox-caption{position:absolute;bottom:-8px;left:50%;transform:translate(-50%,100%);color:#fff;font:18px "Cormorant Garamond";text-align:center;white-space:nowrap}
+
+</style>
+
+
+<style id="instagram-profile-style">
+.social-profiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px auto 18px;max-width:700px}
+.social-profile{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:20px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.95);color:#8e5d58;box-shadow:0 8px 20px rgba(85,55,47,.10);transition:.3s}
+.social-profile:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(85,55,47,.16)}
+.instagram-logo{width:43px;height:43px;min-width:43px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#d8888f,#a85d66);color:#fff;box-shadow:0 6px 14px rgba(100,56,60,.18)}
+.instagram-logo svg{width:25px;height:25px}
+.social-label{display:block;font:600 9px "DM Sans",sans-serif;letter-spacing:.12em;color:#a4776f;margin-bottom:3px}
+.social-name{display:block;font:500 18px "Cormorant Garamond";line-height:1.1}
+@media(max-width:600px){
+  .social-profiles{grid-template-columns:1fr}
+  .social-profile{padding:13px 14px}
+}
+</style>
+
 </head>
 
 <body class="locked">
@@ -275,6 +314,8 @@ body{overflow-x:hidden}
     </div>
     <div class="open-content">
       <div class="kicker">KEPADA YTH. TAMU UNDANGAN</div>
+      <div class="guest-name-label" id="openingGuestLabel">Kepada Yth.</div>
+      <div class="guest-name" id="openingGuestName">Tamu Undangan</div>
       <p>Dengan penuh cinta, kami mengundang Anda.</p>
       <button class="open-btn" id="openInvitation">♡ BUKA UNDANGAN</button>
     </div>
@@ -292,6 +333,8 @@ body{overflow-x:hidden}
     <h1 class="reveal">Muhammad Zaky Khairy</h1>
     <div class="script reveal">&amp; Agnes Viannisa</div>
     <div class="date reveal">7 FEBRUARI 2027</div>
+    <div class="guest-name-label reveal" id="heroGuestLabel">UNDANGAN UNTUK</div>
+    <div class="guest-name reveal" id="heroGuestName">Tamu Undangan</div>
   </div>
 </section>
 
@@ -383,12 +426,52 @@ body{overflow-x:hidden}
   <h2 class="reveal">Galeri <span class="script">Kami</span></h2>
   <p class="invite reveal">Beberapa potongan kecil dari perjalanan yang membawa kami sampai di hari ini.</p>
   <div class="gallery-grid">
-    <div class="gallery-item reveal"><img src="foto-utama.jpg" alt="Zaky dan Agnes"><div class="gallery-caption">Sebuah awal</div></div>
-    <div class="gallery-item reveal"><img src="foto1.jpg" alt="Momen Zaky dan Agnes"><div class="gallery-caption">Tentang kita</div></div>
-    <div class="gallery-item reveal"><img src="foto2.jpg" alt="Momen kebersamaan"><div class="gallery-caption">Saling menemukan</div></div>
-    <div class="gallery-item reveal"><img src="foto3.jpg" alt="Momen bersama"><div class="gallery-caption">Menjaga rasa</div></div>
-    <div class="gallery-item reveal"><img src="foto4.jpg" alt="Momen perjalanan cinta"><div class="gallery-caption">Sampai di sini</div></div>
-    <div class="gallery-item reveal"><img src="foto-utama.jpg" alt="Hari bahagia"><div class="gallery-caption">Menuju hari bahagia</div></div>
+    <div class="gallery-item reveal"><button type="button" class="gallery-open" data-src="foto-utama.jpg" data-caption="Sebuah awal" aria-label="Buka foto Zaky dan Agnes"><img src="foto-utama.jpg" alt="Zaky dan Agnes"><div class="gallery-caption">Sebuah awal</div></button></div>
+    <div class="gallery-item reveal"><button type="button" class="gallery-open" data-src="foto1.jpg" data-caption="Tentang kita" aria-label="Buka foto Momen Zaky dan Agnes"><img src="foto1.jpg" alt="Momen Zaky dan Agnes"><div class="gallery-caption">Tentang kita</div></button></div>
+    <div class="gallery-item reveal"><button type="button" class="gallery-open" data-src="foto2.jpg" data-caption="Saling menemukan" aria-label="Buka foto Momen kebersamaan"><img src="foto2.jpg" alt="Momen kebersamaan"><div class="gallery-caption">Saling menemukan</div></button></div>
+    <div class="gallery-item reveal"><button type="button" class="gallery-open" data-src="foto3.jpg" data-caption="Menjaga rasa" aria-label="Buka foto Momen bersama"><img src="foto3.jpg" alt="Momen bersama"><div class="gallery-caption">Menjaga rasa</div></button></div>
+    <div class="gallery-item reveal"><button type="button" class="gallery-open" data-src="foto4.jpg" data-caption="Sampai di sini" aria-label="Buka foto Momen perjalanan cinta"><img src="foto4.jpg" alt="Momen perjalanan cinta"><div class="gallery-caption">Sampai di sini</div></button></div>
+    <div class="gallery-item reveal"><button type="button" class="gallery-open" data-src="foto-utama.jpg" data-caption="Menuju hari bahagia" aria-label="Buka foto Hari bahagia"><img src="foto-utama.jpg" alt="Hari bahagia"><div class="gallery-caption">Menuju hari bahagia</div></button></div>
+  </div>
+</div>
+</section>
+
+
+<section class="section" id="social">
+<div class="section-inner">
+  <div class="eyebrow reveal">♡ OUR MOMENTS ♡</div>
+  <h2 class="reveal">Instagram <span class="script">Kami</span></h2>
+  <div class="social-card reveal">
+    <div class="social-profiles">
+      <a class="social-profile" href="#" id="instagramZaky" target="_blank" rel="noopener" aria-label="Instagram Muhammad Zaky Khairy">
+        <span class="instagram-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="17.4" cy="6.7" r="1.1" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>
+          <span class="social-label">INSTAGRAM ZAKY</span>
+          <span class="social-name">Muhammad Zaky Khairy</span>
+        </span>
+      </a>
+
+      <a class="social-profile" href="#" id="instagramAgnes" target="_blank" rel="noopener" aria-label="Instagram Agnes Viannisa">
+        <span class="instagram-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="17.4" cy="6.7" r="1.1" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>
+          <span class="social-label">INSTAGRAM AGNES</span>
+          <span class="social-name">Agnes Viannisa</span>
+        </span>
+      </a>
+    </div>
+    <div class="hashtag">#ZakyAgnes</div>
   </div>
 </div>
 </section>
@@ -424,6 +507,7 @@ body{overflow-x:hidden}
 </div>
 </section>
 
+
 <section class="section" id="rsvp">
 <div class="section-inner">
   <div class="eyebrow reveal">KONFIRMASI KEHADIRAN</div><h2 class="reveal">Kirim <span class="script">RSVP</span></h2>
@@ -438,6 +522,17 @@ body{overflow-x:hidden}
 
 <footer><div class="eyebrow">TERIMA KASIH</div><div class="script">Zaky &amp; Agnes</div><p>Atas doa dan restu yang diberikan.</p></footer>
 </main>
+
+
+<div class="lightbox" id="galleryLightbox" aria-hidden="true">
+  <div class="lightbox-content">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Tutup">×</button>
+    <button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Foto sebelumnya">‹</button>
+    <img id="lightboxImage" src="" alt="">
+    <button type="button" class="lightbox-next" id="lightboxNext" aria-label="Foto berikutnya">›</button>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
 
 <nav class="bottom-nav">
 <a href="#home">⌂<br>HOME</a><a href="#story">♡<br>STORY</a><a href="#event">⌖<br>DETAILS</a><a href="#gallery">▧<br>GALERI</a><a href="#gift">♧<br>GIFT</a><a href="#wishes">♡<br>DOA</a><a href="#rsvp">✉<br>RSVP</a>
@@ -585,6 +680,82 @@ document.addEventListener('DOMContentLoaded',()=>{
   setTimeout(show,900);
 });
 </script>
+
+
+<script id="zaky-agnes-added-features-js">
+document.addEventListener('DOMContentLoaded',()=>{
+  /* ===== Guest name from ?to=Nama%20Tamu ===== */
+  const params=new URLSearchParams(window.location.search);
+  const rawGuest=(params.get('to')||'').trim();
+  const guest=rawGuest ? rawGuest.replace(/\+/g,' ') : '';
+  const guestName=guest || 'Tamu Undangan';
+  const openingName=document.getElementById('openingGuestName');
+  const heroName=document.getElementById('heroGuestName');
+  if(openingName) openingName.textContent=guestName;
+  if(heroName) heroName.textContent=guestName;
+  const openingLabel=document.getElementById('openingGuestLabel');
+  const heroLabel=document.getElementById('heroGuestLabel');
+  if(!guest){
+    if(openingLabel) openingLabel.style.display='none';
+    if(heroLabel) heroLabel.style.display='none';
+  }
+
+  /* ===== Gallery lightbox ===== */
+  const items=[...document.querySelectorAll('.gallery-open')];
+  const lightbox=document.getElementById('galleryLightbox');
+  const lbImage=document.getElementById('lightboxImage');
+  const lbCaption=document.getElementById('lightboxCaption');
+  const closeBtn=document.getElementById('lightboxClose');
+  const prevBtn=document.getElementById('lightboxPrev');
+  const nextBtn=document.getElementById('lightboxNext');
+  let current=0, startX=0;
+
+  const showPhoto=(index)=>{
+    if(!items.length)return;
+    current=(index+items.length)%items.length;
+    lbImage.src=items[current].dataset.src;
+    lbImage.alt=items[current].querySelector('img')?.alt || 'Foto Zaky & Agnes';
+    lbCaption.textContent=items[current].dataset.caption || '';
+  };
+  const openLightbox=(index)=>{
+    showPhoto(index);
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+    document.body.classList.add('locked');
+  };
+  const closeLightbox=()=>{
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    document.body.classList.remove('locked');
+  };
+  items.forEach((item,i)=>item.addEventListener('click',()=>openLightbox(i)));
+  closeBtn?.addEventListener('click',closeLightbox);
+  prevBtn?.addEventListener('click',()=>showPhoto(current-1));
+  nextBtn?.addEventListener('click',()=>showPhoto(current+1));
+  lightbox?.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});
+  document.addEventListener('keydown',e=>{
+    if(!lightbox.classList.contains('open'))return;
+    if(e.key==='Escape')closeLightbox();
+    if(e.key==='ArrowLeft')showPhoto(current-1);
+    if(e.key==='ArrowRight')showPhoto(current+1);
+  });
+  lightbox?.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX},{passive:true});
+  lightbox?.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dx)>45) showPhoto(dx<0?current+1:current-1);
+  },{passive:true});
+
+  /* ===== Instagram =====
+     Replace the placeholder href below with the final Instagram profile URL. */
+  /* Instagram links: isi username asli kalian nanti. */
+  const instagramZaky=document.getElementById('instagramZaky');
+  const instagramAgnes=document.getElementById('instagramAgnes');
+  if(instagramZaky) instagramZaky.href='#';
+  if(instagramAgnes) instagramAgnes.href='#';
+
+});
+</script>
+
 
 </body>
 </html>
