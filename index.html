@@ -47,9 +47,67 @@ main{overflow:hidden}
 .hero{min-height:100svh;display:grid;place-items:center;padding:90px 20px 120px;position:relative}
 .hero-inner{text-align:center;width:min(100%,850px);position:relative}
 .hero-card{width:min(78vw,390px);aspect-ratio:4/5;margin:0 auto 35px;perspective:1200px}
-.photo-3d{width:100%;height:100%;padding:8px;border-radius:45% 45% 38% 38%;background:linear-gradient(135deg,#fff,#d5a0ab,#f7dfcf);box-shadow:var(--shadow);transform-style:preserve-3d;transition:transform .15s ease;position:relative}
-.photo-3d img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
-.photo-3d:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.7);border-radius:inherit;pointer-events:none}
+.photo-3d{
+  width:100%;height:100%;padding:8px;
+  border-radius:45% 45% 38% 38%;
+  background:linear-gradient(145deg,#fffaf7,#d9b2a6 48%,#b8757d);
+  box-shadow:
+    0 28px 65px rgba(62,38,36,.30),
+    0 8px 18px rgba(255,255,255,.65) inset;
+  transform-style:preserve-3d;
+  transition:transform .18s cubic-bezier(.2,.7,.2,1);
+  position:relative;
+  isolation:isolate;
+  will-change:transform;
+}
+.photo-3d:before{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border-radius:inherit;
+  background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(255,255,255,0) 34%),
+             linear-gradient(180deg,rgba(255,255,255,.0),rgba(55,25,30,.25));
+  transform:translateZ(-16px) scale(.98);
+  filter:blur(2px);
+  z-index:-1;
+  box-shadow:0 22px 35px rgba(58,35,35,.28);
+}
+.photo-3d img{
+  width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;
+  transform:translateZ(22px) scale(1.015);
+  transform-origin:center;
+  filter:saturate(1.04) contrast(1.02);
+  box-shadow:0 12px 28px rgba(45,27,29,.22);
+}
+.photo-3d:after{
+  content:"";
+  position:absolute;inset:12px;
+  border:1px solid rgba(255,255,255,.78);
+  border-radius:inherit;
+  pointer-events:none;
+  transform:translateZ(34px);
+  background:linear-gradient(115deg,rgba(255,255,255,.30),transparent 32%,transparent 70%,rgba(255,255,255,.12));
+  box-shadow:inset 0 0 24px rgba(255,255,255,.18);
+}
+.photo-3d .photo-glare{
+  position:absolute;inset:-20%;
+  z-index:5;pointer-events:none;
+  background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.42) 48%,transparent 58%);
+  transform:translateX(-75%) rotate(8deg);
+  animation:photoGlare 5.5s ease-in-out infinite;
+  mix-blend-mode:screen;
+}
+@keyframes photoGlare{
+  0%,48%{transform:translateX(-75%) rotate(8deg);opacity:0}
+  55%{opacity:.9}
+  72%,100%{transform:translateX(75%) rotate(8deg);opacity:0}
+}
+@media(max-width:520px){
+  .photo-3d{box-shadow:0 24px 55px rgba(62,38,36,.28),0 8px 18px rgba(255,255,255,.65) inset}
+  .photo-3d img{transform:translateZ(16px) scale(1.015)}
+  .photo-3d:after{transform:translateZ(25px)}
+}
+
 .eyebrow{font-size:11px;letter-spacing:.45em}.hero h1{font:600 clamp(55px,14vw,100px)/.82 "Cormorant Garamond";margin:15px 0}.script{font:400 clamp(50px,12vw,80px) "Great Vibes";color:var(--rose);margin:10px 0}.date{letter-spacing:.3em;font-size:12px}
 
 .section{padding:95px 20px;position:relative}
@@ -328,7 +386,7 @@ body{overflow-x:hidden}
 <main class="page-drift">
 <section class="hero" id="home">
   <div class="hero-inner">
-    <div class="hero-card reveal"><div class="photo-3d" id="tiltPhoto"><img src="foto-utama.jpg" alt="Zaky & Agnes"></div></div>
+    <div class="hero-card reveal"><div class="photo-3d" id="tiltPhoto"><img src="foto-utama.jpg" alt="Zaky & Agnes"><span class="photo-glare" aria-hidden="true"></span></div></div>
     <div class="eyebrow reveal">ASSALAMUALAIKUM</div>
     <h1 class="reveal">Muhammad Zaky Khairy</h1>
     <div class="script reveal">&amp; Agnes Viannisa</div>
@@ -549,9 +607,29 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll(".reveal").forEach(x=>io.observe(x));
 const tilt=document.getElementById("tiltPhoto");
 if(tilt){
-  const move=e=>{const r=tilt.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;tilt.style.transform=`rotateY(${x*10}deg) rotateX(${-y*10}deg)`};
-  tilt.addEventListener("mousemove",move);tilt.addEventListener("mouseleave",()=>tilt.style.transform="");
-  tilt.addEventListener("touchmove",e=>{const t=e.touches[0],r=tilt.getBoundingClientRect(),x=(t.clientX-r.left)/r.width-.5,y=(t.clientY-r.top)/r.height-.5;tilt.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg)`},{passive:true});
+  let raf=0, tx=0, ty=0, cx=0, cy=0;
+  const render=()=>{
+    cx += (tx-cx)*0.14; cy += (ty-cy)*0.14;
+    tilt.style.transform=`rotateY(${cx}deg) rotateX(${-cy}deg)`;
+    if(Math.abs(tx-cx)>.01 || Math.abs(ty-cy)>.01) raf=requestAnimationFrame(render);
+  };
+  const setTilt=(x,y)=>{
+    tx=x*12; ty=y*10;
+    cancelAnimationFrame(raf); raf=requestAnimationFrame(render);
+  };
+  const reset=()=>{
+    tx=0;ty=0;cancelAnimationFrame(raf);raf=requestAnimationFrame(render);
+  };
+  tilt.addEventListener("mousemove",e=>{
+    const r=tilt.getBoundingClientRect();
+    setTilt((e.clientX-r.left)/r.width-.5,(e.clientY-r.top)/r.height-.5);
+  });
+  tilt.addEventListener("mouseleave",reset);
+  tilt.addEventListener("touchmove",e=>{
+    const t=e.touches[0],r=tilt.getBoundingClientRect();
+    setTilt((t.clientX-r.left)/r.width-.5,(t.clientY-r.top)/r.height-.5);
+  },{passive:true});
+  tilt.addEventListener("touchend",reset,{passive:true});
 }
 document.getElementById("rsvpForm").onsubmit=e=>{e.preventDefault();document.getElementById("rsvpStatus").textContent="Terima kasih, konfirmasi kamu sudah tercatat di perangkat ini ♡";localStorage.setItem("zakyAgnesRSVP",JSON.stringify(Object.fromEntries(new FormData(e.target))))};
 </script>
