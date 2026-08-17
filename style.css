@@ -61,3 +61,6 @@ body{overscroll-behavior-y:none}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* Preloader safety: it must never trap the visitor on a slow connection. */
+#preloader{will-change:opacity;pointer-events:none}

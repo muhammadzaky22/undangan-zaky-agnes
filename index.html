@@ -13,6 +13,18 @@
 </head>
 <body>
   <div id="preloader"><div class="preloader-ring"></div><span>Preparing your invitation</span></div>
+  <script>
+    // Emergency fallback: GitHub Pages must never remain trapped on the preloader
+    // if an external resource or later JavaScript fails.
+    setTimeout(function () {
+      var p = document.getElementById("preloader");
+      if (p) {
+        p.classList.add("preloader-hide");
+        p.style.opacity = "0";
+        p.style.visibility = "hidden";
+      }
+    }, 1800);
+  </script>
 
   <div class="grain"></div>
 
@@ -156,7 +168,6 @@
   <audio id="weddingMusic" loop preload="none">
     <source src="assets/music.mp3" type="audio/mpeg">
   </audio>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
 </body>
 </html>
