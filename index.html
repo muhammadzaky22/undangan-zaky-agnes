@@ -191,31 +191,15 @@
   }
 }
 
-/* ===== FIX: no blank white area after opening ===== */
-.main.main-ready{
-  display:block!important;
-  margin:0!important;
-  padding:0!important;
-  min-height:0!important;
-  position:relative!important;
-  top:0!important;
-  transform:none!important;
-}
-.main.main-ready > .section:first-child{
-  margin-top:0!important;
-  padding-top:58px!important;
-}
-.cinematic-exit{
-  position:fixed!important;
-  inset:0!important;
-  width:100%!important;
-  height:100dvh!important;
-  margin:0!important;
-  z-index:9999!important;
-}
-body.invitation-open{
-  overflow-x:hidden;
-}
+
+/* FINAL FIX — main content must start immediately after cinematic cover */
+html, body { margin:0; padding:0; }
+.site { min-height:100vh; }
+.main { display:none; margin:0; padding:0; min-height:100vh; }
+.main.is-open { display:block; }
+#cover.cinematic-exit { pointer-events:none; }
+#cover.cinematic-exit + .main { display:block; }
+@media (max-width:760px){ .site{width:100%;} }
 </style>
 </head>
 <body>
@@ -254,7 +238,6 @@ body.invitation-open{
   <div class="cinematic-scroll">SCROLL TO BEGIN · 07.02.2027</div>
 </div>
 
-</div>
 <main class="main" id="main">
 
 <section class="section">
@@ -349,32 +332,17 @@ body.invitation-open{
 function openInvitation(){
   const cover=document.getElementById("cover");
   const main=document.getElementById("main");
-  const nav=document.getElementById("nav");
-
-  // Make the main page visible immediately, while the cinematic cover
-  // becomes fixed so it can NEVER leave a 100vh blank space above it.
+  main.classList.add("is-open");
   main.style.display="block";
-  main.style.marginTop="0";
-  main.classList.add("main-ready");
-  nav.style.display="flex";
-
+  document.getElementById("nav").style.display="flex";
   const music=document.getElementById("bgMusic");
   music.volume=0.65;
   music.play().catch(()=>{});
 
-  // Remove the cover from normal document flow during the exit animation.
   cover.classList.add("cinematic-exit");
-  cover.style.position="fixed";
-  cover.style.inset="0";
-  cover.style.width="100%";
-  cover.style.height="100dvh";
-  cover.style.zIndex="9999";
-
-  // Wait for the visual transition, then remove it completely.
   setTimeout(()=>{
-    cover.remove();
-    document.body.classList.add("invitation-open");
-    window.scrollTo({top:0,left:0,behavior:"auto"});
+    cover.style.display="none";
+    window.scrollTo(0,0);
   },850);
 }
 
