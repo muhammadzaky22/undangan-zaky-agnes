@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#8c5d6b">
+<meta name="description" content="Undangan Pernikahan Muhammad Zaky Khairy & Agnes Viannisa — 7 Februari 2027">
 <title>Muhammad Zaky Khairy & Agnes Viannisa</title>
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9dfe3;color:#563e46;font-family:Arial,sans-serif}.site{max-width:760px;margin:auto;background:#fff;min-height:100vh}.cover{min-height:100vh;background:linear-gradient(#0002,#0009),url("foto-utama.jpg") center/cover;display:flex;align-items:end;text-align:center;color:#fff}.cover-inner{width:100%;padding:45px 22px 65px}.small{font-size:11px;letter-spacing:4px}.names{font:48px/1.05 Georgia,serif;margin:18px 0}.date{letter-spacing:2px;font-size:13px}.open,.btn{display:inline-block;border:0;border-radius:35px;background:#8c5d6b;color:#fff;padding:14px 25px;text-decoration:none;cursor:pointer}.open{background:#ffffff22;border:1px solid #fff}.main{display:none}.section{padding:65px 22px;text-align:center;border-bottom:1px solid #eadde1}.section:nth-child(even){background:#f8eef2}h2{font:42px Georgia,serif;margin:12px 0 25px;color:#563e46}.orn{font-size:30px;color:#8c5d6b}.intro{font:italic 20px/1.7 Georgia,serif}.photo{max-width:100%;width:100%;border-radius:28px;box-shadow:0 8px 25px #0001}.couple-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.person{background:#fff;border-radius:20px;padding:15px;box-shadow:0 5px 20px #0001}.person img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}.person h3{font:28px Georgia;margin:12px 0 4px}.person p{font-size:12px}.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.unit{background:#fff;border-radius:14px;padding:14px 4px;box-shadow:0 5px 20px #0001}.unit b{display:block;font:27px Georgia}.unit span{font-size:10px}.story{text-align:left;max-width:580px;margin:auto}.story-item{border-left:2px solid #cbaeb8;padding:0 0 30px 25px;margin-left:8px}.story-item h3{font:27px Georgia;margin:0 0 7px}.story-item p{font-size:13px;line-height:1.8}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:9px}.gallery img{width:100%;height:190px;object-fit:cover;border-radius:14px}.card{background:#fff;border-radius:22px;padding:25px;box-shadow:0 7px 25px #0001;line-height:1.7}.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:13px;border:1px solid #dfd0d6;border-radius:12px;margin:5px 0;font-family:inherit}.nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:none;gap:14px;background:#fff;padding:10px 14px;border-radius:30px;box-shadow:0 5px 25px #0002;z-index:10}.nav a{color:#8c5d6b;text-decoration:none;font-size:11px}.footer{padding:70px 20px;text-align:center;background:#f8eef2}.music-hidden{display:none!important}@media(max-width:500px){.names{font-size:41px}.counter{grid-template-columns:repeat(2,1fr)}.section{padding:55px 18px}.gallery img{height:155px}}
@@ -183,13 +184,33 @@
   .cinematic-date{font-size:15px;letter-spacing:5px}
   .cinematic-divider span{width:38px}
 }
-@media(prefers-reduced-motion:reduce){
-  .cinematic-bg,.cinematic-content,.cinematic-kicker,.cinematic-arabic,
-  .cinematic-names span,.cinematic-names i,.cinematic-divider,
-  .cinematic-date,.cinematic-place,.cinematic-open,.cinematic-scroll,.cinematic-line{
-    animation:none!important;opacity:1!important;transform:none!important;
-  }
-}
+
+
+/* ===== CINEMATIC PLAYBACK FIX v2 ===== */
+.cinematic-cover.cinematic-preplay .cinematic-bg{animation:none!important;transform:scale(1.14)}
+.cinematic-cover.cinematic-preplay .cinematic-line{animation:none!important;transform:scaleX(0)}
+.cinematic-cover.cinematic-preplay .cinematic-kicker,
+.cinematic-cover.cinematic-preplay .cinematic-arabic,
+.cinematic-cover.cinematic-preplay .cinematic-names span,
+.cinematic-cover.cinematic-preplay .cinematic-names i,
+.cinematic-cover.cinematic-preplay .cinematic-divider,
+.cinematic-cover.cinematic-preplay .cinematic-date,
+.cinematic-cover.cinematic-preplay .cinematic-place,
+.cinematic-cover.cinematic-preplay .cinematic-open,
+.cinematic-cover.cinematic-preplay .cinematic-scroll{animation:none!important;opacity:0!important;transform:translateY(22px)!important}
+.cinematic-cover.cinematic-playing .cinematic-bg{animation:cinematicZoom 16s linear forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-line{animation:cinematicLine 1.2s cubic-bezier(.2,.8,.2,1) .15s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-kicker{animation:cinematicUp .9s ease .35s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-arabic{animation:cinematicFade 1s ease .65s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-names span:first-child{animation:cinematicName 1.15s cubic-bezier(.2,.8,.2,1) .95s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-names i{animation:cinematicFade .8s ease 1.25s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-names span:last-child{animation:cinematicName 1.15s cubic-bezier(.2,.8,.2,1) 1.45s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-divider{animation:cinematicFade 1s ease 1.85s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-date{animation:cinematicUp .9s ease 2s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-place{animation:cinematicUp .9s ease 2.15s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-open{animation:cinematicButton 1s cubic-bezier(.2,.8,.2,1) 2.45s forwards!important}
+.cinematic-cover.cinematic-playing .cinematic-scroll{animation:cinematicFade 1s ease 3s forwards,cinematicPulse 2.2s ease-in-out 3.7s infinite!important}
+.cinematic-cover.cinematic-exit .cinematic-open{pointer-events:none}
 
 </style>
 </head>
@@ -199,7 +220,7 @@
 </audio>
 
 <div class="site">
-<div class="cover cinematic-cover" id="cover">
+<div class="cover cinematic-cover cinematic-preplay" id="cover">
   <div class="cinematic-bg"></div>
   <div class="cinematic-vignette"></div>
   <div class="cinematic-line cinematic-line-top"></div>
@@ -321,20 +342,36 @@
 <nav class="nav" id="nav"><a href="#gallery">GALERI</a><a href="#event">ACARA</a><a href="#rsvp">RSVP</a></nav>
 
 <script>
+const cinematicCover=document.getElementById("cover");
+
+function startCinematic(){
+  if(!cinematicCover || cinematicCover.dataset.played==="1") return;
+  cinematicCover.dataset.played="1";
+  cinematicCover.classList.remove("cinematic-preplay");
+  void cinematicCover.offsetWidth;
+  cinematicCover.classList.add("cinematic-playing");
+}
+
 function openInvitation(){
-  const cover=document.getElementById("cover");
+  if(!cinematicCover) return;
+  const music=document.getElementById("bgMusic");
+  if(music){
+    music.volume=0.65;
+    music.play().catch(()=>{});
+  }
   document.getElementById("main").style.display="block";
   document.getElementById("nav").style.display="flex";
-  const music=document.getElementById("bgMusic");
-  music.volume=0.65;
-  music.play().catch(()=>{});
-
-  cover.classList.add("cinematic-exit");
+  cinematicCover.classList.add("cinematic-exit");
   setTimeout(()=>{
-    cover.style.display="none";
+    cinematicCover.style.display="none";
     window.scrollTo(0,0);
-  },850);
+  },900);
 }
+
+window.addEventListener("load",()=>{
+  requestAnimationFrame(()=>requestAnimationFrame(startCinematic));
+});
+setTimeout(startCinematic,500);
 
 const target=new Date("2027-02-07T08:00:00+08:00").getTime();
 function updateCountdown(){
