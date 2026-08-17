@@ -1,1 +1,143 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zaky & Agnes</title><style>body{margin:0;font-family:Arial;color:#563e46;background:#f7edf1}.cover{min-height:100vh;background:linear-gradient(#0003,#0009),url("foto1.jpg") center/cover;color:#fff;display:flex;align-items:end;text-align:center}.box{width:100%;padding:45px 20px}.names{font:48px Georgia;line-height:1.1}button,a{padding:13px 22px;border:0;border-radius:30px;background:#8c5d6b;color:#fff;text-decoration:none}.open{background:#ffffff22;border:1px solid #fff}.main{display:none;max-width:760px;margin:auto;background:#fff}.main section{padding:60px 22px;text-align:center;border-bottom:1px solid #eadde1}.main section:nth-child(even){background:#f8eef2}h2{font:38px Georgia}.photo{max-width:100%;border-radius:25px}.count{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.u{padding:14px;background:#fff;border-radius:12px;min-width:65px}.u b{display:block;font-size:22px}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}.gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px}.card{padding:25px;background:#fff;border-radius:20px;box-shadow:0 5px 20px #0001}.field{width:100%;padding:12px;margin:5px 0;box-sizing:border-box}.nav{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);background:white;padding:10px;border-radius:25px;display:none;gap:12px;box-shadow:0 3px 20px #0002}.nav a{background:none;color:#8c5d6b;padding:5px;font-size:11px}@media(max-width:500px){.names{font-size:40px}.main section{padding:50px 18px}}#audio{display:none!important} </style></head><body><audio id="audio" preload="auto" loop><source src="musik.mp3" type="audio/mpeg"></audio><div class="cover" id="cover"><div class="box"><small>THE WEDDING OF</small><div class="names">Muhammad Zaky Khairy<br>&amp;<br>Agnes Viannisa</div><p>7 FEBRUARI 2027</p><button class="open" onclick="openInvite()">♡ BUKA UNDANGAN</button></div></div><main class="main" id="main"><section><h2>Dengan penuh kebahagiaan</h2><p>Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami.</p><img class="photo" src="foto1.jpg" onerror="this.style.display='none'"></section><section><h2>Countdown</h2><div class="count" id="count"></div></section><section><h2>Kisah Cinta</h2><p>Berawal dari sebuah perkenalan, tumbuh menjadi rasa, dan kini kami melangkah bersama menuju kehidupan baru.</p></section><section id="gallery"><h2>Galeri</h2><div class="gallery"><img src="foto1.jpg"><img src="foto2.jpg"><img src="foto3.jpg"><img src="foto4.jpg"><img src="foto5.jpg"><img src="foto6.jpg"></div><p>Upload foto1.jpg sampai foto6.jpg ke GitHub.</p></section><section id="event"><h2>Detail Acara</h2><div class="card"><p>📅 Minggu, 7 Februari 2027</p><p>⏰ 08.00 WITA s/d selesai</p><p>📍 Gas Alam Badak 1, Muara Badak</p><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gas+Alam+Badak+1+Muara+Badak">Buka Google Maps</a></div></section><section id="rsvp"><h2>RSVP & Ucapan</h2><div class="card"><input id="nama" class="field" placeholder="Nama"><select id="status" class="field"><option>Hadir</option><option>Tidak hadir</option><option>Masih ragu</option></select><input id="jumlah" class="field" type="number" placeholder="Jumlah orang"><textarea id="ucapan" class="field" placeholder="Ucapan & doa"></textarea><button onclick="rsvp()">Kirim via WhatsApp</button></div></section><section><h2>Bagikan Undangan</h2><button onclick="share()">↗ Bagikan</button></section><section><h2>Zaky & Agnes ❤️</h2><p>Terima kasih atas doa dan kehadiran Anda.</p></section></main><nav class="nav" id="nav"><a href="#gallery">GALERI</a><a href="#event">ACARA</a><a href="#rsvp">RSVP</a></nav><script>function openInvite(){cover.style.display="none";main.style.display="block";nav.style.display="flex";document.getElementById("audio").play().catch(()=>{});scrollTo(0,0)})}let t=new Date("2027-02-07T08:00:00+08:00").getTime();setInterval(()=>{let d=Math.max(0,t-Date.now()),v=[Math.floor(d/864e5),Math.floor(d/36e5)%24,Math.floor(d/6e4)%60,Math.floor(d/1e3)%60];count.innerHTML=v.map((x,i)=>`<div class="u"><b>${x}</b>${["Hari","Jam","Menit","Detik"][i]}</div>`).join("")},1000);function rsvp(){let t=`Halo Zaky & Agnes,%0A%0ANama: ${encodeURIComponent(nama.value||"Tamu")}%0AKehadiran: ${encodeURIComponent(status.value)}%0AJumlah: ${jumlah.value||1}%0AUcapan: ${encodeURIComponent(ucapan.value||"-")}`;open("https://wa.me/6289512340428?text="+t)}function share(){navigator.share?navigator.share({title:"Undangan Zaky & Agnes",url:location.href}):navigator.clipboard.writeText(location.href).then(()=>alert("Link disalin"))}</script></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8c5d6b">
+<title>Muhammad Zaky Khairy & Agnes Viannisa</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9dfe3;color:#563e46;font-family:Arial,sans-serif}.site{max-width:760px;margin:auto;background:#fff;min-height:100vh}.cover{min-height:100vh;background:linear-gradient(#0002,#0009),url("foto-utama.jpg") center/cover;display:flex;align-items:end;text-align:center;color:#fff}.cover-inner{width:100%;padding:45px 22px 65px}.small{font-size:11px;letter-spacing:4px}.names{font:48px/1.05 Georgia,serif;margin:18px 0}.date{letter-spacing:2px;font-size:13px}.open,.btn{display:inline-block;border:0;border-radius:35px;background:#8c5d6b;color:#fff;padding:14px 25px;text-decoration:none;cursor:pointer}.open{background:#ffffff22;border:1px solid #fff}.main{display:none}.section{padding:65px 22px;text-align:center;border-bottom:1px solid #eadde1}.section:nth-child(even){background:#f8eef2}h2{font:42px Georgia,serif;margin:12px 0 25px;color:#563e46}.orn{font-size:30px;color:#8c5d6b}.intro{font:italic 20px/1.7 Georgia,serif}.photo{max-width:100%;width:100%;border-radius:28px;box-shadow:0 8px 25px #0001}.couple-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.person{background:#fff;border-radius:20px;padding:15px;box-shadow:0 5px 20px #0001}.person img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}.person h3{font:28px Georgia;margin:12px 0 4px}.person p{font-size:12px}.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.unit{background:#fff;border-radius:14px;padding:14px 4px;box-shadow:0 5px 20px #0001}.unit b{display:block;font:27px Georgia}.unit span{font-size:10px}.story{text-align:left;max-width:580px;margin:auto}.story-item{border-left:2px solid #cbaeb8;padding:0 0 30px 25px;margin-left:8px}.story-item h3{font:27px Georgia;margin:0 0 7px}.story-item p{font-size:13px;line-height:1.8}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:9px}.gallery img{width:100%;height:190px;object-fit:cover;border-radius:14px}.card{background:#fff;border-radius:22px;padding:25px;box-shadow:0 7px 25px #0001;line-height:1.7}.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:13px;border:1px solid #dfd0d6;border-radius:12px;margin:5px 0;font-family:inherit}.nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:none;gap:14px;background:#fff;padding:10px 14px;border-radius:30px;box-shadow:0 5px 25px #0002;z-index:10}.nav a{color:#8c5d6b;text-decoration:none;font-size:11px}.footer{padding:70px 20px;text-align:center;background:#f8eef2}.music-hidden{display:none!important}@media(max-width:500px){.names{font-size:41px}.counter{grid-template-columns:repeat(2,1fr)}.section{padding:55px 18px}.gallery img{height:155px}}
+</style>
+</head>
+<body>
+<audio id="bgMusic" class="music-hidden" preload="auto" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<div class="site">
+<div class="cover" id="cover">
+  <div class="cover-inner">
+    <div class="small">THE WEDDING OF</div>
+    <div class="names">Muhammad Zaky Khairy<br><span style="font-size:25px">&amp;</span><br>Agnes Viannisa</div>
+    <div class="date">7 FEBRUARI 2027</div>
+    <br><br><button class="open" onclick="openInvitation()">♡ BUKA UNDANGAN</button>
+  </div>
+</div>
+
+<main class="main" id="main">
+
+<section class="section">
+  <div class="small">ASSALAMUALAIKUM</div>
+  <h2>Dengan penuh kebahagiaan</h2>
+  <p class="intro">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya.”</p>
+  <div class="orn">❦</div>
+  <p>Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.</p>
+  <img class="photo" src="foto-utama.jpg" onerror="this.style.display='none'">
+</section>
+
+<section class="section">
+  <div class="small">THE COUPLE</div><h2>Zaky & Agnes</h2>
+  <div class="couple-grid">
+    <div class="person"><img src="foto1.jpg" onerror="this.style.display='none'"><h3>Zaky</h3><p>Muhammad Zaky Khairy</p></div>
+    <div class="person"><img src="foto2.jpg" onerror="this.style.display='none'"><h3>Agnes</h3><p>Agnes Viannisa</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="small">SAVE THE DATE</div><h2>Menuju Hari Bahagia</h2>
+  <div class="counter" id="counter"></div>
+</section>
+
+<section class="section">
+  <div class="small">OUR STORY</div><h2>Kisah Cinta Kami</h2>
+  <div class="story">
+    <div class="story-item"><h3>Pertemuan</h3><p>Berawal dari sebuah perkenalan sederhana, kemudian tumbuh menjadi cerita yang semakin berarti.</p></div>
+    <div class="story-item"><h3>Menjadi Kita</h3><p>Kami belajar saling mengenal, saling mendukung, dan melewati berbagai cerita bersama.</p></div>
+    <div class="story-item"><h3>Menuju Selamanya</h3><p>Dengan doa dan restu keluarga, kami memilih untuk melangkah bersama menuju kehidupan baru.</p></div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="small">OUR MOMENTS</div><h2>Galeri Foto</h2>
+  <div class="gallery">
+    <img src="foto1.jpg" onerror="this.style.display='none'">
+    <img src="foto2.jpg" onerror="this.style.display='none'">
+    <img src="foto3.jpg" onerror="this.style.display='none'">
+    <img src="foto4.jpg" onerror="this.style.display='none'">
+    <img src="foto5.jpg" onerror="this.onerror=null;this.src='foto 5.jpg'">
+    <img src="foto6.jpg" onerror="this.onerror=null;this.src='foto 6.jpg'">
+  </div>
+</section>
+
+<section class="section" id="event">
+  <div class="small">WEDDING EVENT</div><h2>Detail Acara</h2>
+  <div class="card">
+    <p>💍 <b>Acara Pernikahan</b></p>
+    <p>📅 <b>Minggu, 7 Februari 2027</b></p>
+    <p>⏰ <b>08.00 WITA s/d selesai</b></p>
+    <p>📍 <b>Gas Alam Badak 1</b><br>Muara Badak</p>
+    <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gas+Alam+Badak+1+Muara+Badak">📍 Buka Google Maps</a>
+  </div>
+</section>
+
+<section class="section" id="rsvp">
+  <div class="small">RSVP & UCAPAN</div><h2>Konfirmasi Kehadiran</h2>
+  <div class="card rsvp">
+    <input id="guest" placeholder="Nama Anda">
+    <select id="status"><option>Hadir</option><option>Tidak hadir</option><option>Masih ragu</option></select>
+    <input id="jumlah" type="number" min="1" placeholder="Jumlah orang">
+    <textarea id="ucapan" rows="4" placeholder="Ucapan & doa"></textarea>
+    <button class="btn" onclick="sendRSVP()">💌 Kirim ke WhatsApp</button>
+  </div>
+</section>
+
+<section class="section">
+  <div class="small">SHARE</div><h2>Bagikan Undangan</h2>
+  <p>Bagikan kebahagiaan ini kepada keluarga dan sahabat.</p>
+  <button class="btn" onclick="shareInvitation()">↗ Bagikan Undangan</button>
+</section>
+
+<div class="footer"><div class="orn">♡</div><div class="names" style="font-size:40px;color:#8c5d6b">Zaky & Agnes</div><p>Terima kasih atas doa, restu, dan kehadiran Anda.</p></div>
+</main>
+</div>
+
+<nav class="nav" id="nav"><a href="#gallery">GALERI</a><a href="#event">ACARA</a><a href="#rsvp">RSVP</a></nav>
+
+<script>
+function openInvitation(){
+  document.getElementById("cover").style.display="none";
+  document.getElementById("main").style.display="block";
+  document.getElementById("nav").style.display="flex";
+  const music=document.getElementById("bgMusic");
+  music.volume=0.65;
+  music.play().catch(()=>{});
+  window.scrollTo(0,0);
+}
+
+const target=new Date("2027-02-07T08:00:00+08:00").getTime();
+function updateCountdown(){
+  let d=Math.max(0,target-Date.now());
+  const vals=[Math.floor(d/86400000),Math.floor(d/3600000)%24,Math.floor(d/60000)%60,Math.floor(d/1000)%60];
+  const labels=["HARI","JAM","MENIT","DETIK"];
+  document.getElementById("counter").innerHTML=vals.map((v,i)=>`<div class="unit"><b>${v}</b><span>${labels[i]}</span></div>`).join("");
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+function sendRSVP(){
+  const n=document.getElementById("guest").value||"Tamu";
+  const s=document.getElementById("status").value;
+  const j=document.getElementById("jumlah").value||1;
+  const u=document.getElementById("ucapan").value||"-";
+  const text=`Halo Zaky & Agnes,%0A%0ANama: ${encodeURIComponent(n)}%0AKehadiran: ${encodeURIComponent(s)}%0AJumlah: ${j}%0AUcapan: ${encodeURIComponent(u)}`;
+  window.open("https://wa.me/6289512340428?text="+text,"_blank");
+}
+
+function shareInvitation(){
+  if(navigator.share){
+    navigator.share({title:"Undangan Zaky & Agnes",text:"Undangan Pernikahan Muhammad Zaky Khairy & Agnes Viannisa",url:location.href});
+  }else if(navigator.clipboard){
+    navigator.clipboard.writeText(location.href).then(()=>alert("Link undangan berhasil disalin."));
+  }
+}
+</script>
+</body></html>
