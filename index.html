@@ -61,7 +61,7 @@ body.cinematic-mode .cover{min-height:100svh;box-sizing:border-box}
 .cinematic-dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:10001;display:grid;gap:7px}
 .cinematic-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#fff6}
 .cinematic-dots button.active{background:#fff;transform:scale(1.4)}
-.cinematic-start{position:fixed;inset:0;z-index:10010;background:#160f12 url("foto-utama.jpg") center/cover;display:flex;align-items:center;justify-content:center}
+.cinematic-start{position:fixed;inset:0;z-index:10010;display:none!important;background:#160f12 url("foto-utama.jpg") center/cover;display:flex;align-items:center;justify-content:center}
 .cinematic-start::after{content:"";position:absolute;inset:0;background:#0007}
 .cinematic-start .start-card{position:relative;z-index:2;text-align:center;color:#fff;width:min(520px,90vw)}
 .cinematic-start button{border:0;border-radius:999px;padding:14px 28px;background:#fff;color:#4b3039;font-size:16px;font-weight:700}
@@ -416,6 +416,7 @@ loadGuestbook();
     window.scrollTo({top:document.querySelector('#rsvp')?.offsetTop||0,behavior:'smooth'});
   };
   document.getElementById('startCinematic').onclick=begin;
+  window.addEventListener('load',()=>{ setTimeout(begin,350); });
   next.onclick=()=>show(idx+1);
   prev.onclick=()=>show(idx-1);
   pause.onclick=togglePause;
