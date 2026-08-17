@@ -6,7 +6,35 @@
 <meta name="theme-color" content="#8c5d6b">
 <title>Muhammad Zaky Khairy & Agnes Viannisa</title>
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9dfe3;color:#563e46;font-family:Arial,sans-serif}.site{max-width:760px;margin:auto;background:#fff;min-height:100vh}.cover{min-height:100vh;background:linear-gradient(#0002,#0009),url("foto-utama.jpg") center/cover;display:flex;align-items:end;text-align:center;color:#fff}.cover-inner{width:100%;padding:45px 22px 65px}.small{font-size:11px;letter-spacing:4px}.names{font:48px/1.05 Georgia,serif;margin:18px 0}.date{letter-spacing:2px;font-size:13px}.open,.btn{display:inline-block;border:0;border-radius:35px;background:#8c5d6b;color:#fff;padding:14px 25px;text-decoration:none;cursor:pointer}.open{background:#ffffff22;border:1px solid #fff}.main{display:none}.section{padding:65px 22px;text-align:center;border-bottom:1px solid #eadde1}.section:nth-child(even){background:#f8eef2}h2{font:42px Georgia,serif;margin:12px 0 25px;color:#563e46}.orn{font-size:30px;color:#8c5d6b}.intro{font:italic 20px/1.7 Georgia,serif}.photo{max-width:100%;width:100%;border-radius:28px;box-shadow:0 8px 25px #0001}.couple-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.person{background:#fff;border-radius:20px;padding:15px;box-shadow:0 5px 20px #0001}.person img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}.person h3{font:28px Georgia;margin:12px 0 4px}.person p{font-size:12px}.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.unit{background:#fff;border-radius:14px;padding:14px 4px;box-shadow:0 5px 20px #0001}.unit b{display:block;font:27px Georgia}.unit span{font-size:10px}.story{text-align:left;max-width:580px;margin:auto}.story-item{border-left:2px solid #cbaeb8;padding:0 0 30px 25px;margin-left:8px}.story-item h3{font:27px Georgia;margin:0 0 7px}.story-item p{font-size:13px;line-height:1.8}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:9px}.gallery img{width:100%;height:190px;object-fit:cover;border-radius:14px}.card{background:#fff;border-radius:22px;padding:25px;box-shadow:0 7px 25px #0001;line-height:1.7}.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:13px;border:1px solid #dfd0d6;border-radius:12px;margin:5px 0;font-family:inherit}.nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:none;gap:14px;background:#fff;padding:10px 14px;border-radius:30px;box-shadow:0 5px 25px #0002;z-index:10}.nav a{color:#8c5d6b;text-decoration:none;font-size:11px}.footer{padding:70px 20px;text-align:center;background:#f8eef2}.music-hidden{display:none!important}@media(max-width:500px){.names{font-size:41px}.counter{grid-template-columns:repeat(2,1fr)}.section{padding:55px 18px}.gallery img{height:155px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9dfe3;color:#563e46;font-family:Arial,sans-serif}.site{max-width:760px;margin:auto;background:#fff;min-height:100vh}.cover{min-height:100vh;position:relative;overflow:hidden;background:#20171b;display:flex;align-items:end;text-align:center;color:#fff}
+.cover::before{content:"";position:absolute;inset:-8%;background:linear-gradient(#0002,#0009),url("foto-utama.jpg") center/cover no-repeat;transform:scale(1.06);animation:coverMove 16s ease-in-out infinite alternate;z-index:0}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0001 25%,#000b 100%);z-index:1;pointer-events:none}
+.cover-inner{position:relative;z-index:2}.cover-inner{width:100%;padding:45px 22px 65px}.small{font-size:11px;letter-spacing:4px}.names{font:48px/1.05 Georgia,serif;margin:18px 0}.date{letter-spacing:2px;font-size:13px}.open,.btn{display:inline-block;border:0;border-radius:35px;background:#8c5d6b;color:#fff;padding:14px 25px;text-decoration:none;cursor:pointer}.open{background:#ffffff22;border:1px solid #fff}.main{display:none}.section{padding:65px 22px;text-align:center;border-bottom:1px solid #eadde1}.section:nth-child(even){background:#f8eef2}h2{font:42px Georgia,serif;margin:12px 0 25px;color:#563e46}.orn{font-size:30px;color:#8c5d6b}.intro{font:italic 20px/1.7 Georgia,serif}.photo{max-width:100%;width:100%;border-radius:28px;box-shadow:0 8px 25px #0001}.couple-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.person{background:#fff;border-radius:20px;padding:15px;box-shadow:0 5px 20px #0001}.person img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}.person h3{font:28px Georgia;margin:12px 0 4px}.person p{font-size:12px}.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.unit{background:#fff;border-radius:14px;padding:14px 4px;box-shadow:0 5px 20px #0001}.unit b{display:block;font:27px Georgia}.unit span{font-size:10px}.story{text-align:left;max-width:580px;margin:auto}.story-item{border-left:2px solid #cbaeb8;padding:0 0 30px 25px;margin-left:8px}.story-item h3{font:27px Georgia;margin:0 0 7px}.story-item p{font-size:13px;line-height:1.8}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:9px}.gallery img{width:100%;height:190px;object-fit:cover;border-radius:14px}.card{background:#fff;border-radius:22px;padding:25px;box-shadow:0 7px 25px #0001;line-height:1.7}.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:13px;border:1px solid #dfd0d6;border-radius:12px;margin:5px 0;font-family:inherit}.nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:none;gap:14px;background:#fff;padding:10px 14px;border-radius:30px;box-shadow:0 5px 25px #0002;z-index:10}.nav a{color:#8c5d6b;text-decoration:none;font-size:11px}.footer{padding:70px 20px;text-align:center;background:#f8eef2}.music-hidden{display:none!important}
+@keyframes coverMove{
+  0%{transform:scale(1.06) translate3d(-1.5%,-1%,0)}
+  50%{transform:scale(1.12) translate3d(1.5%,1%,0)}
+  100%{transform:scale(1.08) translate3d(-1%,1.5%,0)}
+}
+@keyframes gentleFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-7px) scale(1.012)}
+}
+@keyframes softPulse{
+  0%,100%{box-shadow:0 8px 25px #0001}
+  50%{box-shadow:0 12px 32px #8c5d6b22}
+}
+.cover-inner .names{animation:gentleFloat 5s ease-in-out infinite}
+.photo{animation:gentleFloat 7s ease-in-out infinite,softPulse 4s ease-in-out infinite}
+.person img{transition:transform .8s ease;animation:gentleFloat 6s ease-in-out infinite}
+.person:nth-child(2) img{animation-delay:-2s}
+.gallery img{transition:transform .7s ease,filter .7s ease;transform:scale(.985)}
+.gallery img:hover{transform:scale(1.035) translateY(-4px);filter:saturate(1.08)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media(max-width:500px){.names{font-size:41px}.counter{grid-template-columns:repeat(2,1fr)}.section{padding:55px 18px}.gallery img{height:155px}}
 </style>
 </head>
 <body>
@@ -27,7 +55,7 @@
 
 <main class="main" id="main">
 
-<section class="section">
+<section class="section reveal">
   <div class="small">ASSALAMUALAIKUM</div>
   <h2>Dengan penuh kebahagiaan</h2>
   <p class="intro">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya.”</p>
@@ -36,7 +64,7 @@
   <img class="photo" src="foto-utama.jpg" onerror="this.style.display='none'">
 </section>
 
-<section class="section">
+<section class="section reveal">
   <div class="small">THE COUPLE</div><h2>Zaky & Agnes</h2>
   <div class="couple-grid">
     <div class="person"><img src="foto1.jpg" onerror="this.style.display='none'"><h3>Zaky</h3><p>Muhammad Zaky Khairy</p></div>
@@ -44,12 +72,12 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <div class="small">SAVE THE DATE</div><h2>Menuju Hari Bahagia</h2>
   <div class="counter" id="counter"></div>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <div class="small">OUR STORY</div><h2>Kisah Cinta Kami</h2>
   <div class="story">
     <div class="story-item"><h3>Pertemuan</h3><p>Berawal dari sebuah perkenalan sederhana, kemudian tumbuh menjadi cerita yang semakin berarti.</p></div>
@@ -58,7 +86,7 @@
   </div>
 </section>
 
-<section class="section" id="gallery">
+<section class="section reveal" id="gallery">
   <div class="small">OUR MOMENTS</div><h2>Galeri Foto</h2>
   <div class="gallery">
     <img src="foto1.jpg" onerror="this.style.display='none'">
@@ -70,7 +98,7 @@
   </div>
 </section>
 
-<section class="section" id="event">
+<section class="section reveal" id="event">
   <div class="small">WEDDING EVENT</div><h2>Detail Acara</h2>
   <div class="card">
     <p>💍 <b>Acara Pernikahan</b></p>
@@ -82,7 +110,7 @@
 </section>
 
 
-<section class="section" id="rsvp">
+<section class="section reveal" id="rsvp">
   <div class="small">BUKU TAMU ONLINE</div>
   <h2>Ucapan & Kehadiran</h2>
   <p>Berikan doa dan ucapan terbaik untuk Zaky & Agnes.</p>
@@ -103,7 +131,7 @@
 </section>
 
 
-<section class="section">
+<section class="section reveal">
   <div class="small">SHARE</div><h2>Bagikan Undangan</h2>
   <p>Bagikan kebahagiaan ini kepada keluarga dan sahabat.</p>
   <button class="btn" onclick="shareInvitation()">↗ Bagikan Undangan</button>
@@ -153,105 +181,59 @@ function shareInvitation(){
 }
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-/* =========================
-   SUPABASE CONFIG
-   ========================= */
 const SUPABASE_URL = "https://ridrrcprspixtrbwygeo.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_qPkd-UXm7X2KRA-E5a00jA_O8Ya4iSr";
-const supabaseClient = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_PUBLISHABLE_KEY
-);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 
 function escapeGuestbook(text){
-  return String(text ?? "").replace(/[&<>"']/g, m => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-  }[m]));
+  return String(text ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
 }
-
 function statusLabel(status){
-  return status==="Hadir" ? "✅ Hadir" :
-         status==="Tidak hadir" ? "❌ Tidak hadir" :
-         "⏳ Masih ragu";
+  return status==="Hadir"?"✅ Hadir":status==="Tidak hadir"?"❌ Tidak hadir":"⏳ Masih ragu";
 }
-
 function renderGuestbook(list){
   const box=document.getElementById("guestbook");
-  if(!list || !list.length){
+  if(!list?.length){
     box.innerHTML='<div class="card"><p>Belum ada ucapan. Jadilah yang pertama memberikan doa ❤️</p></div>';
     return;
   }
-
-  box.innerHTML=list.map(x => `
+  box.innerHTML=list.map(x=>`
     <div style="background:#fff;border-radius:18px;padding:18px;margin:10px 0;box-shadow:0 5px 18px #0001">
       <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-        <b>${escapeGuestbook(x.nama)}</b>
-        <span style="font-size:12px">${statusLabel(x.kehadiran)}</span>
+        <b>${escapeGuestbook(x.nama)}</b><span style="font-size:12px">${statusLabel(x.kehadiran)}</span>
       </div>
       <p style="margin:10px 0 0;line-height:1.65">${escapeGuestbook(x.ucapan)}</p>
-    </div>
-  `).join("");
+    </div>`).join("");
 }
-
 async function loadGuestbook(){
   const msg=document.getElementById("guestbookMessage");
-
-  const {data,error}=await supabaseClient
-    .from("ucapan")
+  const {data,error}=await supabaseClient.from("ucapan")
     .select("id,nama,kehadiran,ucapan,created_at")
-    .order("created_at",{ascending:false})
-    .limit(100);
-
-  if(error){
-    console.error("Supabase load error:", error);
-    msg.textContent="Ucapan online belum bisa dimuat. Periksa koneksi Supabase/policy.";
-    return;
-  }
-
+    .order("created_at",{ascending:false}).limit(100);
+  if(error){console.error(error);msg.textContent="Ucapan online belum bisa dimuat.";return;}
   renderGuestbook(data);
 }
-
 async function addGuestbook(){
-  const name=document.getElementById("guest").value.trim() || "Tamu";
+  const name=document.getElementById("guest").value.trim()||"Tamu";
   const status=document.getElementById("status").value;
   const message=document.getElementById("ucapan").value.trim();
   const msg=document.getElementById("guestbookMessage");
   const btn=document.getElementById("sendGuestbook");
-
-  if(!message){
-    alert("Silakan tulis ucapan terlebih dahulu.");
-    return;
-  }
-
-  btn.disabled=true;
-  btn.textContent="Mengirim...";
-  msg.textContent="";
-
-  const {error}=await supabaseClient
-    .from("ucapan")
-    .insert({
-      nama:name.slice(0,60),
-      kehadiran:status,
-      ucapan:message.slice(0,500)
-    });
-
-  btn.disabled=false;
-  btn.textContent="💌 Kirim Ucapan";
-
-  if(error){
-    console.error("Supabase insert error:", error);
-    msg.textContent="Ucapan belum terkirim. Periksa policy Supabase lalu coba lagi.";
-    return;
-  }
-
+  if(!message){alert("Silakan tulis ucapan terlebih dahulu.");return;}
+  btn.disabled=true;btn.textContent="Mengirim...";msg.textContent="";
+  const {error}=await supabaseClient.from("ucapan").insert({
+    nama:name.slice(0,60),kehadiran:status,ucapan:message.slice(0,500)
+  });
+  btn.disabled=false;btn.textContent="💌 Kirim Ucapan";
+  if(error){console.error(error);msg.textContent="Ucapan belum terkirim. Coba lagi.";return;}
   document.getElementById("guest").value="";
   document.getElementById("ucapan").value="";
   msg.textContent="Ucapan berhasil dikirim ❤️";
   await loadGuestbook();
 }
-
 loadGuestbook();
-</script></body></html>
+</script>
+</body></html>
