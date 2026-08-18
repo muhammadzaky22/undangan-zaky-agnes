@@ -195,6 +195,21 @@ img{display:block;max-width:100%}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:390px){.phone{width:82%;height:min(77svh,655px)}.open-names{font-size:42px}.verse-card{padding-left:17px;padding-right:17px}.verse-text{font-size:15px}.profile-photo{height:57svh}.book{height:370px}.event-card{padding:16px 14px}.timeline{grid-template-columns:repeat(4,172px)}.story img{height:185px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ===== CLEAN STATIC TEXT — motion only on visual layers ===== */
+.scene-label{display:none!important}
+/* Text stays readable and still. Cards/backgrounds may continue moving. */
+.kicker,.script,.serif,.lead,.open-arabic,.open-kicker,.open-names,.open-date,.open-guest,.open-hint,
+.verse-arabic,.verse-text,.verse-ref,.count-title,.count-date,.count-num,.count-lab,.cal-head,.cal-week,.cal-day,.calendar-copy,
+.profile-copy h3,.profile-copy p,.event-title h3,.event-title p,.event-row,.event-row h4,.event-row p,.book-title,.story h3,.story p,
+.bank-name,.bank-no,.bank-owner,.tabs,.field label,.field input,.field textarea,.field select,.wish-card,.thanks,.close-name,.close-names,.footer small{
+  animation:none!important;transition:none!important;transform:none!important;filter:none!important;opacity:1!important;
+  text-shadow:inherit;will-change:auto!important;
+}
+/* Pure text elements that also carried reveal should not animate. */
+.kicker.reveal,.count-title.reveal,.count-date.reveal,.lead.reveal,.script.reveal,.serif.reveal,.thanks.reveal,.close-name.reveal,.close-names.reveal{
+  opacity:1!important;transform:none!important;transition:none!important;filter:none!important;
+}
 </style>
 </head>
 <body class="locked">
@@ -387,4 +402,7 @@ Kehadiran: ${attendance}
 Jumlah tamu: ${guests} orang 🤍`;rsvpForm.reset();rsvpForm.querySelector('[name=guests]').value='1'})
 })
 </script>
+
+
+
 </body></html>
