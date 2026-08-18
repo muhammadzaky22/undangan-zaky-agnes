@@ -300,10 +300,141 @@ body{overflow-x:hidden}
 }
 </style>
 
+
+<style id="ultra-3d-enhancement">
+:root{
+  --rose-dark:#7b4f59;
+  --rose-soft:#f4dfe2;
+  --ivory:#fffdf9;
+  --ink:#5a3a42;
+}
+body{
+  background:
+    radial-gradient(circle at 8% 10%,rgba(255,230,236,.95),transparent 24%),
+    radial-gradient(circle at 92% 18%,rgba(255,212,220,.65),transparent 26%),
+    radial-gradient(circle at 50% 115%,rgba(241,215,197,.75),transparent 40%),
+    linear-gradient(180deg,#fffdfa 0%,#fff7f5 20%,#f7e2e5 55%,#fffaf8 100%);
+}
+.bg{overflow:hidden}
+.bg::before{content:"";position:absolute;inset:-20% -10%;background:
+  radial-gradient(circle at 20% 22%,rgba(255,255,255,.9),transparent 14%),
+  radial-gradient(circle at 80% 18%,rgba(255,255,255,.55),transparent 12%),
+  radial-gradient(circle at 50% 75%,rgba(255,238,223,.7),transparent 24%);
+  filter:blur(22px);animation:bgPulse 10s ease-in-out infinite alternate}
+.bg:after{opacity:.22;background-size:38px 38px}
+@keyframes bgPulse{from{transform:scale(1) translateY(0)}to{transform:scale(1.08) translateY(-12px)}}
+
+#opening{background:
+ linear-gradient(180deg,#281d21 0%,#3c2830 45%,#24181d 100%);
+ overflow:hidden;
+}
+#opening::before,#opening::after{content:"";position:absolute;border-radius:50%;filter:blur(40px);opacity:.7;pointer-events:none}
+#opening::before{width:260px;height:260px;background:rgba(233,174,185,.25);top:8%;left:10%;animation:orbDrift 12s ease-in-out infinite}
+#opening::after{width:220px;height:220px;background:rgba(243,214,182,.18);right:6%;bottom:12%;animation:orbDrift 14s ease-in-out infinite reverse}
+.open-scene{transform-style:preserve-3d}
+.open-scene::before{content:"";position:absolute;left:50%;bottom:13%;transform:translateX(-50%) translateZ(-60px);width:min(84vw,500px);height:54px;border-radius:50%;background:radial-gradient(circle,rgba(0,0,0,.38),transparent 68%);filter:blur(10px)}
+.envelope{filter:drop-shadow(0 40px 80px rgba(0,0,0,.38));}
+.envelope::before,.envelope::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.envelope::before{width:110px;height:110px;left:-32px;top:-22px;background:radial-gradient(circle,rgba(255,255,255,.48),transparent 70%);animation:haloFloat 6s ease-in-out infinite}
+.envelope::after{width:95px;height:95px;right:-26px;bottom:22px;background:radial-gradient(circle,rgba(233,174,185,.35),transparent 72%);animation:haloFloat 7s ease-in-out infinite reverse}
+.inv-card{background:linear-gradient(180deg,#fffdfb,#fdf2ec);transform:translateZ(26px)}
+.env-body{background:linear-gradient(145deg,#f8e5e8,#cb8d9b 60%,#a66e7b)}
+.env-flap{background:linear-gradient(145deg,#fff4f2,#d49ca7)}
+.seal{transform:translate(-50%,-50%) translateZ(40px);box-shadow:0 12px 28px rgba(0,0,0,.28), inset 0 2px 12px rgba(255,255,255,.28)}
+.open-content{backdrop-filter:blur(12px);padding:18px 18px 6px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));}
+.open-btn{position:relative;overflow:hidden}
+.open-btn::after{content:"";position:absolute;inset:-2px auto -2px -40%;width:34%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-24deg);animation:btnShine 3.8s ease-in-out infinite}
+@keyframes btnShine{0%,100%{left:-48%}55%{left:122%}}
+@keyframes haloFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes orbDrift{0%,100%{transform:translate(0,0)}50%{transform:translate(18px,-16px)}}
+
+.hero{min-height:100svh;padding-top:70px;padding-bottom:130px}
+.hero::before,.hero::after{content:"";position:absolute;pointer-events:none;border-radius:50%;filter:blur(10px)}
+.hero::before{width:250px;height:250px;background:radial-gradient(circle,rgba(231,168,180,.28),transparent 70%);top:7%;left:-4%;animation:orbDrift 10s ease-in-out infinite}
+.hero::after{width:300px;height:300px;background:radial-gradient(circle,rgba(244,220,192,.38),transparent 70%);right:-6%;bottom:12%;animation:orbDrift 13s ease-in-out infinite reverse}
+.hero-inner{position:relative;padding:34px 20px 26px;border-radius:42px;transform-style:preserve-3d;isolation:isolate}
+.hero-inner::before{content:"";position:absolute;inset:0;border-radius:42px;background:
+ linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.12));
+ border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(18px);box-shadow:0 35px 100px rgba(92,62,71,.14);z-index:-2}
+.hero-inner::after{content:"";position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);width:min(74vw,430px);height:42px;border-radius:50%;background:radial-gradient(circle,rgba(86,54,61,.22),transparent 68%);z-index:-3;filter:blur(8px)}
+.hero-arch,.hero-arch-two,.hero-flower-left,.hero-flower-right,.hero-orb-left,.hero-orb-right,.hero-floor{position:absolute;pointer-events:none}
+.hero-arch{left:50%;top:8px;transform:translateX(-50%);width:min(82vw,480px);height:460px;border-radius:240px 240px 38px 38px;background:linear-gradient(180deg,rgba(255,255,255,.45),rgba(255,255,255,.12));border:1px solid rgba(255,255,255,.75);box-shadow:inset 0 0 0 10px rgba(255,255,255,.08);z-index:-1}
+.hero-arch-two{left:50%;top:35px;transform:translateX(-50%);width:min(70vw,400px);height:390px;border-radius:210px 210px 32px 32px;border:1px solid rgba(201,140,151,.35);background:linear-gradient(180deg,rgba(255,250,247,.46),rgba(255,237,235,.18));z-index:-1}
+.hero-floor{left:50%;bottom:88px;transform:translateX(-50%);width:min(78vw,500px);height:84px;border-radius:50%;background:radial-gradient(circle,rgba(225,184,191,.18),rgba(180,129,140,.08),transparent 72%);filter:blur(4px);z-index:-1}
+.hero-flower-left,.hero-flower-right{width:120px;height:150px;bottom:126px;z-index:1;opacity:.95}
+.hero-flower-left{left:10px;transform:rotate(-8deg)}
+.hero-flower-right{right:10px;transform:scaleX(-1) rotate(-8deg)}
+.hero-flower-left::before,.hero-flower-left::after,.hero-flower-right::before,.hero-flower-right::after{content:"";position:absolute;border-radius:50%;background:radial-gradient(circle at 40% 38%,#fff,#f3bec7 55%,#cc8f9b 78%,transparent 79%)}
+.hero-flower-left::before,.hero-flower-right::before{width:64px;height:64px;left:22px;top:18px;box-shadow:34px 14px 0 -4px rgba(241,186,196,.95), 8px 54px 0 -6px rgba(236,170,183,.88), 44px 62px 0 -10px rgba(255,220,226,.92)}
+.hero-flower-left::after,.hero-flower-right::after{width:8px;height:90px;left:54px;bottom:0;border-radius:999px;background:linear-gradient(180deg,#87ab7f,#5c7a56)}
+.hero-orb-left,.hero-orb-right{width:126px;height:126px;border-radius:50%;filter:blur(4px);mix-blend-mode:screen;opacity:.7;z-index:-1}
+.hero-orb-left{left:5%;top:12%;background:radial-gradient(circle,rgba(255,255,255,.95),rgba(243,203,210,.34),transparent 72%);animation:orbDrift 9s ease-in-out infinite}
+.hero-orb-right{right:7%;top:18%;background:radial-gradient(circle,rgba(255,255,255,.9),rgba(241,218,190,.34),transparent 72%);animation:orbDrift 12s ease-in-out infinite reverse}
+.hero-card{width:min(82vw,400px);margin-bottom:28px;position:relative;z-index:2;transform-style:preserve-3d}
+.hero-card::before{content:"";position:absolute;inset:-18px;border-radius:52% 52% 44% 44%;background:linear-gradient(145deg,rgba(255,255,255,.65),rgba(255,234,237,.18));border:1px solid rgba(255,255,255,.72);transform:translateZ(-12px);box-shadow:0 32px 65px rgba(100,66,76,.16)}
+.hero-card::after{content:"";position:absolute;inset:-34px 20px auto;height:46px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.55),transparent 70%);transform:translateZ(18px)}
+.photo-3d{padding:10px;border-radius:46% 46% 40% 40%;background:linear-gradient(145deg,#fff,#f2cfd6,#f7ddce 55%,#fff);box-shadow:0 28px 80px rgba(86,55,64,.22), inset 0 2px 10px rgba(255,255,255,.65)}
+.photo-3d img{box-shadow:0 16px 40px rgba(87,58,66,.18)}
+.photo-3d::before{content:"";position:absolute;inset:20px;border-radius:inherit;border:1px solid rgba(255,255,255,.78);opacity:.65;pointer-events:none}
+.eyebrow{color:#8e6470;text-shadow:0 1px 0 rgba(255,255,255,.45)}
+.hero h1,.script,.date,.guest-name-label,.guest-name{position:relative;z-index:2}
+.hero h1{font-size:clamp(56px,13.6vw,104px);text-shadow:0 14px 28px rgba(82,52,60,.08)}
+.script{filter:drop-shadow(0 8px 15px rgba(169,111,125,.15))}
+.date,.guest-name-label{letter-spacing:.28em}
+.guest-name{display:inline-block;margin-top:10px;padding:10px 22px;border-radius:999px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.82);box-shadow:0 14px 30px rgba(100,68,73,.10)}
+
+.section{position:relative}
+.section::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:min(100%,820px);height:100%;border-radius:40px;background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,0));pointer-events:none;opacity:.48}
+.section-inner{position:relative;padding:0 4px}
+.section-inner::before,.section-inner::after{content:"";position:absolute;pointer-events:none;border-radius:50%;filter:blur(18px);opacity:.4;z-index:-1}
+.section-inner::before{width:100px;height:100px;left:0;top:12%;background:radial-gradient(circle,rgba(240,194,202,.65),transparent 70%)}
+.section-inner::after{width:120px;height:120px;right:0;bottom:10%;background:radial-gradient(circle,rgba(246,225,198,.75),transparent 72%)}
+.section h2{color:#6b434d;text-shadow:0 6px 15px rgba(255,255,255,.32)}
+.story-card,.event-card,.gift-card,.social-card,.intro-card,.wish-form,.rsvp-form,.wedding-calendar,.wish-card{backdrop-filter:blur(18px)}
+.story-card,.event-card,.gift-card,.gallery-item,.wish-card,.social-profile{box-shadow:0 22px 50px rgba(91,57,67,.14)}
+.story-card::before,.event-card::before,.gift-card::before,.gallery-item::before{content:"";position:absolute;inset:1px;border-radius:inherit;border:1px solid rgba(255,255,255,.56);pointer-events:none}
+.story-card{background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(251,237,238,.56))}
+.story-card img{box-shadow:0 14px 26px rgba(86,55,64,.12)}
+.event-card{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(250,238,235,.62))}
+.gallery-item{background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(249,232,230,.74))}
+.gallery-item img{box-shadow:0 12px 26px rgba(86,55,64,.12)}
+.wedding-calendar,.intro-card,.wish-form,.rsvp-form,.social-card{background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(249,231,229,.7))}
+.count-box{backdrop-filter:blur(10px)}
+.bottom-nav{bottom:14px;border:1px solid rgba(255,255,255,.95);background:rgba(255,255,255,.74);backdrop-filter:blur(18px);box-shadow:0 20px 45px rgba(70,45,53,.16)}
+.bottom-nav a{transition:.28s;color:#7d5662}
+.bottom-nav a:hover{transform:translateY(-3px);color:#a65d66}
+.music-btn{background:linear-gradient(145deg,#af6876,#7c4c57);backdrop-filter:blur(10px);box-shadow:0 12px 28px rgba(88,53,61,.26)}
+footer{position:relative;background:linear-gradient(180deg,#f1dcde,#e5cdd1)}
+footer::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.45),transparent 40%);pointer-events:none}
+
+.floating-petals{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden}
+.floating-petal{position:absolute;top:-10vh;width:14px;height:20px;border-radius:12px 12px 12px 0;background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(240,179,191,.9));box-shadow:0 2px 6px rgba(135,81,89,.14);opacity:.72}
+.floating-petal:nth-child(3n){background:linear-gradient(180deg,rgba(255,255,255,.84),rgba(246,215,195,.95))}
+.floating-petal:nth-child(4n){width:10px;height:16px}
+
+@media(max-width:760px){
+  .hero-inner{padding:28px 14px 18px}
+  .hero-arch{height:410px;width:min(88vw,420px)}
+  .hero-arch-two{height:345px;width:min(76vw,350px)}
+  .hero-flower-left,.hero-flower-right{width:90px;height:120px;bottom:118px}
+  .guest-name{padding:9px 16px}
+}
+@media(max-width:480px){
+  .hero{padding-top:85px}
+  .hero-inner{border-radius:30px}
+  .hero-arch{height:365px;width:min(90vw,360px)}
+  .hero-arch-two{height:310px;width:min(80vw,310px)}
+  .hero-floor{bottom:86px;height:68px}
+  .hero-flower-left,.hero-flower-right{width:72px;height:100px;bottom:116px}
+  .open-content{width:94%}
+}
+</style>
+
 </head>
 
 <body class="locked">
 <div class="bg"></div>
+<div class="floating-petals" id="floatingPetals" aria-hidden="true"></div>
 
 <section id="opening">
   <div class="open-scene">
@@ -328,6 +459,13 @@ body{overflow-x:hidden}
 <main class="page-drift">
 <section class="hero" id="home">
   <div class="hero-inner">
+    <div class="hero-orb-left" aria-hidden="true"></div>
+    <div class="hero-orb-right" aria-hidden="true"></div>
+    <div class="hero-arch" aria-hidden="true"></div>
+    <div class="hero-arch-two" aria-hidden="true"></div>
+    <div class="hero-floor" aria-hidden="true"></div>
+    <div class="hero-flower-left" aria-hidden="true"></div>
+    <div class="hero-flower-right" aria-hidden="true"></div>
     <div class="hero-card reveal"><div class="photo-3d" id="tiltPhoto"><img src="foto-utama.jpg" alt="Zaky & Agnes"></div></div>
     <div class="eyebrow reveal">ASSALAMUALAIKUM</div>
     <h1 class="reveal">Muhammad Zaky Khairy</h1>
@@ -888,6 +1026,44 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   }
 
   await loadWishes();
+});
+</script>
+
+
+<script id="ultra-3d-motion-js">
+document.addEventListener('DOMContentLoaded',()=>{
+  const bindParallax=(area,target,factor=10)=>{
+    if(!area || !target) return;
+    const move=(x,y)=>{
+      const r=area.getBoundingClientRect();
+      const dx=((x-r.left)/r.width)-0.5;
+      const dy=((y-r.top)/r.height)-0.5;
+      target.style.transform=`perspective(1400px) rotateY(${dx*factor}deg) rotateX(${-dy*factor*.75}deg) translateZ(0)`;
+    };
+    area.addEventListener('mousemove',e=>move(e.clientX,e.clientY));
+    area.addEventListener('mouseleave',()=>{target.style.transform='';});
+    area.addEventListener('touchmove',e=>{
+      const t=e.touches[0];
+      if(t) move(t.clientX,t.clientY);
+    },{passive:true});
+  };
+
+  bindParallax(document.querySelector('.hero-inner'), document.querySelector('.hero-card'), 9);
+  bindParallax(document.querySelector('.open-scene'), document.querySelector('.envelope'), 7);
+
+  const petalWrap=document.getElementById('floatingPetals');
+  if(petalWrap && !petalWrap.children.length){
+    for(let i=0;i<18;i++){
+      const p=document.createElement('span');
+      p.className='floating-petal';
+      p.style.left=`${Math.random()*100}%`;
+      p.style.animationDuration=`${8+Math.random()*8}s`;
+      p.style.animationDelay=`-${Math.random()*8}s`;
+      p.style.transform=`rotate(${Math.random()*360}deg)`;
+      p.style.opacity=(0.35+Math.random()*0.45).toFixed(2);
+      petalWrap.appendChild(p);
+    }
+  }
 });
 </script>
 
