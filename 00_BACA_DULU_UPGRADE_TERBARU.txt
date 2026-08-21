@@ -1,0 +1,31 @@
+ZAKY & AGNES — UPGRADE TERBARU
+Pilihan yang ditambahkan: 1, 3, 6, 8, 9, 10, 12.
+
+URUTAN SETUP:
+1. Jalankan file SETUP_TERBARU_SUPABASE.sql di Supabase > SQL Editor > New Query > Run.
+2. Pastikan muncul Success.
+3. Upload seluruh isi ZIP ke root repository GitHub Pages (jangan upload folder pembungkus).
+4. Buka https://zakyagnes.my.id/admin.html lalu login.
+5. Lakukan Health Check.
+
+FITUR BARU:
+- Optimasi performa: gambar bawaan dipisah menjadi WebP dan lazy-load.
+- Backup Semua + Restore Konfigurasi & Daftar Tamu.
+- Nama anggota rombongan per undangan dan saat RSVP.
+- Template WhatsApp yang bisa dibuat/edit/hapus dari admin.
+- Funnel tamu: Terdaftar > Dikirim > Dibuka > RSVP > Akan Hadir.
+- Smart filter reminder: belum dikirim, belum dibuka, belum RSVP, sudah RSVP, akan hadir.
+- Security admin: auto-lock 30 menit tanpa aktivitas, lock manual, hapus data admin lokal.
+
+CATATAN BACKUP:
+Backup Semua menyimpan konfigurasi website, tema, foto admin, referensi musik, daftar tamu,
+RSVP, ucapan, foto tamu, dan analytics ke JSON. Tombol Restore sengaja hanya mengembalikan
+KONFIGURASI + DAFTAR TAMU agar RSVP/ucapan/analytics tidak terduplikasi secara tidak sengaja.
+
+CATATAN WHATSAPP:
+Pesan dibuka satu per satu melalui aplikasi/web WhatsApp. Ini tidak membutuhkan WhatsApp
+Business API atau credential rahasia di website.
+
+CATATAN MUSIK:
+musik.mp3 bawaan tetap ada sebagai fallback. Jika musik diganti dari admin, URL Supabase
+Storage yang aktif ikut tercatat dalam backup konfigurasi.

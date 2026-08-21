@@ -1,0 +1,36 @@
+1 — OPTIMASI KECEPATAN
+- 7 foto bawaan dipindahkan dari Base64 index.html ke folder assets/ sebagai WebP.
+- Galeri/story memakai lazy loading + async decoding.
+- Service Worker diperbarui untuk cache aset foto.
+- index.html turun dari sekitar 1.55 MB ke sekitar 322 KB.
+
+3 — BACKUP / RESTORE
+- Tombol Backup Semua.
+- Backup mencakup settings, tamu, RSVP, ucapan, foto tamu, analytics.
+- Restore aman untuk settings + daftar tamu.
+
+6 — NAMA ANGGOTA ROMBONGAN
+- Admin bisa mengisi nama rombongan satu nama per baris.
+- CSV import/export mendukung kolom anggota_rombongan.
+- Tamu bisa mengisi nama anggota ketika jumlah tamu lebih dari 1.
+- Nama tersimpan bersama RSVP dan bisa dimuat lagi saat edit RSVP.
+
+8 — TEMPLATE WHATSAPP
+- Template Umum, Keluarga, Teman, Kantor, VIP, Reminder RSVP.
+- Bisa tambah/edit/hapus template dari admin.
+- Placeholder: {nama}, {tanggal}, {lokasi}, {link}, {kuota}.
+- Template kategori bisa dipilih otomatis berdasarkan kategori tamu.
+
+9 — DASHBOARD FUNNEL TAMU
+- Terdaftar → Dikirim → Dibuka → RSVP → Akan Hadir.
+
+10 — FILTER & REMINDER PINTAR
+- Belum Dikirim, Belum Dibuka, Belum RSVP, Sudah RSVP, Akan Hadir.
+- Pencarian tamu + tombol WhatsApp personal.
+
+12 — KEAMANAN ADMIN
+- Auto-lock sesi setelah 30 menit tanpa aktivitas saat online.
+- Tombol kunci admin manual.
+- Tombol hapus snapshot/roster/antrean check-in lokal dari HP.
+- Referrer policy admin dipersempit ke same-origin.
+- Operasi sensitif tetap memeriksa is_wedding_admin() di Supabase.

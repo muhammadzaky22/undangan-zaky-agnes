@@ -1,5 +1,5 @@
-const CACHE='za-domain-v2026-08-21-guest-admin-1';
-const CORE=['/','/index.html','/offline.html','/maintenance.html','/manifest.webmanifest','/icon-192.png','/icon-512.png','/social-preview.jpg'];
+const CACHE='za-domain-v2026-08-21-admin-upgrade-2';
+const CORE=['/','/index.html','/offline.html','/maintenance.html','/manifest.webmanifest','/icon-192.png','/icon-512.png','/social-preview.jpg','/guest-rsvp-upgrades.js','/assets/zaky.webp','/assets/agnes.webp','/assets/couple-1.webp','/assets/couple-2.webp','/assets/couple-3.webp','/assets/couple-4.webp','/assets/couple-5.webp'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(url=>cache.add(url)))).then(()=>self.skipWaiting()));
 });
