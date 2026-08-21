@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" preserveAspectRatio="none">
+<defs>
+ <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#18203a"/><stop offset="1" stop-color="#080d18"/></linearGradient>
+ <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151b31"/><stop offset="1" stop-color="#050914"/></linearGradient>
+ <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10203e" stop-opacity=".9"/><stop offset="1" stop-color="#040712"/></linearGradient>
+</defs>
+<path d="M0 380 L90 290 160 330 280 190 390 310 520 120 650 320 770 235 855 310 930 230 1000 300 V650 H0Z" fill="url(#m1)"/>
+<path d="M0 440 L110 360 230 405 350 310 470 400 590 250 715 410 845 330 1000 420 V650 H0Z" fill="url(#m2)" opacity=".98"/>
+<path d="M0 470 H1000 V650 H0Z" fill="url(#lake)" opacity=".8"/>
+<g opacity=".25" stroke="#6bd5d5" fill="none"><path d="M50 510 Q300 500 540 520 T980 505"/><path d="M90 545 Q330 530 550 548 T950 536"/></g>
+</svg>
