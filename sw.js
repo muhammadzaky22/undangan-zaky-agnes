@@ -1,4 +1,4 @@
-const CACHE='za-domain-v2026-08-21-ultimate-admin-2';
+const CACHE='za-domain-v2026-08-21-guest-admin-1';
 const CORE=['/','/index.html','/offline.html','/maintenance.html','/manifest.webmanifest','/icon-192.png','/icon-512.png','/social-preview.jpg'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(url=>cache.add(url)))).then(()=>self.skipWaiting()));

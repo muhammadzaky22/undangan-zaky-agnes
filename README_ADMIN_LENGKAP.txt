@@ -35,3 +35,12 @@ KEAMANAN:
 - Publishable/anon key di frontend memang untuk client publik.
 - Service-role key TIDAK disimpan di HTML.
 - Perubahan admin tetap membutuhkan login dan fungsi is_wedding_admin().
+
+
+DAFTAR TAMU PERSONAL
+- Kelola nama tamu langsung dari admin.html.
+- Setiap tamu mendapat token/link unik.
+- Sapaan, WhatsApp, kategori, dan kuota RSVP bisa diatur per tamu.
+- Copy Link, Kirim WhatsApp, QR personal, edit, hapus, import CSV, dan export CSV tersedia.
+- Status Belum Dikirim / Dikirim / Dibuka / RSVP dapat dipantau.
+- Jalankan SETUP_DAFTAR_TAMU_SUPABASE.sql sekali untuk mengaktifkan fitur ini.

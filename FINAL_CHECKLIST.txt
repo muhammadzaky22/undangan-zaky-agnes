@@ -30,3 +30,11 @@ TEMA WEBSITE (sekali saja):
 - Jalankan SETUP_ADMIN_LENGKAP_SUPABASE.sql di Supabase SQL Editor.
 - Buka /admin.html > Tema Website > pilih tema > Simpan Tema.
 - Preview dari tombol Preview Undangan atau buka domain utama.
+
+DAFTAR TAMU PERSONAL (VERSI TERBARU)
+[ ] Jalankan SETUP_DAFTAR_TAMU_SUPABASE.sql sekali di Supabase SQL Editor.
+[ ] Buka admin.html > Daftar Tamu dan tambahkan 1 tamu percobaan.
+[ ] Tekan Copy Link lalu buka link personal untuk memastikan nama tampil pada cover.
+[ ] Coba RSVP dan pastikan kuota mengikuti tamu tersebut.
+[ ] Refresh admin dan cek status tamu berubah menjadi Dibuka / RSVP.
+[ ] Gunakan Import CSV bila daftar tamu dibuat di Excel.

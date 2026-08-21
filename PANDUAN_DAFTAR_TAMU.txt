@@ -1,0 +1,28 @@
+ZAKY & AGNES — DAFTAR TAMU PERSONAL
+
+1. Jalankan SETUP_DAFTAR_TAMU_SUPABASE.sql sekali di Supabase SQL Editor.
+2. Upload seluruh isi ZIP ke root repository GitHub Pages.
+3. Buka https://zakyagnes.my.id/admin.html dan login admin.
+4. Pilih menu "Daftar Tamu".
+5. Tambah nama, sapaan, WhatsApp, kategori, dan kuota tamu.
+6. Gunakan "Copy Link" atau "WhatsApp" untuk mengirim link personal.
+7. Contoh link personal: https://zakyagnes.my.id/?guest=KODE_UNIK
+8. Saat dibuka, nama tamu tampil otomatis pada cover undangan.
+9. Kuota RSVP mengikuti kuota yang ditentukan untuk tamu tersebut.
+10. Admin dapat melihat status Belum Dikirim / Dikirim / Dibuka / RSVP.
+
+IMPORT CSV
+- Boleh membuat daftar di Excel lalu Save As CSV.
+- Header yang disarankan:
+  nama,sapaan,whatsapp,kategori,kuota,catatan
+- Template CSV tersedia dari tombol "Template CSV" di admin.
+
+PRIVASI
+- Daftar tamu lengkap tidak bisa dibaca publik.
+- Link personal menggunakan token acak, bukan nama mentah.
+- RPC publik hanya mengembalikan nama, sapaan, token, dan kuota untuk token yang valid.
+- Nomor WhatsApp, kategori, dan catatan tetap admin-only.
+
+KOMPATIBILITAS
+- Link lama ?to=Nama tetap berfungsi.
+- RSVP lama tetap tersimpan.
