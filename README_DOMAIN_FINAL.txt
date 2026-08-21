@@ -88,3 +88,10 @@ PERUBAHAN FINAL YANG SUDAH DITERAPKAN
 6. Tekan Pakai Bawaan kapan saja untuk kembali ke foto asli yang tertanam di index.html.
 
 Catatan: fitur ini tidak membutuhkan Supabase Storage bucket tambahan dan tidak menggunakan service-role key di browser.
+
+
+ADMIN TEMA WEBSITE
+-------------------
+Versi ini memiliki 12 tema premium yang dapat diganti dari admin.html.
+Jalankan SETUP_TEMA_ADMIN_SUPABASE.sql sekali agar site_theme dapat dibaca publik.
+Tema tidak mengubah data RSVP, foto, musik, Supabase, atau domain.

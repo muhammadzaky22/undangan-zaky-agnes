@@ -24,3 +24,9 @@ FOTO WEBSITE VIA ADMIN
 - Buka /admin.html, login, pilih tab Foto Website.
 - Pilih foto dari HP lalu tekan Simpan Foto.
 - Foto bawaan tetap menjadi fallback jika tombol Pakai Bawaan dipilih.
+
+
+TEMA WEBSITE (sekali saja):
+- Jalankan SETUP_TEMA_ADMIN_SUPABASE.sql di Supabase SQL Editor.
+- Buka /admin.html > Tema Website > pilih tema > Simpan Tema.
+- Preview dari tombol Preview Undangan atau buka domain utama.

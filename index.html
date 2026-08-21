@@ -21,7 +21,7 @@
 <meta name="color-scheme" content="light">
 <!-- Fallback live streaming: dapat diisi manual; URL dari Admin/Supabase akan diprioritaskan jika tersedia -->
 <meta name="za-stream-url" content="">
-<meta name="za-version" content="2026.08.21-photo-admin">
+<meta name="za-version" content="2026.08.21-theme-admin">
 <!-- Professional Final 2026: PWA / privacy / installability -->
 <meta name="application-name" content="Zaky & Agnes Wedding">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,6 +33,7 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icon-192.png">
 <link rel="canonical" href="https://zakyagnes.my.id/">
+<script id="za-theme-bootstrap">document.documentElement.dataset.theme="champagne";</script>
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23f8eee8'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-size='22' fill='%23a67551' font-family='serif'%3EZA%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
@@ -2986,6 +2987,81 @@ body.za-font-large{--za-scale:1.12}body.za-font-large .lead,body.za-font-large .
 @media(prefers-reduced-motion:reduce){.post-open-photo,.post-open-mouse::after,.post-open-petal{animation:none!important}}
 </style>
 
+
+<style id="za-theme-system-v1">
+/* ===== ZAKY & AGNES — 12 PREMIUM THEMES ===== */
+html[data-theme]{
+ --theme-bg1:#f8f1ec;--theme-bg2:#eadbd4;--theme-surface:rgba(255,252,249,.80);--theme-surface2:rgba(246,232,225,.68);
+ --theme-heading:#4e3833;--theme-text:#705852;--theme-muted:#967d75;--theme-accent:#b98550;--theme-accent2:#d8b17a;
+ --theme-line:rgba(151,108,88,.22);--theme-glow1:rgba(233,177,192,.25);--theme-glow2:rgba(211,176,146,.24);
+ --theme-shadow:rgba(83,54,47,.14);--theme-button-text:#fffaf3;--theme-display:"Italiana","Cormorant Garamond",serif;--theme-script:"Great Vibes",cursive;
+ --lux-espresso:var(--theme-heading);--lux-brown:var(--theme-text);--lux-taupe:var(--theme-muted);--lux-gold:var(--theme-accent);--lux-gold2:var(--theme-accent2);
+ --gold:var(--theme-accent);--gold2:var(--theme-accent2);--ink:var(--theme-heading);--muted:var(--theme-muted);--line:var(--theme-line);
+ color-scheme:light;
+}
+html[data-theme="champagne"]{--theme-bg1:#f8f1ec;--theme-bg2:#eadbd4;--theme-surface:rgba(255,252,249,.82);--theme-surface2:rgba(246,232,225,.68);--theme-heading:#4e3833;--theme-text:#705852;--theme-muted:#967d75;--theme-accent:#b98550;--theme-accent2:#d8b17a;--theme-line:rgba(151,108,88,.22);--theme-glow1:rgba(233,177,192,.25);--theme-glow2:rgba(211,176,146,.24);--theme-shadow:rgba(83,54,47,.14);--theme-button-text:#fffaf3;--theme-script:"Great Vibes",cursive}
+html[data-theme="black-gold"]{--theme-bg1:#070706;--theme-bg2:#17130d;--theme-surface:rgba(24,21,15,.84);--theme-surface2:rgba(12,11,9,.74);--theme-heading:#fff3ce;--theme-text:#eadfc4;--theme-muted:#b7a98e;--theme-accent:#d7b66d;--theme-accent2:#f1d899;--theme-line:rgba(218,184,111,.28);--theme-glow1:rgba(194,151,64,.19);--theme-glow2:rgba(116,87,34,.22);--theme-shadow:rgba(0,0,0,.48);--theme-button-text:#17120a;--theme-display:"Bodoni Moda","Cormorant Garamond",serif;--theme-script:"Great Vibes",cursive;color-scheme:dark}
+html[data-theme="ivory-pearl"]{--theme-bg1:#fffdf8;--theme-bg2:#f0eadf;--theme-surface:rgba(255,255,252,.88);--theme-surface2:rgba(247,242,232,.74);--theme-heading:#49433b;--theme-text:#70675b;--theme-muted:#9b9184;--theme-accent:#a78955;--theme-accent2:#d4c09b;--theme-line:rgba(137,119,86,.20);--theme-glow1:rgba(255,255,255,.70);--theme-glow2:rgba(220,205,176,.28);--theme-shadow:rgba(83,72,52,.11);--theme-button-text:#fffdf7;--theme-display:"Cormorant Garamond",serif;--theme-script:"Parisienne",cursive}
+html[data-theme="emerald-gold"]{--theme-bg1:#06120d;--theme-bg2:#10291e;--theme-surface:rgba(15,39,29,.86);--theme-surface2:rgba(7,24,17,.78);--theme-heading:#f6ecd3;--theme-text:#d7e7db;--theme-muted:#9db4a4;--theme-accent:#d0ad65;--theme-accent2:#eed193;--theme-line:rgba(211,178,103,.25);--theme-glow1:rgba(39,116,80,.26);--theme-glow2:rgba(197,154,66,.16);--theme-shadow:rgba(0,0,0,.43);--theme-button-text:#102016;--theme-display:"Cormorant Garamond",serif;--theme-script:"Great Vibes",cursive;color-scheme:dark}
+html[data-theme="royal-navy"]{--theme-bg1:#06101e;--theme-bg2:#10243d;--theme-surface:rgba(15,31,53,.88);--theme-surface2:rgba(7,20,36,.78);--theme-heading:#f8f1df;--theme-text:#dce6f3;--theme-muted:#9fafc5;--theme-accent:#d2b36d;--theme-accent2:#edd49a;--theme-line:rgba(211,181,111,.24);--theme-glow1:rgba(44,87,143,.26);--theme-glow2:rgba(205,167,83,.14);--theme-shadow:rgba(0,0,0,.44);--theme-button-text:#102034;--theme-display:"Bodoni Moda",serif;--theme-script:"Parisienne",cursive;color-scheme:dark}
+html[data-theme="burgundy-romance"]{--theme-bg1:#19080d;--theme-bg2:#3a121d;--theme-surface:rgba(55,18,29,.87);--theme-surface2:rgba(28,9,15,.78);--theme-heading:#fff0e5;--theme-text:#efdadd;--theme-muted:#c29da5;--theme-accent:#d4a56b;--theme-accent2:#efc794;--theme-line:rgba(221,175,119,.24);--theme-glow1:rgba(131,34,58,.30);--theme-glow2:rgba(204,132,79,.16);--theme-shadow:rgba(0,0,0,.44);--theme-button-text:#2b1015;--theme-display:"Cormorant Garamond",serif;--theme-script:"Great Vibes",cursive;color-scheme:dark}
+html[data-theme="sage-botanical"]{--theme-bg1:#f2f4ed;--theme-bg2:#dce6d8;--theme-surface:rgba(251,252,247,.84);--theme-surface2:rgba(229,237,225,.72);--theme-heading:#33443a;--theme-text:#5f7064;--theme-muted:#839287;--theme-accent:#758a64;--theme-accent2:#b6a677;--theme-line:rgba(91,117,90,.20);--theme-glow1:rgba(154,185,149,.28);--theme-glow2:rgba(208,193,151,.22);--theme-shadow:rgba(54,79,57,.12);--theme-button-text:#fffdf7;--theme-display:"Cormorant Garamond",serif;--theme-script:"Parisienne",cursive}
+html[data-theme="rose-gold"]{--theme-bg1:#fff4f6;--theme-bg2:#ead3da;--theme-surface:rgba(255,250,251,.85);--theme-surface2:rgba(244,223,229,.70);--theme-heading:#5b3d47;--theme-text:#795c66;--theme-muted:#a2848d;--theme-accent:#b87886;--theme-accent2:#d7a891;--theme-line:rgba(171,113,128,.20);--theme-glow1:rgba(234,167,186,.30);--theme-glow2:rgba(218,177,150,.20);--theme-shadow:rgba(104,60,72,.12);--theme-button-text:#fff8f7;--theme-display:"Bodoni Moda",serif;--theme-script:"Parisienne",cursive}
+html[data-theme="terracotta-rustic"]{--theme-bg1:#f7eee7;--theme-bg2:#e4c9b8;--theme-surface:rgba(255,249,244,.83);--theme-surface2:rgba(238,215,201,.70);--theme-heading:#5b382d;--theme-text:#79594d;--theme-muted:#9e7e70;--theme-accent:#b86e4d;--theme-accent2:#cf9a6e;--theme-line:rgba(164,100,75,.21);--theme-glow1:rgba(210,139,105,.27);--theme-glow2:rgba(190,159,118,.20);--theme-shadow:rgba(99,59,44,.13);--theme-button-text:#fff8f2;--theme-display:"Cormorant Garamond",serif;--theme-script:"Great Vibes",cursive}
+html[data-theme="celestial-night"]{--theme-bg1:#060716;--theme-bg2:#171d40;--theme-surface:rgba(20,24,55,.86);--theme-surface2:rgba(8,10,28,.76);--theme-heading:#f5f2ff;--theme-text:#dcdbf0;--theme-muted:#aaa8c8;--theme-accent:#aebcff;--theme-accent2:#ddb6ff;--theme-line:rgba(178,189,255,.25);--theme-glow1:rgba(91,110,255,.28);--theme-glow2:rgba(194,111,255,.22);--theme-shadow:rgba(0,0,0,.46);--theme-button-text:#11152b;--theme-display:"Bodoni Moda",serif;--theme-script:"Parisienne",cursive;color-scheme:dark}
+html[data-theme="marble-gold"]{--theme-bg1:#fafaf8;--theme-bg2:#e4e3df;--theme-surface:rgba(255,255,253,.86);--theme-surface2:rgba(237,236,231,.72);--theme-heading:#353432;--theme-text:#62605c;--theme-muted:#8d8982;--theme-accent:#b59a67;--theme-accent2:#d1bd94;--theme-line:rgba(108,103,92,.18);--theme-glow1:rgba(255,255,255,.68);--theme-glow2:rgba(187,181,167,.23);--theme-shadow:rgba(58,57,53,.11);--theme-button-text:#fffdf8;--theme-display:"Italiana",serif;--theme-script:"Great Vibes",cursive}
+html[data-theme="editorial-mono"]{--theme-bg1:#f3f2ef;--theme-bg2:#dad9d5;--theme-surface:rgba(251,250,247,.88);--theme-surface2:rgba(229,228,223,.76);--theme-heading:#171716;--theme-text:#4b4a47;--theme-muted:#777570;--theme-accent:#262624;--theme-accent2:#9d9a92;--theme-line:rgba(30,30,28,.17);--theme-glow1:rgba(255,255,255,.70);--theme-glow2:rgba(160,158,151,.18);--theme-shadow:rgba(25,25,23,.11);--theme-button-text:#fff;--theme-display:"Bodoni Moda","Italiana",serif;--theme-script:"Cormorant Garamond",serif}
+
+/* Shared visual language driven by theme tokens. */
+html[data-theme] body{background:linear-gradient(180deg,var(--theme-bg1),var(--theme-bg2) 48%,var(--theme-bg1))!important;color:var(--theme-text)!important}
+html[data-theme] .scene{background:radial-gradient(circle at 15% 12%,var(--theme-glow1),transparent 27%),radial-gradient(circle at 84% 17%,var(--theme-glow2),transparent 31%),linear-gradient(155deg,var(--theme-bg1),var(--theme-bg2) 54%,var(--theme-bg1))!important;color:var(--theme-text)!important}
+html[data-theme] .scene::before{background:radial-gradient(ellipse at 12% 16%,var(--theme-glow1),transparent 28%),radial-gradient(ellipse at 84% 13%,var(--theme-glow2),transparent 31%),radial-gradient(ellipse at 64% 66%,var(--theme-glow1),transparent 35%)!important;opacity:.82!important;filter:blur(30px) saturate(120%)!important}
+html[data-theme] .glass,html[data-theme] .profile-card,html[data-theme] .event-card,html[data-theme] .form-card,html[data-theme] .bank-card,html[data-theme] .count-panel,html[data-theme] .verse-card,html[data-theme] .calendar-card,html[data-theme] .timeline-panel,html[data-theme] #events .location-pro,html[data-theme] .story{background:linear-gradient(145deg,var(--theme-surface),var(--theme-surface2))!important;border-color:var(--theme-line)!important;box-shadow:0 25px 58px var(--theme-shadow),inset 0 1px 0 rgba(255,255,255,.20)!important}
+html[data-theme] .glass::after{background:linear-gradient(90deg,transparent,var(--theme-accent),var(--theme-accent2),transparent)!important;box-shadow:0 0 14px color-mix(in srgb,var(--theme-accent) 35%,transparent)!important}
+html[data-theme] .serif,html[data-theme] .count-title,html[data-theme] .profile-copy h3,html[data-theme] .event-title h3,html[data-theme] .event-card h3,html[data-theme] .location-pro h3,html[data-theme] .rundown-card strong,html[data-theme] .story h3,html[data-theme] .book-title,html[data-theme] .bank-no,html[data-theme] .gift-confirm h3,html[data-theme] .thanks,html[data-theme] .close-name,html[data-theme] .close-names{font-family:var(--theme-display)!important;color:var(--theme-heading)!important}
+html[data-theme] .script{font-family:var(--theme-script)!important;color:var(--theme-accent)!important;-webkit-text-fill-color:var(--theme-accent)!important}
+html[data-theme] .kicker,html[data-theme] .lead,html[data-theme] .count-date,html[data-theme] .count-lab,html[data-theme] .profile-copy p,html[data-theme] .event-card p,html[data-theme] .event-row p,html[data-theme] .location-pro p,html[data-theme] .rundown-card span,html[data-theme] .story p,html[data-theme] .gift-confirm p,html[data-theme] .bank-owner,html[data-theme] .wish-card p{color:var(--theme-text)!important}
+html[data-theme] #events .event-title h3,html[data-theme] #rundown .rundown-card strong,html[data-theme] #gift .gift-confirm h3,html[data-theme] .bank-name,html[data-theme] .bank-no{color:var(--theme-heading)!important}
+html[data-theme] #events .event-title p,html[data-theme] #rundown .rundown-card span,html[data-theme] #gift .gift-confirm>p,html[data-theme] .bank-owner,html[data-theme] .field label,html[data-theme] .wish-card p{color:var(--theme-text)!important}
+html[data-theme] .count-box{background:color-mix(in srgb,var(--theme-surface) 86%,transparent)!important;border-color:var(--theme-line)!important}
+html[data-theme] .count-num{color:var(--theme-heading)!important;font-family:var(--theme-display)!important;text-shadow:none!important}
+html[data-theme] .count-lab{color:var(--theme-muted)!important}
+html[data-theme] .open-btn,html[data-theme] .btn.gold,html[data-theme] .submit,html[data-theme] .calendar-action,html[data-theme] .location-actions a.primary,html[data-theme] .gift-confirm button{background:linear-gradient(135deg,var(--theme-accent),var(--theme-accent2))!important;color:var(--theme-button-text)!important;border-color:color-mix(in srgb,var(--theme-accent) 58%,transparent)!important;box-shadow:0 12px 27px color-mix(in srgb,var(--theme-accent) 22%,transparent)!important}
+html[data-theme] .btn,html[data-theme] .location-actions a,html[data-theme] .location-actions button,html[data-theme] .copy{background:color-mix(in srgb,var(--theme-surface) 94%,transparent)!important;color:var(--theme-heading)!important;border-color:var(--theme-line)!important}
+html[data-theme] #events .actions .btn{background:color-mix(in srgb,var(--theme-surface) 94%,transparent)!important;color:var(--theme-heading)!important;border-color:var(--theme-line)!important;box-shadow:0 10px 22px var(--theme-shadow)!important}
+html[data-theme] #events .actions .btn.gold{background:linear-gradient(135deg,var(--theme-accent),var(--theme-accent2))!important;color:var(--theme-button-text)!important}
+html[data-theme] .mini-nav a,html[data-theme] .music{background:color-mix(in srgb,var(--theme-surface) 90%,transparent)!important;color:var(--theme-heading)!important;border-color:var(--theme-line)!important;box-shadow:0 10px 30px var(--theme-shadow)!important}
+html[data-theme] .mini-nav a.active,html[data-theme] .mini-nav a:hover{color:var(--theme-accent)!important}
+html[data-theme] .za-monogram,html[data-theme] .hero-monogram{border-color:color-mix(in srgb,var(--theme-accent) 52%,transparent)!important;color:var(--theme-accent)!important;background:color-mix(in srgb,var(--theme-surface) 78%,transparent)!important}
+html[data-theme] #opening{background:linear-gradient(160deg,var(--theme-bg1),var(--theme-bg2))!important}
+html[data-theme] #opening .phone{border-color:color-mix(in srgb,var(--theme-accent) 42%,transparent)!important;box-shadow:0 34px 80px var(--theme-shadow),0 0 0 1px color-mix(in srgb,var(--theme-accent) 22%,transparent)!important}
+html[data-theme] #opening .open-content{background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--theme-bg1) 72%,transparent))!important}
+html[data-theme] #opening .open-names{color:var(--theme-accent)!important;font-family:var(--theme-script)!important;text-shadow:none!important}
+html[data-theme] #opening .open-kicker,html[data-theme] #opening .open-date,html[data-theme] #opening .guest-honor,html[data-theme] #opening .guest-sub,html[data-theme] #opening .open-hint{color:var(--theme-muted)!important}
+html[data-theme] #opening .open-guest{color:var(--theme-heading)!important;font-family:var(--theme-display)!important}
+html[data-theme] #opening .guest-card{background:color-mix(in srgb,var(--theme-surface) 83%,transparent)!important;border-color:var(--theme-line)!important;box-shadow:0 16px 38px var(--theme-shadow)!important}
+html[data-theme] .premium-progress i{background:linear-gradient(90deg,var(--theme-accent),var(--theme-accent2))!important}
+html[data-theme] .premium-ornament path,html[data-theme] .premium-ornament circle{stroke:var(--theme-accent)!important}
+/* Dark themes need bright form controls and copy contrast without changing the content structure. */
+html[data-theme="black-gold"] input,html[data-theme="black-gold"] textarea,html[data-theme="black-gold"] select,
+html[data-theme="emerald-gold"] input,html[data-theme="emerald-gold"] textarea,html[data-theme="emerald-gold"] select,
+html[data-theme="royal-navy"] input,html[data-theme="royal-navy"] textarea,html[data-theme="royal-navy"] select,
+html[data-theme="burgundy-romance"] input,html[data-theme="burgundy-romance"] textarea,html[data-theme="burgundy-romance"] select,
+html[data-theme="celestial-night"] input,html[data-theme="celestial-night"] textarea,html[data-theme="celestial-night"] select{background:rgba(255,255,255,.08)!important;color:var(--theme-heading)!important;border-color:var(--theme-line)!important}
+html[data-theme="black-gold"] input::placeholder,html[data-theme="emerald-gold"] input::placeholder,html[data-theme="royal-navy"] input::placeholder,html[data-theme="burgundy-romance"] input::placeholder,html[data-theme="celestial-night"] input::placeholder{color:var(--theme-muted)!important}
+/* Each option has one small signature so it feels like a real theme, not only a recolor. */
+html[data-theme="black-gold"] .scene{background-image:radial-gradient(circle at 18% 9%,rgba(215,182,109,.08),transparent 23%),linear-gradient(160deg,#050504,#18140d)!important}
+html[data-theme="emerald-gold"] .scene{background-image:radial-gradient(circle at 14% 14%,rgba(73,147,108,.16),transparent 30%),linear-gradient(155deg,#06110d,#123124)!important}
+html[data-theme="royal-navy"] .scene{background-image:radial-gradient(circle at 82% 12%,rgba(82,124,179,.16),transparent 30%),linear-gradient(155deg,#07101c,#132947)!important}
+html[data-theme="burgundy-romance"] .scene{background-image:radial-gradient(circle at 15% 12%,rgba(164,58,86,.18),transparent 31%),linear-gradient(155deg,#18070c,#421522)!important}
+html[data-theme="celestial-night"] .scene{background-image:radial-gradient(circle at 17% 12%,rgba(96,120,255,.18),transparent 30%),radial-gradient(circle at 83% 20%,rgba(205,116,255,.15),transparent 28%),linear-gradient(155deg,#070817,#171c43)!important}
+html[data-theme="editorial-mono"] .scene{background-image:linear-gradient(125deg,rgba(0,0,0,.025) 1px,transparent 1px),linear-gradient(155deg,#f6f5f2,#dcdad5)!important;background-size:26px 26px,auto!important}
+html[data-theme="marble-gold"] .scene{background-image:linear-gradient(115deg,transparent 46%,rgba(100,96,86,.06) 47%,transparent 49%),linear-gradient(155deg,#fbfbf9,#e6e4df)!important;background-size:170px 170px,auto!important}
+html[data-theme="sage-botanical"] .scene{background-image:radial-gradient(ellipse at 15% 12%,rgba(126,156,113,.16),transparent 30%),linear-gradient(155deg,#f3f5ef,#dbe6d7)!important}
+html[data-theme="rose-gold"] .scene{background-image:radial-gradient(ellipse at 82% 14%,rgba(205,131,151,.17),transparent 31%),linear-gradient(155deg,#fff5f7,#ead2d9)!important}
+html[data-theme="terracotta-rustic"] .scene{background-image:radial-gradient(ellipse at 14% 12%,rgba(191,111,77,.15),transparent 29%),linear-gradient(155deg,#f8f0e9,#e4c7b5)!important}
+</style>
+
 </head>
 <body class="locked">
 <div class="pro-loader" id="proLoader" aria-hidden="true"><div class="pro-loader-card"><div class="pro-loader-mark">Z·A</div><b>Zaky &amp; Agnes</b><small>Preparing your invitation</small><div class="pro-loader-line"><i></i></div></div></div>
@@ -3956,6 +4032,10 @@ document.addEventListener('DOMContentLoaded',async()=>{
  // Public-safe settings, maintenance redirect, announcement, and family contacts.
  const wa=v=>String(v||'').replace(/\D/g,'').replace(/^0/,'62');
  const MEDIA_SLOTS={media_zaky:'--zsolo',media_agnes:'--asolo',media_p0:'--p0',media_p1:'--p1',media_p2:'--p2',media_p3:'--p3',media_p4:'--p4'};
+ const VALID_THEMES=['champagne','black-gold','ivory-pearl','emerald-gold','royal-navy','burgundy-romance','sage-botanical','rose-gold','terracotta-rustic','celestial-night','marble-gold','editorial-mono'];
+ const THEME_COLORS={champagne:'#eadbd4','black-gold':'#17130d','ivory-pearl':'#f0eadf','emerald-gold':'#10291e','royal-navy':'#10243d','burgundy-romance':'#3a121d','sage-botanical':'#dce6d8','rose-gold':'#ead3da','terracotta-rustic':'#e4c9b8','celestial-night':'#171d40','marble-gold':'#e4e3df','editorial-mono':'#dad9d5'};
+ function applySiteTheme(v){const theme=VALID_THEMES.includes(String(v||''))?String(v):'champagne';document.documentElement.dataset.theme=theme;try{localStorage.setItem('za-site-theme',theme)}catch(_e){}const meta=document.querySelector('meta[name=theme-color]');if(meta)meta.content=THEME_COLORS[theme]||'#eadbd4';}
+ try{const cached=localStorage.getItem('za-site-theme');if(VALID_THEMES.includes(cached))applySiteTheme(cached)}catch(_e){}
  const validMedia=v=>typeof v==='string'&&(v.startsWith('data:image/')||/^https:\/\//i.test(v));
  function applyMediaOverrides(x={}){
   const root=document.documentElement;
@@ -3972,15 +4052,16 @@ document.addEventListener('DOMContentLoaded',async()=>{
    if(error)throw error;
    let rows=Array.isArray(data)?data:[];
    const mediaKeys=['media_zaky','media_agnes','media_p0','media_p1','media_p2','media_p3','media_p4'];
-   // Compatibility fallback: older public-settings RPCs may not expose the new media keys yet.
-   // If an anon SELECT policy already exists, this fills them without requiring an RPC update.
-   if(!rows.some(r=>mediaKeys.includes(r?.setting_key))){
+   const fallbackKeys=[...mediaKeys,'site_theme'];
+   // Compatibility fallback for older public-settings RPC versions.
+   if(!rows.some(r=>r?.setting_key==='site_theme')||!rows.some(r=>mediaKeys.includes(r?.setting_key))){
     try{
-     const{data:mr}=await udb.from('wedding_site_settings').select('key,value').in('key',mediaKeys);
-     if(Array.isArray(mr))rows=rows.concat(mr.map(r=>({setting_key:r.key,setting_value:r.value})));
+     const{data:mr}=await udb.from('wedding_site_settings').select('key,value').in('key',fallbackKeys);
+     if(Array.isArray(mr)){const seen=new Set(rows.map(r=>r?.setting_key));rows=rows.concat(mr.filter(r=>!seen.has(r.key)).map(r=>({setting_key:r.key,setting_value:r.value}))) }
     }catch(_e){}
    }
    const x={};rows.forEach(r=>{if(r&&r.setting_key)x[r.setting_key]=r.setting_value});
+   applySiteTheme(x.site_theme||'champagne');
    applyMediaOverrides(x);
    const maintenance=x.maintenance_mode===true||x.maintenance_enabled===true;
    if(maintenance&&new URLSearchParams(location.search).get('preview')!=='1'){

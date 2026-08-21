@@ -1,0 +1,28 @@
+ZAKY & AGNES — 12 TEMA PREMIUM
+
+1. Champagne Luxury — cream, champagne, soft blush
+2. Luxury Black Gold — hitam pekat + emas klasik
+3. Ivory Pearl — ivory putih, pearl, timeless
+4. Emerald Gold — emerald gelap + emas
+5. Royal Navy — navy kerajaan + emas
+6. Burgundy Romance — maroon romantis
+7. Sage Botanical — sage garden modern
+8. Rose Gold — blush rose + metallic warm
+9. Terracotta Rustic — earthy hangat / intimate
+10. Celestial Night — midnight + violet dreamy
+11. White Marble Gold — marble putih + emas modern
+12. Editorial Monochrome — fashion editorial hitam-putih
+
+CARA GANTI
+- Buka https://zakyagnes.my.id/admin.html
+- Login admin
+- Pilih tab Tema Website
+- Pilih tema
+- Tekan Simpan Tema
+- Buka Preview Undangan untuk melihat hasilnya
+
+AKTIVASI PERTAMA
+Jalankan SETUP_TEMA_ADMIN_SUPABASE.sql sekali di Supabase SQL Editor.
+Setelah itu pergantian tema berikutnya cukup dari admin.html.
+
+Tema tidak mengubah data acara, foto, musik, RSVP, Wedding Pass, Supabase, atau domain.

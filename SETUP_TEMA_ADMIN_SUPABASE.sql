@@ -1,7 +1,6 @@
--- ZAKY & AGNES — FOTO WEBSITE VIA ADMIN
--- Jalankan sekali di Supabase SQL Editor agar foto yang disimpan dari admin.html
--- dapat dibaca secara publik oleh index.html melalui RPC yang aman.
--- Fungsi ini HANYA mengekspos key yang memang ditujukan untuk publik.
+-- ZAKY & AGNES — AKTIVASI TEMA WEBSITE VIA ADMIN
+-- Jalankan SEKALI di Supabase SQL Editor setelah upload versi tema.
+-- Fungsi publik hanya mengekspos pengaturan yang memang aman untuk tamu.
 
 create or replace function public.get_public_wedding_settings()
 returns table(setting_key text, setting_value jsonb)
@@ -26,5 +25,4 @@ $$;
 revoke all on function public.get_public_wedding_settings() from public;
 grant execute on function public.get_public_wedding_settings() to anon, authenticated;
 
--- Tidak perlu membuat Storage bucket: foto admin disimpan sebagai gambar terkompresi
--- di wedding_site_settings, sehingga tidak ada service-role key di frontend.
+-- Selesai. Tidak ada API key rahasia atau Storage bucket tambahan yang dibutuhkan.
