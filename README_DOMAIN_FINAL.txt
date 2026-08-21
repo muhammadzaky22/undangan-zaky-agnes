@@ -80,7 +80,7 @@ PERUBAHAN FINAL YANG SUDAH DITERAPKAN
 
 
 === FITUR FOTO WEBSITE DARI ADMIN ===
-1. Jalankan SETUP_FOTO_ADMIN_SUPABASE.sql satu kali di Supabase SQL Editor.
+1. Jalankan SETUP_ADMIN_LENGKAP_SUPABASE.sql satu kali di Supabase SQL Editor.
 2. Buka https://zakyagnes.my.id/admin.html dan login sebagai wedding admin.
 3. Pilih tab Foto Website.
 4. Pilih JPG/PNG/WEBP dari HP lalu tekan Simpan Foto.
@@ -93,5 +93,5 @@ Catatan: fitur ini tidak membutuhkan Supabase Storage bucket tambahan dan tidak 
 ADMIN TEMA WEBSITE
 -------------------
 Versi ini memiliki 12 tema premium yang dapat diganti dari admin.html.
-Jalankan SETUP_TEMA_ADMIN_SUPABASE.sql sekali agar site_theme dapat dibaca publik.
+Jalankan SETUP_ADMIN_LENGKAP_SUPABASE.sql sekali agar site_theme dapat dibaca publik.
 Tema tidak mengubah data RSVP, foto, musik, Supabase, atau domain.

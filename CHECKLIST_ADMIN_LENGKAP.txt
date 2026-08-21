@@ -1,0 +1,22 @@
+CHECKLIST FINAL — ADMIN LENGKAP ZAKY & AGNES
+
+[ ] Upload semua file ke ROOT repository GitHub Pages (jangan di dalam folder).
+[ ] Pastikan CNAME tetap zakyagnes.my.id.
+[ ] Jalankan SETUP_ADMIN_LENGKAP_SUPABASE.sql SEKALI di Supabase SQL Editor.
+[ ] Buka /admin.html dan login.
+[ ] Tes Data Undangan: ubah kecil lalu simpan, preview, lalu kembalikan bila perlu.
+[ ] Tes Acara & Maps: pastikan peta, tombol Maps, countdown, dan kalender benar.
+[ ] Tes Musik: upload audio pendek/lagu, lalu cek di website.
+[ ] Tes Foto Website dan salah satu dari 12 tema.
+[ ] Tes Story & Hadiah.
+[ ] Tes Tampilan: on/off section dan urutan.
+[ ] Tes RSVP dari mode incognito/perangkat lain.
+[ ] Jalankan Health Check di admin.
+
+DATA BAWAAN TETAP:
+- Muhammad Zaky Khairy & Agnes Viannisa
+- 7 Februari 2027
+- Akad 08.00 WITA
+- Resepsi 11.00 WITA
+- Gas Alam Badak 1, Muara Badak
+- musik.mp3 tetap ada sebagai fallback

@@ -20,13 +20,13 @@ Catatan: jangan upload service_role/secret key Supabase ke GitHub.
 
 FOTO WEBSITE VIA ADMIN
 - Upload semua file ZIP ke GitHub.
-- Jalankan SETUP_FOTO_ADMIN_SUPABASE.sql sekali di Supabase SQL Editor.
+- Jalankan SETUP_ADMIN_LENGKAP_SUPABASE.sql sekali di Supabase SQL Editor.
 - Buka /admin.html, login, pilih tab Foto Website.
 - Pilih foto dari HP lalu tekan Simpan Foto.
 - Foto bawaan tetap menjadi fallback jika tombol Pakai Bawaan dipilih.
 
 
 TEMA WEBSITE (sekali saja):
-- Jalankan SETUP_TEMA_ADMIN_SUPABASE.sql di Supabase SQL Editor.
+- Jalankan SETUP_ADMIN_LENGKAP_SUPABASE.sql di Supabase SQL Editor.
 - Buka /admin.html > Tema Website > pilih tema > Simpan Tema.
 - Preview dari tombol Preview Undangan atau buka domain utama.

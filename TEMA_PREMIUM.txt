@@ -22,7 +22,7 @@ CARA GANTI
 - Buka Preview Undangan untuk melihat hasilnya
 
 AKTIVASI PERTAMA
-Jalankan SETUP_TEMA_ADMIN_SUPABASE.sql sekali di Supabase SQL Editor.
+Jalankan SETUP_ADMIN_LENGKAP_SUPABASE.sql sekali di Supabase SQL Editor.
 Setelah itu pergantian tema berikutnya cukup dari admin.html.
 
 Tema tidak mengubah data acara, foto, musik, RSVP, Wedding Pass, Supabase, atau domain.
