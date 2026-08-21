@@ -1,0 +1,13 @@
+FIX FOTO AMAN UPLOAD HP
+========================
+
+Dibuat dari MASTER ZA Admin PWA stabil.
+
+- 7 foto bawaan ditanam langsung di index.html sebagai fallback.
+- Dekorasi yang sebelumnya di folder assets juga ditanam langsung.
+- Folder assets tidak diperlukan lagi.
+- Foto yang kamu ganti dari admin/Supabase tetap menjadi prioritas.
+- Jika foto admin di-reset/dihapus, foto bawaan muncul kembali.
+- Tidak perlu menjalankan SQL Supabase baru.
+
+Upload semua file ZIP ke root repository GitHub Pages.
