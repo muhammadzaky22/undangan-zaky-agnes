@@ -1,0 +1,18 @@
+CHECKLIST SETELAH UPLOAD KE GITHUB
+================================
+
+[ ] index.html terlihat di ROOT repository (bukan di dalam folder)
+[ ] CNAME berisi: zakyagnes.my.id
+[ ] Settings > Pages > Custom domain: zakyagnes.my.id
+[ ] DNS @ memakai 4 A record GitHub Pages
+[ ] DNS www CNAME -> muhammadzaky22.github.io
+[ ] Enforce HTTPS aktif setelah tersedia
+[ ] musik.mp3 masih ada di ROOT repository jika ingin musik
+[ ] Buka zakyagnes.my.id dan tekan Buka Undangan
+[ ] Coba RSVP dan pastikan jumlah tamu tampil
+[ ] Coba admin.html dan Health Check
+[ ] Jika memakai live streaming: Admin > Pengaturan > isi URL > Simpan
+[ ] Coba QR undangan dan Google Maps
+[ ] Coba Tambah ke Kalender / file kalender
+
+Catatan: jangan upload service_role/secret key Supabase ke GitHub.
