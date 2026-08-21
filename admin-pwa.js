@@ -59,11 +59,23 @@
     markInstalled();
   });
 
-  // If the browser has no beforeinstallprompt (iOS / local preview), show a useful action.
+  // Keep the install action visible on normal browser pages too.
+  // Some Android/Chrome versions delay or never emit beforeinstallprompt even though
+  // the user can still install from the browser menu. The button therefore stays
+  // available as a reliable entry point, and uses the native prompt when provided.
   window.setTimeout(() => {
-    if(!installBtn || isStandalone() || !installBtn.hidden) return;
-    if(isIOS() || location.protocol === 'content:' || location.protocol === 'file:') installBtn.hidden = false;
-  }, 1200);
+    if(!installBtn || isStandalone()) return;
+    installBtn.hidden = false;
+    if(installNote && !deferredPrompt){
+      if(location.protocol === 'content:' || location.protocol === 'file:'){
+        installNote.innerHTML = '<b>Preview lokal:</b> upload dulu ke zakyagnes.my.id agar ZA Admin bisa dipasang sebagai aplikasi.';
+      } else if(isIOS()){
+        installNote.innerHTML = '<b>Install ZA Admin:</b> gunakan Share di Safari lalu pilih “Tambahkan ke Layar Utama”.';
+      } else {
+        installNote.innerHTML = '<b>Install ZA Admin:</b> tekan tombol di kanan bawah. Jika prompt Chrome belum tersedia, ikuti petunjuk yang muncul.';
+      }
+    }
+  }, 700);
 
   // App shortcuts: open requested admin tab once page listeners are ready.
   const tab = new URLSearchParams(location.search).get('tab');
