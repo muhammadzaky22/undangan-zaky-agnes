@@ -77,3 +77,14 @@ PERUBAHAN FINAL YANG SUDAH DITERAPKAN
 - Live Streaming tetap punya fallback meta za-stream-url.
 - Service Worker cache version dinaikkan agar update lebih cepat terbaca setelah deploy.
 - Desain, nama mempelai, nama orang tua, RSVP, Wedding Pass, galeri, dan fitur utama dipertahankan.
+
+
+=== FITUR FOTO WEBSITE DARI ADMIN ===
+1. Jalankan SETUP_FOTO_ADMIN_SUPABASE.sql satu kali di Supabase SQL Editor.
+2. Buka https://zakyagnes.my.id/admin.html dan login sebagai wedding admin.
+3. Pilih tab Foto Website.
+4. Pilih JPG/PNG/WEBP dari HP lalu tekan Simpan Foto.
+5. Sistem otomatis mengompres foto sebelum menyimpannya agar undangan tetap ringan.
+6. Tekan Pakai Bawaan kapan saja untuk kembali ke foto asli yang tertanam di index.html.
+
+Catatan: fitur ini tidak membutuhkan Supabase Storage bucket tambahan dan tidak menggunakan service-role key di browser.

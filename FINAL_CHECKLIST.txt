@@ -16,3 +16,11 @@ CHECKLIST SETELAH UPLOAD KE GITHUB
 [ ] Coba Tambah ke Kalender / file kalender
 
 Catatan: jangan upload service_role/secret key Supabase ke GitHub.
+
+
+FOTO WEBSITE VIA ADMIN
+- Upload semua file ZIP ke GitHub.
+- Jalankan SETUP_FOTO_ADMIN_SUPABASE.sql sekali di Supabase SQL Editor.
+- Buka /admin.html, login, pilih tab Foto Website.
+- Pilih foto dari HP lalu tekan Simpan Foto.
+- Foto bawaan tetap menjadi fallback jika tombol Pakai Bawaan dipilih.
