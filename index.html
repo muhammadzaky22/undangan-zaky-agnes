@@ -2827,6 +2827,165 @@ body.za-font-large{--za-scale:1.12}body.za-font-large .lead,body.za-font-large .
 }
 </style>
 
+
+<style id="post-open-wedding-hero-v1">
+/* ===== POST-OPEN WEDDING HERO =====
+   Tampil SETELAH tamu menekan Buka Undangan.
+   Terinspirasi komposisi editorial wedding cover, tetap tema Zaky & Agnes: ivory / blush / gold. */
+#postOpenHero{
+  min-height:100svh!important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:34px 18px 76px!important;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(255,255,255,.96),transparent 24%),
+    radial-gradient(circle at 82% 24%,rgba(238,196,196,.32),transparent 28%),
+    radial-gradient(circle at 48% 86%,rgba(218,170,132,.15),transparent 31%),
+    linear-gradient(180deg,#fffaf6 0%,#f9ede8 52%,#f6e7e1 100%)!important;
+  color:#694b43!important;
+  overflow:hidden;
+}
+#postOpenHero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse at 0% 78%,rgba(190,93,111,.10) 0 10%,transparent 11%),
+    radial-gradient(ellipse at 100% 15%,rgba(188,114,120,.10) 0 11%,transparent 12%),
+    radial-gradient(circle at 8% 24%,rgba(224,181,174,.22),transparent 14%),
+    radial-gradient(circle at 92% 72%,rgba(236,192,186,.24),transparent 16%);
+  pointer-events:none;
+  z-index:-2;
+}
+#postOpenHero::after{
+  content:"Z  ·  A";
+  position:absolute;
+  left:50%;top:51%;
+  transform:translate(-50%,-50%);
+  font:400 clamp(120px,40vw,250px)/1 "Italiana",serif;
+  letter-spacing:.04em;
+  color:rgba(178,127,81,.035);
+  white-space:nowrap;
+  pointer-events:none;
+  z-index:-1;
+}
+.post-open-shell{
+  width:min(620px,100%);
+  margin:auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+.post-open-kicker{
+  font:500 15px/1.2 "Italiana",serif;
+  letter-spacing:.02em;
+  color:#7d534b;
+  margin-bottom:13px;
+}
+.post-open-monogram{
+  width:42px;height:42px;
+  margin:0 auto 10px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid rgba(184,132,87,.30);
+  background:rgba(255,250,246,.78);
+  box-shadow:0 10px 25px rgba(110,73,60,.08),inset 0 0 0 4px rgba(255,255,255,.45);
+  font:400 12px/1 "Italiana",serif;
+  letter-spacing:.08em;
+  color:#b27c4d;
+}
+.post-open-photo-wrap{
+  width:min(74vw,390px);
+  aspect-ratio:.72;
+  margin:0 auto;
+  padding:7px;
+  border-radius:48% 48% 44% 44% / 30% 30% 23% 23%;
+  background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(224,187,157,.68));
+  box-shadow:0 24px 58px rgba(122,84,69,.17),0 0 0 1px rgba(183,132,92,.18);
+  position:relative;
+}
+.post-open-photo-wrap::before,
+.post-open-photo-wrap::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(.1px);pointer-events:none
+}
+.post-open-photo-wrap::before{
+  width:110px;height:110px;left:-68px;bottom:42px;
+  background:radial-gradient(circle at 62% 62%,#fff7f2 0 12%,#e9c1ba 13% 25%,transparent 26%),radial-gradient(circle at 42% 30%,#f3d8d2 0 9%,transparent 10%);
+  opacity:.55;
+}
+.post-open-photo-wrap::after{
+  width:92px;height:92px;right:-60px;top:52px;
+  background:radial-gradient(circle at 45% 55%,#fff6f1 0 13%,#e3b7b2 14% 27%,transparent 28%),radial-gradient(circle at 66% 27%,#f2d4cd 0 9%,transparent 10%);
+  opacity:.50;
+}
+.post-open-photo{
+  width:100%;height:100%;
+  border-radius:inherit;
+  background-image:linear-gradient(180deg,rgba(255,247,241,.02),rgba(91,57,49,.07)),var(--p1);
+  background-size:cover;
+  background-position:center 42%;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.52);
+  position:relative;
+  overflow:hidden;
+  animation:postOpenPhotoDrift 12s ease-in-out infinite alternate;
+}
+@keyframes postOpenPhotoDrift{
+  from{background-size:102%;background-position:center 42%}
+  to{background-size:108%;background-position:center 46%}
+}
+.post-open-names{
+  margin-top:22px;
+  font:400 clamp(45px,12.5vw,70px)/.92 "Great Vibes",cursive;
+  color:#b07a49;
+  text-shadow:0 4px 16px rgba(255,255,255,.75);
+}
+.post-open-date{
+  margin-top:11px;
+  font:500 12px/1.3 "Manrope",sans-serif;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#6f544b;
+}
+.post-open-line{
+  width:92px;height:1px;margin:15px auto 0;
+  background:linear-gradient(90deg,transparent,#c99a71,transparent);
+  position:relative;
+}
+.post-open-line::after{
+  content:"♡";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  padding:0 7px;background:#f9ece7;color:#bd8b61;font-size:11px;
+}
+.post-open-scroll{
+  margin:20px auto 0;
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  color:#9a7768;
+  font:600 7px/1 "Manrope",sans-serif;
+  letter-spacing:.18em;text-transform:uppercase;
+}
+.post-open-mouse{
+  width:27px;height:42px;border-radius:999px;
+  border:1.5px solid rgba(124,87,73,.62);position:relative;
+}
+.post-open-mouse::after{
+  content:"";position:absolute;left:50%;top:8px;transform:translateX(-50%);
+  width:3px;height:9px;border-radius:4px;background:#bc875d;
+  animation:postOpenScrollDot 1.8s ease-in-out infinite;
+}
+@keyframes postOpenScrollDot{0%{opacity:.25;transform:translate(-50%,0)}50%{opacity:1}100%{opacity:.1;transform:translate(-50%,14px)}}
+.post-open-petal{position:absolute;width:13px;height:23px;border-radius:80% 20% 80% 20%;background:linear-gradient(145deg,#efd0cf,#dbaeb0);opacity:.45;pointer-events:none;animation:postPetal 8s ease-in-out infinite alternate}
+.post-open-petal.p1{left:7%;top:17%;transform:rotate(25deg)}.post-open-petal.p2{right:8%;top:33%;animation-delay:-2s;transform:rotate(-28deg)}.post-open-petal.p3{left:13%;bottom:15%;animation-delay:-5s;transform:rotate(52deg)}
+@keyframes postPetal{from{translate:0 -4px;rotate:-4deg}to{translate:8px 10px;rotate:9deg}}
+@media(max-width:390px){
+  #postOpenHero{padding:25px 14px 65px!important}
+  .post-open-photo-wrap{width:min(78vw,330px)}
+  .post-open-kicker{font-size:14px}
+  .post-open-names{margin-top:18px;font-size:48px}
+  .post-open-date{font-size:10px;letter-spacing:.19em}
+}
+@media(prefers-reduced-motion:reduce){.post-open-photo,.post-open-mouse::after,.post-open-petal{animation:none!important}}
+</style>
+
 </head>
 <body class="locked">
 <div class="pro-loader" id="proLoader" aria-hidden="true"><div class="pro-loader-card"><div class="pro-loader-mark">Z·A</div><b>Zaky &amp; Agnes</b><small>Preparing your invitation</small><div class="pro-loader-line"><i></i></div></div></div>
@@ -2875,6 +3034,21 @@ body.za-font-large{--za-scale:1.12}body.za-font-large .lead,body.za-font-large .
 <div class="site">
  <section class="mode-hero" id="eventDayHero" hidden><div class="mode-kicker">Wedding Day Mode</div><h2>Hari Ini, Kami Menikah 🤍</h2><p>Terima kasih telah hadir menjadi bagian dari hari bahagia kami. Akses cepat untuk lokasi, rangkaian acara, dan Wedding Pass tersedia di bawah ini.</p><div class="mode-actions"><a class="accent" href="#events">Buka Lokasi</a><a href="#rundown">Lihat Rundown</a><a href="#rsvp">Wedding Pass</a></div></section>
  <section class="mode-hero" id="afterWeddingHero" hidden><div class="mode-kicker">With Love & Gratitude</div><h2>Terima Kasih Telah Menjadi Bagian Cerita Kami</h2><p>Hari bahagia telah berlalu, tetapi kenangannya akan selalu tinggal. Kami menyimpan halaman ini sebagai album kecil untuk mengenang momen indah bersama.</p><div class="mode-actions"><a class="accent" href="#gallery">Lihat Galeri</a><a href="#guestphotos">Kirim Foto Kenangan</a><a href="#closing">Pesan Penutup</a></div></section>
+
+ <!-- POST-OPEN WEDDING HERO: tampil setelah tombol Buka Undangan -->
+ <section class="scene post-open-wedding-hero" id="postOpenHero">
+  <i class="post-open-petal p1" aria-hidden="true"></i><i class="post-open-petal p2" aria-hidden="true"></i><i class="post-open-petal p3" aria-hidden="true"></i>
+  <div class="post-open-shell reveal">
+   <div class="post-open-kicker">The Wedding of</div>
+   <div class="post-open-monogram" aria-hidden="true">Z·A</div>
+   <div class="post-open-photo-wrap depth"><div class="post-open-photo" role="img" aria-label="Zaky dan Agnes"></div></div>
+   <div class="post-open-names">Zaky &amp; Agnes</div>
+   <div class="post-open-date">Minggu · 7 Februari 2027</div>
+   <div class="post-open-line" aria-hidden="true"></div>
+   <div class="post-open-scroll"><div class="post-open-mouse" aria-hidden="true"></div><span>Scroll untuk melanjutkan</span></div>
+  </div>
+ </section>
+
  <!-- 2 AYAT -->
  <section class="scene" id="verse"><div class="aurora-ribbon"></div><div class="mountain"></div><div class="floating-memory fm-left fp-p4" aria-hidden="true"></div>
   <div class="verse-wrap"><div class="verse-card glass reveal depth">
