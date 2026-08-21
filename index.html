@@ -9,15 +9,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Wedding of Zaky & Agnes">
 <meta property="og:description" content="Minggu, 7 Februari 2027 · Gas Alam Badak Satu, Muara Badak">
-<meta property="og:url" content="https://zakyagnes.github.io/">
-<meta property="og:image" content="https://zakyagnes.github.io/social-preview.jpg">
+<meta property="og:url" content="https://zakyagnes.my.id/">
+<meta property="og:image" content="https://zakyagnes.my.id/social-preview.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Zaky & Agnes — 7 Februari 2027">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Wedding of Zaky & Agnes">
 <meta name="twitter:description" content="7 Februari 2027 · Muara Badak">
-<meta name="twitter:image" content="https://zakyagnes.github.io/social-preview.jpg">
+<meta name="twitter:image" content="https://zakyagnes.my.id/social-preview.jpg">
 <meta name="color-scheme" content="light">
 <!-- Premium Plus configuration: isi content dengan URL YouTube/Zoom jika live streaming dipakai -->
 <meta name="za-stream-url" content="">
@@ -32,11 +32,11 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<link rel="canonical" href="https://zakyagnes.github.io/">
+<link rel="canonical" href="https://zakyagnes.my.id/">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23f8eee8'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-size='22' fill='%23a67551' font-family='serif'%3EZA%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Event","name":"The Wedding of Zaky & Agnes","startDate":"2027-02-07T08:00:00+08:00","endDate":"2027-02-07T23:59:00+08:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Gas Alam Badak Satu","address":{"@type":"PostalAddress","addressLocality":"Muara Badak","addressRegion":"Kalimantan Timur","addressCountry":"ID"}},"image":["https://zakyagnes.github.io/social-preview.jpg"],"description":"Undangan pernikahan Muhammad Zaky Khairy & Agnes Viannisa."}
+{"@context":"https://schema.org","@type":"Event","name":"The Wedding of Zaky & Agnes","startDate":"2027-02-07T08:00:00+08:00","endDate":"2027-02-07T23:59:00+08:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Gas Alam Badak Satu","address":{"@type":"PostalAddress","addressLocality":"Muara Badak","addressRegion":"Kalimantan Timur","addressCountry":"ID"}},"image":["https://zakyagnes.my.id/social-preview.jpg"],"description":"Undangan pernikahan Muhammad Zaky Khairy & Agnes Viannisa."}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3406,7 +3406,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
  let lastPass=null,checkinCodeParam=(new URLSearchParams(location.search).get('checkin')||'').trim();
  try{const saved=JSON.parse(sessionStorage.getItem('zakyAgnesLastRSVP')||'null');if(saved&&saved.name)lastPass=saved}catch(e){}
  const makeCode=()=>('ZA-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7)).toUpperCase();
- const defaultPublicBase='https://zakyagnes.github.io/';
+ const defaultPublicBase='https://zakyagnes.my.id/';
  const passQrUrl=payload=>'https://quickchart.io/qr?size=320&margin=2&ecLevel=H&dark=5b403b&light=fffaf6&text='+encodeURIComponent(payload);
  function passPayload(p){if(p.checkinPersisted){let base=(location.protocol==='http:'||location.protocol==='https:')?location.href:defaultPublicBase;const u=new URL('./admin.html',base);u.searchParams.set('pass',p.code);return u.href}return 'ZAKY & AGNES | '+p.name+' | '+p.guests+' tamu | 7 Februari 2027 | '+p.code}
  function openPass(p){if(!p)return;lastPass=p;document.getElementById('passName').textContent=p.name;document.getElementById('passGuests').textContent=p.guests+' orang';document.getElementById('passAttendance').textContent=p.attendance;document.getElementById('passCode').textContent=p.code;const payload=passPayload(p);document.getElementById('passQr').src=passQrUrl(payload);document.getElementById('passNote').textContent=p.checkinPersisted?'Tunjukkan QR ini kepada panitia saat hadir untuk proses guest check-in.':'Wedding Pass tetap valid. Aktifkan upgrade Supabase di ZIP agar QR dapat dipakai untuk check-in otomatis.';passOverlay.classList.add('open');passOverlay.setAttribute('aria-hidden','false')}
@@ -3769,11 +3769,11 @@ document.addEventListener('DOMContentLoaded',async()=>{
   q('#downloadCalendar')?.addEventListener('click',()=>{
     const ics=[
       'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Zaky Agnes Wedding//ID','CALSCALE:GREGORIAN','METHOD:PUBLISH',
-      'BEGIN:VEVENT','UID:zaky-agnes-20270207@zakyagnes.github.io','DTSTAMP:20260820T000000Z',
+      'BEGIN:VEVENT','UID:zaky-agnes-20270207@zakyagnes.my.id','DTSTAMP:20260820T000000Z',
       'DTSTART;TZID=Asia/Makassar:20270207T080000','DTEND;TZID=Asia/Makassar:20270207T235900',
       'SUMMARY:The Wedding of Zaky & Agnes','LOCATION:Gas Alam Badak Satu\\, Muara Badak\\, Kalimantan Timur',
       'DESCRIPTION:Akad dan resepsi pernikahan Muhammad Zaky Khairy & Agnes Viannisa.',
-      'URL:https://zakyagnes.github.io/','END:VEVENT','END:VCALENDAR'
+      'URL:https://zakyagnes.my.id/','END:VEVENT','END:VCALENDAR'
     ].join('\r\n');
     const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
     const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Zaky-Agnes-7-Februari-2027.ics';
