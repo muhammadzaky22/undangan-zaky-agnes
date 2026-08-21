@@ -1,0 +1,19 @@
+ZAKY & AGNES — INSTALL APLIKASI ADMIN (PWA)
+
+1. Upload SEMUA isi ZIP ini ke root repository GitHub Pages.
+2. Tunggu website https://zakyagnes.my.id selesai ter-update.
+3. Buka https://zakyagnes.my.id/admin.html menggunakan Chrome di Android.
+4. Login seperti biasa.
+5. Tekan tombol “Install Aplikasi Admin” yang muncul di bawah kanan.
+6. Konfirmasi Install.
+7. Ikon “ZA Admin” akan muncul di layar utama HP.
+
+PENTING:
+- Tombol install TIDAK dapat bekerja jika admin.html dibuka dari preview file lokal dengan alamat content:// atau file://.
+- PWA membutuhkan HTTPS; domain zakyagnes.my.id sudah sesuai untuk itu.
+- Setelah terpasang, app tetap memakai Supabase dan data yang sama dengan admin.html.
+- Update website tidak perlu install ulang; app akan mengambil versi terbaru melalui service worker.
+- Jika tombol tidak muncul di Chrome: menu ⋮ > Install app / Tambahkan ke layar utama.
+
+iPhone/iPad:
+Safari > Share > Add to Home Screen / Tambahkan ke Layar Utama.
