@@ -1,4 +1,4 @@
-const CACHE='za-domain-v2026-08-21-admin-pwa-1-photo-safe';
+const CACHE='zaky-agnes-open-quran-book-v10';
 const CORE=['/','/index.html','/admin.html','/offline.html','/maintenance.html','/manifest.webmanifest','/admin-manifest.webmanifest','/icon-192.png','/icon-512.png','/admin-icon-192.png','/admin-icon-512.png','/admin-icon-maskable-512.png','/social-preview.jpg','/guest-rsvp-upgrades.js','/admin-upgrades.js','/admin-pwa.js'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(url=>cache.add(url)))).then(()=>self.skipWaiting()));

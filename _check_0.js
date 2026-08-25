@@ -1,0 +1,1 @@
+document.documentElement.dataset.theme="black-cherry-bloom";
